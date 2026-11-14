@@ -229,6 +229,14 @@ def design(capacity_tpd=None, region="US", **over):
                                            "temperature. Effluent stays liquid only if the pressure is above "
                                            f"{core.psat('H2O', TR):.0f} bar.")
     tpy = p["capacity_tpd"] * d.hours / 24
+    d.check("DEG plus TEG co-product, scaled from the HYSYS design", _kg({"DEG": Dg, "TEG": Tg}) * d.hours / 1000,
+            22270 * tpy / 600000, "t/y", "Shehata et al. (2024), Scientific Reports 14, 10:1 water to EO", SH,
+            tol=25, note="The paper's figure is a simulation result. The competing rate model with the assumed rate "
+                         "ratio makes far more DEG and TEG; it sits inside the BREF range for real units instead. "
+                         "Left failing.")
+    d.check("Evaporator first effect steam duty", Q_first / 1000, 17.8 * tpy / 600000, "MW",
+            "Shehata et al. (2024), Scientific Reports 14, three effect train, scaled linearly from 600,000 t/y", SH,
+            tol=25, note="First effect steam after the reaction heat credit.")
     d.check("MEG column reboiler duty", Q_meg / 1000, 30.66 * tpy / 600000, "MW",
             "Shehata et al. (2024), Scientific Reports 14, HYSYS design, scaled linearly from 600,000 t/y", SH, tol=25,
             note="Model uses an assumed reflux ratio of 1.0; the paper's design implies a lower one. Left failing "
