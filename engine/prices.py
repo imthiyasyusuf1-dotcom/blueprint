@@ -55,6 +55,9 @@ PRICE_T = {
     "CaCO3": _v("limestone"),
     "C": _v("coke"),
     "NaCl_brine": _v("salt_brine"),
+    "NH4NO3": _v("ammonium_nitrate"),
+    "H2O2": _v("hydrogen_peroxide") * 2,  # source price per t of 50% solution
+    "EAQ": _v("ethylanthraquinone"),
 }
 
 # batch B (US quotes; formaldehyde is quoted per t of solution, taken as 37 wt% formalin, so the
@@ -132,6 +135,9 @@ PRICE_KEYS = {
     "CaCO3": "limestone",
     "C": "coke",
     "NaCl_brine": "salt_brine",
+    "NH4NO3": "ammonium_nitrate",
+    "H2O2": "hydrogen_peroxide",
+    "EAQ": "ethylanthraquinone",
 }
 PRICE_KEYS.update({
     "Phenol": "phenol", "Acetone": "acetone", "Benzene": "benzene", "C3H6": "propylene",

@@ -683,6 +683,47 @@
       "source": "SourceBySpec, Foundry coke price 2026",
       "url": "https://www.sourcebyspec.com/news/foundry-coke-price-2026-regional-fob-quotes-market-sizing-and-cost-drivers.html",
       "quote": "with China at USD 361.55/MT, India at USD 357.00/MT, Colombia at USD 300.00/MT, Poland at USD 362.01/MT, and Australia at USD 294.81/MT, all as of August 2026"
+    },
+    "ammonium_nitrate": {
+      "value": 405.0,
+      "unit": "USD/t",
+      "basis": "United States, Q2 2026 (Germany 450, India 385, Russia 315; global average 387.40). Grade not stated; taken as solid fertiliser grade AN",
+      "year": 2026,
+      "source": "Expert Market Research (free snippet)",
+      "url": "https://www.expertmarketresearch.com/price-forecast/ammonium-nitrate-price-trends",
+      "quote": "Ammonium Nitrate Prices Q2 2026: - Germany: USD 450.00/MT - United States: USD 405.00/MT - India: USD 385.00/MT - Russia: USD 315.00/MT",
+      "alt": {
+        "value": 570.19,
+        "basis": "Italy FOB, September 2026",
+        "source": "Procurement Resource (free snippet)",
+        "url": "https://www.procurementresource.com/resource-center/ammonium-nitrate-price-trends",
+        "quote": "Ammonium Nitrate | Italy | FOB | USD 570.19/MT | September 2026"
+      }
+    },
+    "hydrogen_peroxide": {
+      "value": 580.0,
+      "unit": "USD/t",
+      "basis": "United States, Q2 2026 (Germany 530, India 460, China 340). The snippet does not state the strength; it is taken as per tonne of 50 wt% solution, the usual traded grade, so the model prices 100% H2O2 at twice this figure",
+      "year": 2026,
+      "source": "Expert Market Research (free snippet)",
+      "url": "https://www.expertmarketresearch.com/price-forecast/hydrogen-peroxide-price-trends",
+      "quote": "Hydrogen Peroxide Prices Q2 2026: - United States: USD 580.00/MT - Germany: USD 530.00/MT - India: USD 460.00/MT - China: USD 340.00/MT",
+      "alt": {
+        "value": 298.45,
+        "basis": "USA FOB, October 2026, strength not stated",
+        "source": "Procurement Resource (free snippet)",
+        "url": "https://www.procurementresource.com/resource-center/hydrogen-peroxide-price-trends",
+        "quote": "Hydrogen Peroxide | USA | FOB | USD 298.45/MT | October 2026"
+      }
+    },
+    "ethylanthraquinone": {
+      "value": 10000.0,
+      "unit": "USD/t",
+      "basis": "2-ethylanthraquinone, China supplier listing, 1,000 kg minimum order, ex works",
+      "year": 2026,
+      "source": "Made-in-China.com listing, Shandong Yubin Chemical",
+      "url": "https://www.made-in-china.com/products-search/hot-china-products/2_Ethylanthraquinone.html",
+      "quote": "2-EAQ 2-Ethylanthraquinone Dye Intermediate CAS 84-51-5 US$10.00 1,000 kg(MOQ)"
     }
   },
   "emission_factors": {

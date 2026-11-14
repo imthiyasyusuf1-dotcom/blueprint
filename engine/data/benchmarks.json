@@ -1696,6 +1696,104 @@
       "model_type": "cost"
     }
   ],
+  "ammonium_nitrate": [
+    {
+      "metric": "Ammonia per tonne",
+      "value": 213,
+      "unit": "kg/t AN",
+      "conditions": "Pressure neutralisation at 4 bar with clean steam production; 60% HNO3, 96% AN solution product",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Ammonia, Acids and Fertilisers (2007), Table 9.8 (Uhde 2003)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic_aaf.pdf",
+      "quote": "At 4 bar with clean steam production ... Steam import, kg/tonne AN 130 (10 bar) 10 52 (10 bar) Steam export, kg/tonne AN None None 240 (5 bar) Cooling water, m3/tonne AN 31.0 22.5 3.8 Electricity, kWh/tonne AN 2.0 3.8 4.8 Ammonia, kg/tonne AN 213 213 213 Nitric acid, kg/tonne AN 789 789 789",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Nitric acid (100%) per tonne",
+      "value": 789,
+      "unit": "kg/t AN",
+      "conditions": "Pressure neutralisation at 4 bar with clean steam production; 60% HNO3, 96% AN solution product",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Ammonia, Acids and Fertilisers (2007), Table 9.8 (Uhde 2003)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic_aaf.pdf",
+      "quote": "At 4 bar with clean steam production ... Steam import, kg/tonne AN 130 (10 bar) 10 52 (10 bar) Steam export, kg/tonne AN None None 240 (5 bar) Cooling water, m3/tonne AN 31.0 22.5 3.8 Electricity, kWh/tonne AN 2.0 3.8 4.8 Ammonia, kg/tonne AN 213 213 213 Nitric acid, kg/tonne AN 789 789 789",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Clean steam export",
+      "value": 240,
+      "unit": "kg/t AN (5 bar)",
+      "conditions": "Pressure neutralisation at 4 bar with clean steam production; 60% HNO3, 96% AN solution product",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Ammonia, Acids and Fertilisers (2007), Table 9.8 (Uhde 2003)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic_aaf.pdf",
+      "quote": "At 4 bar with clean steam production ... Steam import, kg/tonne AN 130 (10 bar) 10 52 (10 bar) Steam export, kg/tonne AN None None 240 (5 bar) Cooling water, m3/tonne AN 31.0 22.5 3.8 Electricity, kWh/tonne AN 2.0 3.8 4.8 Ammonia, kg/tonne AN 213 213 213 Nitric acid, kg/tonne AN 789 789 789",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Steam import to reach 96% solution",
+      "value": 52,
+      "unit": "kg/t AN (10 bar)",
+      "conditions": "Pressure neutralisation at 4 bar with clean steam production; 60% HNO3, 96% AN solution product",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Ammonia, Acids and Fertilisers (2007), Table 9.8 (Uhde 2003)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic_aaf.pdf",
+      "quote": "At 4 bar with clean steam production ... Steam import, kg/tonne AN 130 (10 bar) 10 52 (10 bar) Steam export, kg/tonne AN None None 240 (5 bar) Cooling water, m3/tonne AN 31.0 22.5 3.8 Electricity, kWh/tonne AN 2.0 3.8 4.8 Ammonia, kg/tonne AN 213 213 213 Nitric acid, kg/tonne AN 789 789 789",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Cooling water",
+      "value": 3.8,
+      "unit": "m3/t AN",
+      "conditions": "Pressure neutralisation at 4 bar with clean steam production; 60% HNO3, 96% AN solution product, cooling water dT 10 C",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Ammonia, Acids and Fertilisers (2007), Table 9.8 (Uhde 2003)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic_aaf.pdf",
+      "quote": "At 4 bar with clean steam production ... Steam import, kg/tonne AN 130 (10 bar) 10 52 (10 bar) Steam export, kg/tonne AN None None 240 (5 bar) Cooling water, m3/tonne AN 31.0 22.5 3.8 Electricity, kWh/tonne AN 2.0 3.8 4.8 Ammonia, kg/tonne AN 213 213 213 Nitric acid, kg/tonne AN 789 789 789",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Electricity, 96% solution",
+      "value": 4.8,
+      "unit": "kWh/t AN",
+      "conditions": "Pressure neutralisation at 4 bar with clean steam production; 60% HNO3, 96% AN solution product",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Ammonia, Acids and Fertilisers (2007), Table 9.8 (Uhde 2003)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic_aaf.pdf",
+      "quote": "At 4 bar with clean steam production ... Steam import, kg/tonne AN 130 (10 bar) 10 52 (10 bar) Steam export, kg/tonne AN None None 240 (5 bar) Cooling water, m3/tonne AN 31.0 22.5 3.8 Electricity, kWh/tonne AN 2.0 3.8 4.8 Ammonia, kg/tonne AN 213 213 213 Nitric acid, kg/tonne AN 789 789 789",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Net energy, modern AN plant",
+      "value": [
+        0.09,
+        0.22
+      ],
+      "unit": "GJ/t AN",
+      "conditions": "Modern plants; European average 0.7",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Ammonia, Acids and Fertilisers (2007), section 9.3 (infoMil 2001)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic_aaf.pdf",
+      "quote": "Average energy consumption in Europe is 0.7 GJ/tonne AN produced, but modern AN plants require only 0.09 - 0.22 GJ/tonne AN.",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Electricity, plants making solid product",
+      "value": [
+        10,
+        50
+      ],
+      "unit": "kWh/t product",
+      "conditions": "Solid CAN plants",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Ammonia, Acids and Fertilisers (2007), section 9.4.3 (EFMA 2000)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic_aaf.pdf",
+      "quote": "Plants that make solid CAN also need around 150 - 200 kg steam per tonne of product, together with electrical power of 10 - 50 kWh/tonne of product",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Steam export, solution only plants",
+      "value": 170,
+      "unit": "kg/t AN (maximum)",
+      "conditions": "Plants making only AN solution",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Ammonia, Acids and Fertilisers (2007), section 9.4.3",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic_aaf.pdf",
+      "quote": "If the plant only makes ANS, steam can be exported at a rate of up to 170 kg/tonne of AN",
+      "model_type": "energy"
+    }
+  ],
   "_meta": {
     "compiled": "2026-11-14",
     "notes": "Every quote was seen in the source text. Gaps: methanol capex, NH3 equilibrium mole % table, sulphuric acid t steam/t acid.",
