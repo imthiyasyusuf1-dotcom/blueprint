@@ -18,6 +18,18 @@ PROCESSES = [
     ("ethylene_oxide", "Ethylene oxide", 1000, ["ethylene oxide", "eo", "c2h4o", "oxirane", "epoxyethane"]),
     ("styrene", "Styrene", 1500, ["styrene", "styrene monomer", "sm", "vinylbenzene", "phenylethene", "c8h8"]),
     ("aspirin", "Aspirin", 10, ["aspirin", "acetylsalicylic acid", "asa", "c9h8o4"]),
+    # batch A
+    ("chlor_alkali", "Chlorine and caustic soda", 500, ["chlor alkali", "chloralkali", "chlorine", "cl2", "caustic soda",
+                                                        "sodium hydroxide", "naoh", "caustic", "lye", "membrane cell",
+                                                        "brine electrolysis", "chlorine caustic"]),
+    ("hydrogen_peroxide", "Hydrogen peroxide", 200, ["hydrogen peroxide", "h2o2", "peroxide", "perhydrol",
+                                                     "anthraquinone process", "ao process"]),
+    ("e_methanol", "e-Methanol", 300, ["e methanol", "emethanol", "green methanol", "renewable methanol",
+                                       "power to methanol", "co2 to methanol", "electro methanol", "synthetic methanol"]),
+    ("ammonium_nitrate", "Ammonium nitrate", 1200, ["ammonium nitrate", "nh4no3", "an fertiliser", "an fertilizer",
+                                                    "nitram", "prilled ammonium nitrate"]),
+    ("soda_ash", "Soda ash", 1000, ["soda ash", "sodium carbonate", "na2co3", "solvay", "solvay process",
+                                    "ammonia soda process", "washing soda"]),
 ]
 
 # Recognised but not yet modelled. Shown as coming soon so the request is captured.

@@ -15,6 +15,7 @@ H_TEXT = {
     "H226": "Flammable liquid and vapour",
     "H230": "May react explosively even without air",
     "H270": "May cause or intensify fire; oxidiser",
+    "H271": "May cause fire or explosion; strong oxidiser",
     "H272": "May intensify fire; oxidiser",
     "H280": "Contains gas under pressure; may explode if heated",
     "H290": "May be corrosive to metals",
@@ -82,9 +83,24 @@ GHS = {
     "KOH": ["H290", "H302", "H314"],
     "Glucose": [],
     "H2O": [],
+    # batch A species (EU CLP Annex VI harmonised entries; NH4NO3 and EAQ are not harmonised,
+    # supplier self classification used for NH4NO3)
+    "Cl2": ["H270", "H280", "H315", "H319", "H331", "H335", "H400"],
+    "HCl": ["H280", "H314", "H331"],
+    "NaCl": [],
+    "H2O2": ["H271", "H302", "H314", "H332", "H335"],
+    "Na2CO3": ["H319"],
+    "NaHCO3": [],
+    "CaCO3": [],
+    "CaO": ["H315", "H318", "H335"],
+    "CaOH2": ["H315", "H318", "H335"],
+    "CaCl2": ["H319"],
+    "NH4Cl": ["H302", "H319"],
+    "NH4NO3": ["H272", "H319"],
+    "C": ["DUST"],
 }
 
-SEVERE = {"H220", "H221", "H225", "H230", "H270", "H272", "H314", "H330", "H331", "H340", "H350", "H360D", "H360Fd"}
+SEVERE = {"H220", "H221", "H225", "H230", "H270", "H271", "H272", "H314", "H330", "H331", "H340", "H350", "H360D", "H360Fd"}
 
 
 def assess(design):
