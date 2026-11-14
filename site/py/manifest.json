@@ -1,0 +1,113 @@
+{
+ "files": [
+  {
+   "path": "engine/__init__.py",
+   "bytes": 0
+  },
+  {
+   "path": "engine/core.py",
+   "bytes": 10592
+  },
+  {
+   "path": "engine/cost.py",
+   "bytes": 10300
+  },
+  {
+   "path": "engine/design.py",
+   "bytes": 24190
+  },
+  {
+   "path": "engine/economics.py",
+   "bytes": 3707
+  },
+  {
+   "path": "engine/formula.py",
+   "bytes": 280
+  },
+  {
+   "path": "engine/hazards.py",
+   "bytes": 5891
+  },
+  {
+   "path": "engine/prices.py",
+   "bytes": 3697
+  },
+  {
+   "path": "engine/registry.py",
+   "bytes": 3671
+  },
+  {
+   "path": "engine/thermo.py",
+   "bytes": 5296
+  },
+  {
+   "path": "engine/processes/__init__.py",
+   "bytes": 0
+  },
+  {
+   "path": "engine/processes/ammonia.py",
+   "bytes": 25575
+  },
+  {
+   "path": "engine/processes/aspirin.py",
+   "bytes": 22083
+  },
+  {
+   "path": "engine/processes/biodiesel.py",
+   "bytes": 16597
+  },
+  {
+   "path": "engine/processes/ethanol.py",
+   "bytes": 29725
+  },
+  {
+   "path": "engine/processes/ethylene_oxide.py",
+   "bytes": 17829
+  },
+  {
+   "path": "engine/processes/hydrogen.py",
+   "bytes": 19360
+  },
+  {
+   "path": "engine/processes/methanol.py",
+   "bytes": 15376
+  },
+  {
+   "path": "engine/processes/nitric_acid.py",
+   "bytes": 20391
+  },
+  {
+   "path": "engine/processes/styrene.py",
+   "bytes": 18455
+  },
+  {
+   "path": "engine/processes/sulphuric_acid.py",
+   "bytes": 15713
+  },
+  {
+   "path": "engine/processes/urea.py",
+   "bytes": 16607
+  },
+  {
+   "path": "engine/data/benchmarks.json",
+   "bytes": 35030
+  },
+  {
+   "path": "engine/data/components.json",
+   "bytes": 40239
+  },
+  {
+   "path": "engine/data/prices.json",
+   "bytes": 34370
+  },
+  {
+   "path": "build_pdf.py",
+   "bytes": 105235
+  }
+ ],
+ "fonts": [
+  "Inter-Regular.ttf",
+  "Inter-SemiBold.ttf",
+  "Inter-Bold.ttf"
+ ]
+}

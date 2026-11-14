@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Blueprint: first pass chemical plant design from one word</title>
+<meta name="description" content="Type a chemical and get a first pass plant design: flow diagram, mass and energy balance, kit list, capex and opex, hazards and carbon, checked against published plant figures. Free.">
+<link rel="canonical" href="https://imthiyasyusuf1-dotcom.github.io/blueprint/">
+<meta name="theme-color" content="#FCFCFD">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Blueprint">
+<meta property="og:title" content="Blueprint: first pass chemical plant design from one word">
+<meta property="og:description" content="Type a chemical and get a first pass plant design: flow diagram, mass and energy balance, kit list, capex and opex, hazards and carbon, checked against published plant figures. Free.">
+<meta property="og:url" content="https://imthiyasyusuf1-dotcom.github.io/blueprint/">
+<meta property="og:image" content="https://imthiyasyusuf1-dotcom.github.io/blueprint/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Blueprint: type a chemical, get a first pass plant design">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Blueprint: first pass chemical plant design from one word">
+<meta name="twitter:description" content="Type a chemical and get a first pass plant design: flow diagram, mass and energy balance, kit list, capex and opex, hazards and carbon, checked against published plant figures. Free.">
+<meta name="twitter:image" content="https://imthiyasyusuf1-dotcom.github.io/blueprint/assets/og.png">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preload" href="fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Blueprint", "url": "https://imthiyasyusuf1-dotcom.github.io/blueprint/", "applicationCategory": "EngineeringApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "creator": {"@type": "Person", "name": "Yusuf Imthiyas"}, "description": "Type a chemical and get a first pass plant design: flow diagram, mass and energy balance, kit list, capex and opex, hazards and carbon, checked against published plant figures. Free."}</script>
+<script type="application/json" id="bp-catalog">{"processes":[{"id":"ammonia","label":"Ammonia","aliases":["ammonia","nh3","haber","haber bosch","anhydrous ammonia"],"default_tpd":2000,"live":true},{"id":"methanol","label":"Methanol","aliases":["methanol","meoh","ch3oh","methyl alcohol","wood alcohol"],"default_tpd":2500,"live":true},{"id":"hydrogen","label":"Hydrogen","aliases":["hydrogen","h2","grey hydrogen","smr","steam methane reforming","blue hydrogen"],"default_tpd":100,"live":true},{"id":"urea","label":"Urea","aliases":["urea","carbamide","co(nh2)2","fertiliser","fertilizer"],"default_tpd":2000,"live":true},{"id":"nitric_acid","label":"Nitric acid","aliases":["nitric acid","hno3","ostwald","aqua fortis"],"default_tpd":1000,"live":true},{"id":"sulphuric_acid","label":"Sulphuric acid","aliases":["sulphuric acid","sulfuric acid","h2so4","contact process","oil of vitriol"],"default_tpd":2000,"live":true},{"id":"ethanol","label":"Ethanol","aliases":["ethanol","bioethanol","etoh","c2h5oh","ethyl alcohol","fuel ethanol","corn ethanol"],"default_tpd":1000,"live":true},{"id":"biodiesel","label":"Biodiesel","aliases":["biodiesel","fame","fatty acid methyl ester","rme","transesterification"],"default_tpd":300,"live":true},{"id":"ethylene_oxide","label":"Ethylene oxide","aliases":["ethylene oxide","eo","c2h4o","oxirane","epoxyethane"],"default_tpd":1000,"live":true},{"id":"styrene","label":"Styrene","aliases":["styrene","styrene monomer","sm","vinylbenzene","phenylethene","c8h8"],"default_tpd":1500,"live":true},{"id":"aspirin","label":"Aspirin","aliases":["aspirin","acetylsalicylic acid","asa","c9h8o4"],"default_tpd":10,"live":true}],"coming_soon":["acetic acid","acetone","acrylic acid","adipic acid","benzene","bisphenol a","butadiene","caprolactam","chlorine","caustic soda","sodium hydroxide","cumene","dimethyl ether","ethylene","ethylene glycol","formaldehyde","green ammonia","green hydrogen","hydrogen peroxide","isopropanol","maleic anhydride","melamine","mtbe","nylon","paracetamol","phenol","phosphoric acid","polyethylene","polypropylene","propylene","propylene oxide","pta","terephthalic acid","soda ash","sodium carbonate","titanium dioxide","toluene","vinyl chloride","pvc","xylene","e-methanol","sustainable aviation fuel","saf","lithium hydroxide","ammonium nitrate","glycerol","lactic acid","succinic acid","butanol","hydrochloric acid"]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Blueprint home"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#2347F5"/><rect x="6.5" y="8.5" width="8" height="8" rx="1.5" fill="none" stroke="#fff" stroke-width="2"/><path d="M14.5 12.5h4.5v7.5" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><rect x="15" y="19" width="10.5" height="5.5" rx="1.5" fill="#fff"/></svg><span>Blueprint</span></a>
+    <nav class="nav" aria-label="Main"><a href="examples/">Examples</a><a href="method/">Method</a><a href="about/">About</a></nav>
+  </div>
+</header>
+<main id="main">
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Free first pass chemical plant design</p>
+    <h1><span class="line">Type a chemical.</span> <span class="line">Get a plant design.</span></h1>
+    <p class="lede">A first pass design you can check, from flow diagram to costs and carbon, measured against published plant figures.</p>
+    <form class="search" role="search" data-bp-search action="request/" autocomplete="off">
+  <label class="sr-only" for="q">Type a chemical</label>
+  <div class="search-field">
+    <div class="search-box">
+      <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.75"/><path d="m13.5 13.5 3.5 3.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+      <input id="q" name="q" type="text" placeholder="Type a chemical" spellcheck="false" autocapitalize="off"
+        role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="q-list">
+      <button class="btn btn-primary" type="submit">Design</button>
+    </div>
+    <ul class="typeahead" id="q-list" role="listbox" aria-label="Matches" hidden></ul>
+  </div>
+  <div class="search-meta"><span class="label">Live now</span><a class="chip" href="design/ammonia/">Ammonia</a><a class="chip" href="design/methanol/">Methanol</a><a class="chip" href="design/hydrogen/">Hydrogen</a><a class="chip" href="design/urea/">Urea</a><a class="chip" href="design/nitric_acid/">Nitric acid</a><a class="chip" href="design/sulphuric_acid/">Sulphuric acid</a><a class="chip" href="design/ethanol/">Ethanol</a><a class="chip" href="design/biodiesel/">Biodiesel</a><a class="chip" href="design/ethylene_oxide/">Ethylene oxide</a><a class="chip" href="design/styrene/">Styrene</a><a class="chip" href="design/aspirin/">Aspirin</a></div>
+</form>
+
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What you get</h2>
+      <p>Eight sections for every design, worked out from first principles and costed with a recognised textbook method. Change the inputs and the engine solves again in your browser.</p>
+    </div>
+    <div class="features"><div class="feature"><div class="fnum">01</div><h3>Flow diagram</h3><p>Every unit and stream, with temperature, pressure and composition on tap.</p></div><div class="feature"><div class="fnum">02</div><h3>Mass and energy balance</h3><p>Full stream table, closure and atom balance errors, utilities and their annual cost.</p></div><div class="feature"><div class="fnum">03</div><h3>Kit list</h3><p>Each item sized and costed: type, size, material, pressure, purchased and bare module cost.</p></div><div class="feature"><div class="fnum">04</div><h3>Capex and opex</h3><p>Fixed capital, cost of manufacture, NPV, IRR, payback and levelised cost per tonne.</p></div><div class="feature"><div class="fnum">05</div><h3>Hazards</h3><p>GHS statements per substance, flammability limits, process hazard flags and a starter HAZOP.</p></div><div class="feature"><div class="fnum">06</div><h3>Carbon</h3><p>Scope 1 and 2 emissions per tonne of product, plus the greener route worth looking at.</p></div><div class="feature"><div class="fnum">07</div><h3>Validation</h3><p>Model results set against published plant figures, with the source and the error shown.</p></div><div class="feature"><div class="fnum">08</div><h3>PDF report</h3><p>The whole design as a tidy report you can share, for the default case or your own inputs.</p></div></div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Example designs</h2>
+      <p>Default cases at typical world scale capacity, US prices. Open one to explore every section, switch region or change the inputs.</p>
+    </div>
+    <div class="grid grid-3"><article class="card ex-card">
+  <div class="ex-top">
+    <div>
+      <h3>Ammonia</h3>
+      <p class="ex-route">Natural gas, Haber Bosch</p>
+    </div>
+    <span class="pill pill-pass" title="Validation checks within tolerance"><span class="dot"></span>7 of 7 checks</span>
+  </div>
+  <dl class="ex-stats">
+    <div><dt>Capacity</dt><dd>2,000 t/d</dd></div>
+    <div><dt>Fixed capital</dt><dd>$357M</dd></div>
+    <div><dt>Cost of manufacture</dt><dd>$219/t</dd></div>
+    <div><dt>Levelised cost</dt><dd>$282/t</dd></div>
+  </dl>
+  <div class="ex-actions">
+    <a class="btn btn-primary btn-sm" href="design/ammonia/">Open design<span class="sr-only"> for Ammonia</span></a>
+    <a class="btn btn-secondary btn-sm" href="pdf/ammonia.US.pdf" download><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2.5v8m0 0L4.75 7.25M8 10.5l3.25-3.25M2.75 13.25h10.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Sample PDF<span class="sr-only"> for Ammonia</span></a>
+  </div>
+</article><article class="card ex-card">
+  <div class="ex-top">
+    <div>
+      <h3>Methanol</h3>
+      <p class="ex-route">Natural gas, low pressure synthesis</p>
+    </div>
+    <span class="pill pill-pass" title="Validation checks within tolerance"><span class="dot"></span>3 of 3 checks</span>
+  </div>
+  <dl class="ex-stats">
+    <div><dt>Capacity</dt><dd>2,500 t/d</dd></div>
+    <div><dt>Fixed capital</dt><dd>$389M</dd></div>
+    <div><dt>Cost of manufacture</dt><dd>$216/t</dd></div>
+    <div><dt>Levelised cost</dt><dd>$271/t</dd></div>
+  </dl>
+  <div class="ex-actions">
+    <a class="btn btn-primary btn-sm" href="design/methanol/">Open design<span class="sr-only"> for Methanol</span></a>
+    <a class="btn btn-secondary btn-sm" href="pdf/methanol.US.pdf" download><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2.5v8m0 0L4.75 7.25M8 10.5l3.25-3.25M2.75 13.25h10.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Sample PDF<span class="sr-only"> for Methanol</span></a>
+  </div>
+</article><article class="card ex-card">
+  <div class="ex-top">
+    <div>
+      <h3>Hydrogen</h3>
+      <p class="ex-route">Steam methane reforming, PSA</p>
+    </div>
+    <span class="pill pill-pass" title="Validation checks within tolerance"><span class="dot"></span>6 of 6 checks</span>
+  </div>
+  <dl class="ex-stats">
+    <div><dt>Capacity</dt><dd>100 t/d</dd></div>
+    <div><dt>Fixed capital</dt><dd>$49.9M</dd></div>
+    <div><dt>Cost of manufacture</dt><dd>$887/t</dd></div>
+    <div><dt>Levelised cost</dt><dd>$1.06k/t</dd></div>
+  </dl>
+  <div class="ex-actions">
+    <a class="btn btn-primary btn-sm" href="design/hydrogen/">Open design<span class="sr-only"> for Hydrogen</span></a>
+    <a class="btn btn-secondary btn-sm" href="pdf/hydrogen.US.pdf" download><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2.5v8m0 0L4.75 7.25M8 10.5l3.25-3.25M2.75 13.25h10.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Sample PDF<span class="sr-only"> for Hydrogen</span></a>
+  </div>
+</article></div>
+    <p style="margin:var(--s5) 0 0"><a class="btn btn-secondary" href="examples/">See all 11 designs<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="form-card" id="waitlist">
+  <div class="section-head">
+    <h2>Hear when new processes go live</h2>
+    <p>One short email when a new chemical is added. Nothing else.</p>
+  </div>
+  <form data-bp-form="waitlist" novalidate>
+    <div class="form-body">
+      <div class="form-row form-inline">
+        <div class="field">
+          <label for="wl-email">Email</label>
+          <input class="input" id="wl-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required>
+          <span class="err" aria-live="polite"></span>
+        </div>
+        <button class="btn btn-primary" type="submit">Join the list</button>
+      </div>
+      <div class="hp" aria-hidden="true"><label for="wl-honey">Leave this empty</label><input id="wl-honey" name="_honey" type="text" tabindex="-1" autocomplete="off"></div>
+      <p class="form-fine">Used only to reply and to announce new processes. See <a href="privacy/">privacy</a>.</p>
+    </div>
+    <div class="form-status" role="status" aria-live="polite"></div>
+  </form>
+</div>
+
+    <p class="disclaimer" style="margin-top:var(--s5)">Blueprint gives a factored, screening level estimate, typically within minus 30 to plus 50 percent. It is a starting point for study and scoping, not a basis for construction or investment.</p>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <a class="brand" href="./" aria-label="Blueprint home"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#2347F5"/><rect x="6.5" y="8.5" width="8" height="8" rx="1.5" fill="none" stroke="#fff" stroke-width="2"/><path d="M14.5 12.5h4.5v7.5" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><rect x="15" y="19" width="10.5" height="5.5" rx="1.5" fill="#fff"/></svg><span>Blueprint</span></a>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="examples/">Examples</a>
+        <a href="method/">Method</a>
+        <a href="about/">About</a>
+        <a href="privacy/">Privacy</a>
+      </nav>
+    </div>
+    <div class="foot-fine">
+      <span>Screening tool, not for construction.</span>
+      <span>Founded and built by Yusuf Imthiyas.</span>
+    </div>
+  </div>
+</footer>
+<script src="js/config.js" defer></script>
+<script src="js/common.js" defer></script>
+</body>
+</html>

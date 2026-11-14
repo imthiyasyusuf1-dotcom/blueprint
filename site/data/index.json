@@ -64,7 +64,20 @@
     "steam methane reforming",
     "blue hydrogen"
    ],
-   "live": false
+   "live": true,
+   "params": {
+    "capacity_tpd": 100.0,
+    "steam_to_carbon": 2.6,
+    "reformer_T_C": 870.0,
+    "reform_P_bar": 28.0,
+    "hts_in_C": 350.0,
+    "psa_recovery_pct": 89.0,
+    "excess_air_pct": 10.0,
+    "radiant_exit_C": 1000.0,
+    "stack_C": 160.0,
+    "air_preheat_C": 250.0
+   },
+   "summary": "100 t/d of 99.9%+ hydrogen from natural gas, the grey hydrogen route used by refineries and merchant gas suppliers. No carbon capture."
   },
   {
    "id": "urea",
@@ -77,7 +90,16 @@
     "fertiliser",
     "fertilizer"
    ],
-   "live": false
+   "live": true,
+   "params": {
+    "capacity_tpd": 2000.0,
+    "nc_ratio": 2.95,
+    "hc_ratio": 0.45,
+    "co2_conversion_pct": 60.0,
+    "stripper_eff_pct": 80.0,
+    "synthesis_P_bar": 140.0
+   },
+   "summary": "2,000 t/d prilled urea (46% N) from ammonia and the CO2 by-product of an ammonia plant, the CO2 stripping total recycle route."
   },
   {
    "id": "nitric_acid",
@@ -89,7 +111,19 @@
     "ostwald",
     "aqua fortis"
    ],
-   "live": false
+   "live": true,
+   "params": {
+    "capacity_tpd": 1000.0,
+    "nh3_in_air_pct": 10.5,
+    "P_oxidation_bar": 5.0,
+    "P_absorption_bar": 11.0,
+    "no_yield_pct": 96.0,
+    "acid_wt_pct": 60.0,
+    "tail_O2_pct": 3.0,
+    "tail_NOx_ppm": 150.0,
+    "tertiary_abatement": true
+   },
+   "summary": "1,000 t/d nitric acid (100% basis, sold as 60% acid) from ammonia, the fertiliser grade dual pressure route, with surplus steam exported."
   },
   {
    "id": "sulphuric_acid",
@@ -102,7 +136,17 @@
     "contact process",
     "oil of vitriol"
    ],
-   "live": false
+   "live": true,
+   "params": {
+    "capacity_tpd": 2000.0,
+    "so2_pct": 11.0,
+    "bed_inlet_C": 430.0,
+    "bed4_inlet_C": 420.0,
+    "approach_C": 10.0,
+    "acid_wt_pct": 98.5,
+    "blower_dP_bar": 0.45
+   },
+   "summary": "2,000 t/d sulphuric acid (100% basis, sold as 98.5%) from sulphur, a net steam exporter."
   },
   {
    "id": "ethanol",
@@ -117,7 +161,30 @@
     "fuel ethanol",
     "corn ethanol"
    ],
-   "live": false
+   "live": true,
+   "params": {
+    "capacity_tpd": 1000.0,
+    "corn_moisture": 0.155,
+    "starch_dry": 0.72,
+    "sugars_dry": 0.026,
+    "starch_conversion": 0.98,
+    "fermentation_efficiency": 0.95,
+    "mash_solids": 0.32,
+    "backset_frac": 0.3,
+    "beer_overhead_wt": 0.5,
+    "rectifier_wt": 0.925,
+    "sieve_regen_frac": 0.15,
+    "wetcake_solids": 0.35,
+    "syrup_solids": 0.35,
+    "thin_stillage_solids_split": 0.3,
+    "ddgs_moisture": 0.1,
+    "beer_preheat_C": 85.0,
+    "boiler_eff": 0.85,
+    "dryer_kJ_per_kg_water": 3300.0,
+    "evaporator_effects": 4,
+    "rectifier_reflux": 1.5
+   },
+   "summary": "1,000 t/d of fuel ethanol from 3,007 t/d of corn, with 872 t/d of DDGS."
   },
   {
    "id": "biodiesel",
@@ -130,7 +197,20 @@
     "rme",
     "transesterification"
    ],
-   "live": false
+   "live": true,
+   "params": {
+    "capacity_tpd": 300.0,
+    "methanol_ratio": 5.5,
+    "conversion": 0.995,
+    "naoh_wt_oil": 0.005,
+    "reactor_T_C": 60.0,
+    "residence_h": 1.0,
+    "meoh_in_ester_phase": 0.4,
+    "meoh_recovery": 0.995,
+    "wash_water_kg_per_kg": 0.1,
+    "storage_days": 14
+   },
+   "summary": "300 t/d of biodiesel from 299 t/d of refined vegetable oil and 32 t/d of methanol, with 32 t/d of crude glycerol."
   },
   {
    "id": "ethylene_oxide",
@@ -143,7 +223,27 @@
     "oxirane",
     "epoxyethane"
    ],
-   "live": false
+   "live": true,
+   "params": {
+    "capacity_tpd": 1000.0,
+    "selectivity": 0.8,
+    "per_pass_conversion": 0.1,
+    "y_C2H4": 0.3,
+    "y_O2": 0.08,
+    "y_CO2": 0.01,
+    "y_Ar": 0.05,
+    "reactor_T_C": 250.0,
+    "reactor_P_bar": 20.0,
+    "o2_purity": 0.995,
+    "asu_o2_recovery": 0.95,
+    "co2_regen_GJ_t": 2.8,
+    "rich_water_eo_wt": 0.025,
+    "stripping_steam_kg_kg": 1.0,
+    "refining_reflux": 3.0,
+    "ghsv_h": 4000.0,
+    "storage_days": 2
+   },
+   "summary": "1,000 t/d of ethylene oxide from 818 t/d of ethylene at 80% catalyst selectivity, with oxygen from an on site air separation unit."
   },
   {
    "id": "styrene",
@@ -157,7 +257,23 @@
     "phenylethene",
     "c8h8"
    ],
-   "live": false
+   "live": true,
+   "params": {
+    "capacity_tpd": 1000.0,
+    "per_pass_conversion": 0.65,
+    "sel_styrene": 0.94,
+    "sel_benzene": 0.035,
+    "steam_oil_wt": 1.6,
+    "inlet_T_C": 620.0,
+    "outlet_T_C": 560.0,
+    "reactor_P_bar": 0.5,
+    "superheater_eff": 0.9,
+    "condensate_reuse": 0.9,
+    "splitter_reflux": 7.0,
+    "lhsv_h": 0.5,
+    "storage_days": 7
+   },
+   "summary": "1,000 t/d of styrene from 1,084 t/d of ethylbenzene. The hydrogen off gas and 51 t/d of benzene and toluene fire the superheater."
   },
   {
    "id": "aspirin",
@@ -169,7 +285,22 @@
     "asa",
     "c9h8o4"
    ],
-   "live": false
+   "live": true,
+   "params": {
+    "capacity_tpd": 10.0,
+    "anhydride_excess": 0.18,
+    "diluent_kg_per_kg_sa": 0.32,
+    "reactor_T_C": 85.0,
+    "reaction_h": 2.0,
+    "conversion": 0.97,
+    "first_crop": 0.6804123711340206,
+    "second_crop_recovery": 0.9,
+    "volatiles_recovery": 0.97,
+    "crystalliser_T_C": 20.0,
+    "cake_liquor_frac": 0.1,
+    "handling_loss": 0.005
+   },
+   "summary": "10 t/d of pharmaceutical aspirin from salicylic acid and acetic anhydride."
   }
  ],
  "coming_soon": [

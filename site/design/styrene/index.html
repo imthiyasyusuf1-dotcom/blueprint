@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Styrene plant design: 1,000 t/d | Blueprint</title>
+<meta name="description" content="First pass styrene plant design at 1,000 t/d: 1,000 t/d of styrene from 1,084 t/d of ethylbenzene. The hydrogen off gas and 51 t/d of benzene and toluene fire the superheater. Flow diagram, mass and energy balance, kit list, capex, opex, hazards and carbon, validated against published figures.">
+<link rel="canonical" href="https://imthiyasyusuf1-dotcom.github.io/blueprint/design/styrene/">
+<meta name="theme-color" content="#FCFCFD">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Blueprint">
+<meta property="og:title" content="Styrene plant design: 1,000 t/d | Blueprint">
+<meta property="og:description" content="First pass styrene plant design at 1,000 t/d: 1,000 t/d of styrene from 1,084 t/d of ethylbenzene. The hydrogen off gas and 51 t/d of benzene and toluene fire the superheater. Flow diagram, mass and energy balance, kit list, capex, opex, hazards and carbon, validated against published figures.">
+<meta property="og:url" content="https://imthiyasyusuf1-dotcom.github.io/blueprint/design/styrene/">
+<meta property="og:image" content="https://imthiyasyusuf1-dotcom.github.io/blueprint/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Blueprint: type a chemical, get a first pass plant design">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Styrene plant design: 1,000 t/d | Blueprint">
+<meta name="twitter:description" content="First pass styrene plant design at 1,000 t/d: 1,000 t/d of styrene from 1,084 t/d of ethylbenzene. The hydrogen off gas and 51 t/d of benzene and toluene fire the superheater. Flow diagram, mass and energy balance, kit list, capex, opex, hazards and carbon, validated against published figures.">
+<meta name="twitter:image" content="https://imthiyasyusuf1-dotcom.github.io/blueprint/assets/og.png">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preload" href="../../fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../css/site.css">
+<script type="application/json" id="bp-config">{"id":"styrene","label":"Styrene","default_tpd":1500,"cap_min":375.0,"cap_max":6000,"params":[{"key":"per_pass_conversion","label":"Conversion per pass","unit":"fraction","kind":"number","default":0.65,"min":0.325,"max":0.975,"step":"any","label_html":"Conversion per pass"},{"key":"sel_styrene","label":"Selectivity to styrene","unit":"fraction","kind":"number","default":0.94,"min":0.47,"max":1.0,"step":"any","label_html":"Selectivity to styrene"},{"key":"sel_benzene","label":"Selectivity to benzene","unit":"fraction","kind":"number","default":0.035,"min":0.0175,"max":0.0525,"step":"any","label_html":"Selectivity to benzene"},{"key":"steam_oil_wt","label":"Steam to ethylbenzene ratio","unit":"kg/kg","kind":"number","default":1.6,"min":0.8,"max":3.2,"step":"any","label_html":"Steam to ethylbenzene ratio"},{"key":"inlet_T_C","label":"Inlet temperature","unit":"\u00b0C","kind":"number","default":620.0,"min":496.0,"max":744.0,"step":"any","label_html":"Inlet temperature"},{"key":"outlet_T_C","label":"Outlet temperature","unit":"\u00b0C","kind":"number","default":560.0,"min":448.0,"max":672.0,"step":"any","label_html":"Outlet temperature"},{"key":"reactor_P_bar","label":"Reactor pressure","unit":"bar","kind":"number","default":0.5,"min":0.25,"max":1.0,"step":"any","label_html":"Reactor pressure"},{"key":"superheater_eff","label":"Superheater efficiency","unit":"fraction","kind":"number","default":0.9,"min":0.45,"max":1.0,"step":"any","label_html":"Superheater efficiency"},{"key":"condensate_reuse","label":"Condensate reuse","unit":"fraction","kind":"number","default":0.9,"min":0.45,"max":1.0,"step":"any","label_html":"Condensate reuse"},{"key":"splitter_reflux","label":"Splitter reflux ratio","unit":"","kind":"number","default":7.0,"min":3.5,"max":14.0,"step":"any","label_html":"Splitter reflux ratio"},{"key":"lhsv_h","label":"Liquid hourly space velocity","unit":"1/h","kind":"number","default":0.5,"min":0.25,"max":1.0,"step":"any","label_html":"Liquid hourly space velocity"},{"key":"storage_days","label":"Product storage","unit":"days","kind":"int","default":7,"min":3.0,"max":14.0,"step":1,"label_html":"Product storage"}],"regions":{"US":"United States","EU":"European Union","UK":"United Kingdom"},"default_region":"US","pdfs":["US","EU","UK"]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../../" aria-label="Blueprint home"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#2347F5"/><rect x="6.5" y="8.5" width="8" height="8" rx="1.5" fill="none" stroke="#fff" stroke-width="2"/><path d="M14.5 12.5h4.5v7.5" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><rect x="15" y="19" width="10.5" height="5.5" rx="1.5" fill="#fff"/></svg><span>Blueprint</span></a>
+    <nav class="nav" aria-label="Main"><a href="../../examples/">Examples</a><a href="../../method/">Method</a><a href="../../about/">About</a></nav>
+  </div>
+</header>
+<main id="main">
+<div class="design-head">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">Home</a><span class="sep">/</span><a href="../../examples/">Designs</a><span class="sep">/</span><span aria-current="page">Styrene</span></nav>
+    <h1 id="d-title">Styrene plant (ethylbenzene dehydrogenation)</h1>
+    <p class="lede" id="d-summary">1,000 t/d of styrene from 1,084 t/d of ethylbenzene. The hydrogen off gas and 51 t/d of benzene and toluene fire the superheater.</p>
+    <div class="head-meta" id="d-meta">
+      <span class="pill" id="m-region">United States</span>
+      <span class="pill num" id="m-cap">1,000 t/d</span>
+      <span class="pill " id="m-val"><span class="dot"></span>3 of 4 checks pass</span>
+    </div>
+    <div class="toolbar">
+      <div class="seg" role="group" aria-label="Price region"><button type="button" data-region="US" aria-pressed="true" title="United States">US</button><button type="button" data-region="EU" aria-pressed="false" title="European Union">EU</button><button type="button" data-region="UK" aria-pressed="false" title="United Kingdom">UK</button></div>
+      <span class="spacer"></span>
+      <button class="btn btn-secondary" type="button" id="btn-inputs" aria-expanded="false" aria-controls="inputs"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 4.5h6m3 0h2m-11 7h2m3 0h6M8.5 3v3m-3 4v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Change inputs</button>
+      <a class="btn btn-primary" id="btn-pdf" href="../../pdf/styrene.US.pdf" download><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2.5v8m0 0L4.75 7.25M8 10.5l3.25-3.25M2.75 13.25h10.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Download PDF</a>
+    </div>
+    <div class="status-bar" id="status" role="status" aria-live="polite"></div>
+    <div class="inputs" id="inputs" hidden>
+      <form class="card" id="inputs-form" novalidate>
+        <div class="inputs-grid" id="inputs-grid"></div>
+        <div class="inputs-actions">
+          <button class="btn btn-primary" type="submit" id="btn-run">Run design</button>
+          <button class="btn btn-ghost" type="button" id="btn-reset">Reset to defaults</button>
+          <span class="note">Runs the same Python engine in your browser. The first run downloads Python (about 10 MB) and takes 10 to 30 seconds.</span>
+        </div>
+        <div class="progress" id="progress" hidden>
+          <ol class="steps"><li data-step="python">Loading Python</li><li data-step="engine">Loading engine</li><li data-step="solve">Solving</li></ol>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<nav class="secnav" aria-label="Sections"><div class="wrap"><ul><li><a href="#overview">Overview</a></li><li><a href="#flow">Flow diagram</a></li><li><a href="#balance">Mass and energy balance</a></li><li><a href="#kit">Kit list</a></li><li><a href="#costs">Capex and opex</a></li><li><a href="#hazards">Hazards</a></li><li><a href="#carbon">Carbon</a></li><li><a href="#validation">Validation</a></li><li><a href="#assumptions">Assumptions and notes</a></li></ul></div></nav>
+<section class="dsec" id="overview" aria-labelledby="overview-h">
+  <div class="wrap">
+    <h2 id="overview-h">Overview</h2>
+    <p class="intro">Route, conditions, reactions and the headline numbers.</p>
+    <div data-sec="overview"><p class="route">Ethylbenzene is mixed with steam superheated to about 800 C and dehydrogenated over iron oxide catalyst in two adiabatic beds under vacuum. The product is condensed, the hydrogen rich off gas fuels the furnace, and styrene is separated from unreacted ethylbenzene, which is recycled.</p></div>
+  </div>
+</section>
+<section class="dsec" id="flow" aria-labelledby="flow-h">
+  <div class="wrap">
+    <h2 id="flow-h">Flow diagram</h2>
+    <p class="intro">Tap any stream or unit for its conditions and composition.</p>
+    <div data-sec="flow"></div>
+  </div>
+</section>
+<section class="dsec" id="balance" aria-labelledby="balance-h">
+  <div class="wrap">
+    <h2 id="balance-h">Mass and energy balance</h2>
+    <p class="intro">Every stream in kg/h, closure and atom balance errors, and utilities.</p>
+    <div data-sec="balance"></div>
+  </div>
+</section>
+<section class="dsec" id="kit" aria-labelledby="kit-h">
+  <div class="wrap">
+    <h2 id="kit-h">Kit list</h2>
+    <p class="intro">Major equipment, sized and costed with Turton bare module factors.</p>
+    <div data-sec="kit"></div>
+  </div>
+</section>
+<section class="dsec" id="costs" aria-labelledby="costs-h">
+  <div class="wrap">
+    <h2 id="costs-h">Capex and opex</h2>
+    <p class="intro">Fixed capital, cost of manufacture and returns over the plant life.</p>
+    <div data-sec="costs"></div>
+  </div>
+</section>
+<section class="dsec" id="hazards" aria-labelledby="hazards-h">
+  <div class="wrap">
+    <h2 id="hazards-h">Hazards</h2>
+    <p class="intro">Substance hazards, process hazard flags and a starter HAZOP.</p>
+    <div data-sec="hazards"></div>
+  </div>
+</section>
+<section class="dsec" id="carbon" aria-labelledby="carbon-h">
+  <div class="wrap">
+    <h2 id="carbon-h">Carbon</h2>
+    <p class="intro">Scope 1 and 2 emissions per tonne of product.</p>
+    <div data-sec="carbon"></div>
+  </div>
+</section>
+<section class="dsec" id="validation" aria-labelledby="validation-h">
+  <div class="wrap">
+    <h2 id="validation-h">Validation</h2>
+    <p class="intro">Model results against published plant figures.</p>
+    <div data-sec="validation"></div>
+  </div>
+</section>
+<section class="dsec" id="assumptions" aria-labelledby="assumptions-h">
+  <div class="wrap">
+    <h2 id="assumptions-h">Assumptions and notes</h2>
+    <p class="intro">What the model takes as given.</p>
+    <div data-sec="assumptions"></div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <a class="brand" href="../../" aria-label="Blueprint home"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#2347F5"/><rect x="6.5" y="8.5" width="8" height="8" rx="1.5" fill="none" stroke="#fff" stroke-width="2"/><path d="M14.5 12.5h4.5v7.5" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><rect x="15" y="19" width="10.5" height="5.5" rx="1.5" fill="#fff"/></svg><span>Blueprint</span></a>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="../../examples/">Examples</a>
+        <a href="../../method/">Method</a>
+        <a href="../../about/">About</a>
+        <a href="../../privacy/">Privacy</a>
+      </nav>
+    </div>
+    <div class="foot-fine">
+      <span>Screening tool, not for construction.</span>
+      <span>Founded and built by Yusuf Imthiyas.</span>
+    </div>
+  </div>
+</footer>
+<script src="../../js/config.js" defer></script>
+<script src="../../js/common.js" defer></script>
+<script src="../../js/design.js" defer></script>
+</body>
+</html>

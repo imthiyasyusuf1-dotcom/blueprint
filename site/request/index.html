@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Request a chemical | Blueprint</title>
+<meta name="description" content="Ask for a chemical that Blueprint has not modelled yet. Requests decide what gets built next.">
+<link rel="canonical" href="https://imthiyasyusuf1-dotcom.github.io/blueprint/request/">
+<meta name="theme-color" content="#FCFCFD">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Blueprint">
+<meta property="og:title" content="Request a chemical | Blueprint">
+<meta property="og:description" content="Ask for a chemical that Blueprint has not modelled yet. Requests decide what gets built next.">
+<meta property="og:url" content="https://imthiyasyusuf1-dotcom.github.io/blueprint/request/">
+<meta property="og:image" content="https://imthiyasyusuf1-dotcom.github.io/blueprint/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Blueprint: type a chemical, get a first pass plant design">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Request a chemical | Blueprint">
+<meta name="twitter:description" content="Ask for a chemical that Blueprint has not modelled yet. Requests decide what gets built next.">
+<meta name="twitter:image" content="https://imthiyasyusuf1-dotcom.github.io/blueprint/assets/og.png">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preload" href="../fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/site.css">
+<script type="application/json" id="bp-catalog">{"processes":[{"id":"ammonia","label":"Ammonia","aliases":["ammonia","nh3","haber","haber bosch","anhydrous ammonia"],"default_tpd":2000,"live":true},{"id":"methanol","label":"Methanol","aliases":["methanol","meoh","ch3oh","methyl alcohol","wood alcohol"],"default_tpd":2500,"live":true},{"id":"hydrogen","label":"Hydrogen","aliases":["hydrogen","h2","grey hydrogen","smr","steam methane reforming","blue hydrogen"],"default_tpd":100,"live":true},{"id":"urea","label":"Urea","aliases":["urea","carbamide","co(nh2)2","fertiliser","fertilizer"],"default_tpd":2000,"live":true},{"id":"nitric_acid","label":"Nitric acid","aliases":["nitric acid","hno3","ostwald","aqua fortis"],"default_tpd":1000,"live":true},{"id":"sulphuric_acid","label":"Sulphuric acid","aliases":["sulphuric acid","sulfuric acid","h2so4","contact process","oil of vitriol"],"default_tpd":2000,"live":true},{"id":"ethanol","label":"Ethanol","aliases":["ethanol","bioethanol","etoh","c2h5oh","ethyl alcohol","fuel ethanol","corn ethanol"],"default_tpd":1000,"live":true},{"id":"biodiesel","label":"Biodiesel","aliases":["biodiesel","fame","fatty acid methyl ester","rme","transesterification"],"default_tpd":300,"live":true},{"id":"ethylene_oxide","label":"Ethylene oxide","aliases":["ethylene oxide","eo","c2h4o","oxirane","epoxyethane"],"default_tpd":1000,"live":true},{"id":"styrene","label":"Styrene","aliases":["styrene","styrene monomer","sm","vinylbenzene","phenylethene","c8h8"],"default_tpd":1500,"live":true},{"id":"aspirin","label":"Aspirin","aliases":["aspirin","acetylsalicylic acid","asa","c9h8o4"],"default_tpd":10,"live":true}],"coming_soon":["acetic acid","acetone","acrylic acid","adipic acid","benzene","bisphenol a","butadiene","caprolactam","chlorine","caustic soda","sodium hydroxide","cumene","dimethyl ether","ethylene","ethylene glycol","formaldehyde","green ammonia","green hydrogen","hydrogen peroxide","isopropanol","maleic anhydride","melamine","mtbe","nylon","paracetamol","phenol","phosphoric acid","polyethylene","polypropylene","propylene","propylene oxide","pta","terephthalic acid","soda ash","sodium carbonate","titanium dioxide","toluene","vinyl chloride","pvc","xylene","e-methanol","sustainable aviation fuel","saf","lithium hydroxide","ammonium nitrate","glycerol","lactic acid","succinic acid","butanol","hydrochloric acid"]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../" aria-label="Blueprint home"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#2347F5"/><rect x="6.5" y="8.5" width="8" height="8" rx="1.5" fill="none" stroke="#fff" stroke-width="2"/><path d="M14.5 12.5h4.5v7.5" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><rect x="15" y="19" width="10.5" height="5.5" rx="1.5" fill="#fff"/></svg><span>Blueprint</span></a>
+    <nav class="nav" aria-label="Main"><a href="../examples/">Examples</a><a href="../method/">Method</a><a href="../about/">About</a></nav>
+  </div>
+</header>
+<main id="main">
+<div class="page-head">
+  <div class="wrap narrow">
+    <p class="eyebrow">Request</p>
+    <h1 id="req-title">Request a chemical</h1>
+    <p class="lede" id="req-lede">Tell us what you want designed. Requests decide what gets modelled next.</p>
+  </div>
+</div>
+<div class="wrap narrow">
+  <div class="req-state" id="req-state" hidden></div>
+  <div class="form-card">
+    <form data-bp-form="request" novalidate>
+      <div class="form-body">
+        <div class="form-grid">
+          <div class="field">
+            <label for="rq-email">Email</label>
+            <input class="input" id="rq-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required>
+            <span class="err" aria-live="polite"></span>
+          </div>
+          <div class="field">
+            <label for="rq-chem">Chemical</label>
+            <input class="input" id="rq-chem" name="chemical" type="text" placeholder="For example, acetone" required>
+            <span class="err" aria-live="polite"></span>
+          </div>
+          <div class="field">
+            <label for="rq-cap">Capacity, t/d <span class="muted">(optional)</span></label>
+            <input class="input" id="rq-cap" name="capacity_tpd" type="number" inputmode="decimal" min="0" step="any" placeholder="For example, 500">
+            <span class="err" aria-live="polite"></span>
+          </div>
+          <div class="field span-2">
+            <label for="rq-note">Note <span class="muted">(optional)</span></label>
+            <textarea class="textarea" id="rq-note" name="note" rows="4" placeholder="Route, feedstock, region or what you need it for"></textarea>
+          </div>
+        </div>
+        <div class="hp" aria-hidden="true"><label for="rq-honey">Leave this empty</label><input id="rq-honey" name="_honey" type="text" tabindex="-1" autocomplete="off"></div>
+        <div style="margin-top:var(--s5)"><button class="btn btn-primary" type="submit">Send request</button></div>
+        <p class="form-fine">Used only to reply and to announce new processes. See <a href="../privacy/">privacy</a>.</p>
+      </div>
+      <div class="form-status" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+  <div class="block">
+    <h2 style="font-size:1.25rem;margin-bottom:var(--s4)">Or try another chemical</h2>
+    <form class="search" role="search" data-bp-search action="../request/" autocomplete="off">
+  <label class="sr-only" for="q2">Type a chemical</label>
+  <div class="search-field">
+    <div class="search-box">
+      <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.75"/><path d="m13.5 13.5 3.5 3.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+      <input id="q2" name="q" type="text" placeholder="Type a chemical" spellcheck="false" autocapitalize="off"
+        role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="q2-list">
+      <button class="btn btn-primary" type="submit">Design</button>
+    </div>
+    <ul class="typeahead" id="q2-list" role="listbox" aria-label="Matches" hidden></ul>
+  </div>
+  <div class="search-meta"><span class="label">Live now</span><a class="chip" href="../design/ammonia/">Ammonia</a><a class="chip" href="../design/methanol/">Methanol</a><a class="chip" href="../design/hydrogen/">Hydrogen</a><a class="chip" href="../design/urea/">Urea</a><a class="chip" href="../design/nitric_acid/">Nitric acid</a><a class="chip" href="../design/sulphuric_acid/">Sulphuric acid</a><a class="chip" href="../design/ethanol/">Ethanol</a><a class="chip" href="../design/biodiesel/">Biodiesel</a><a class="chip" href="../design/ethylene_oxide/">Ethylene oxide</a><a class="chip" href="../design/styrene/">Styrene</a><a class="chip" href="../design/aspirin/">Aspirin</a></div>
+</form>
+
+  </div>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <a class="brand" href="../" aria-label="Blueprint home"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#2347F5"/><rect x="6.5" y="8.5" width="8" height="8" rx="1.5" fill="none" stroke="#fff" stroke-width="2"/><path d="M14.5 12.5h4.5v7.5" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><rect x="15" y="19" width="10.5" height="5.5" rx="1.5" fill="#fff"/></svg><span>Blueprint</span></a>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="../examples/">Examples</a>
+        <a href="../method/">Method</a>
+        <a href="../about/">About</a>
+        <a href="../privacy/">Privacy</a>
+      </nav>
+    </div>
+    <div class="foot-fine">
+      <span>Screening tool, not for construction.</span>
+      <span>Founded and built by Yusuf Imthiyas.</span>
+    </div>
+  </div>
+</footer>
+<script src="../js/config.js" defer></script>
+<script src="../js/common.js" defer></script>
+</body>
+</html>
