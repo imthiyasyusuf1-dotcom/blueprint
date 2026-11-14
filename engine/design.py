@@ -389,7 +389,7 @@ class Design:
         n2o = self.direct_other.get("N2O", 0.0) / prod_kg_h * 273 if prod_kg_h else 0  # GWP100 AR6
         ch4 = self.direct_other.get("CH4", 0.0) / prod_kg_h * 27.9 if prod_kg_h else 0
         co2_power = self.power_kW * reg["grid_kg_kwh"] / prod_kg_h if prod_kg_h else 0
-        steam_co2 = steam_net_kg_h * (th.H_STEAM_40BAR_450C - th.H_BFW_105C) / 1e6 / 0.9 * PR.NG_KG_CO2_GJ_LHV / 1000 / prod_kg_h if prod_kg_h else 0
+        steam_co2 = steam_net_kg_h * (th.H_STEAM_40BAR_450C - th.H_BFW_105C) / 1e6 / 0.9 * PR.NG_KG_CO2_GJ_LHV / prod_kg_h if prod_kg_h else 0  # kJ/kg*kg/h/1e6 = GJ/h; *kg/GJ = kg/h
         carbon = {
             "direct_co2": co2_direct_t,
             "direct_n2o_co2e": n2o,
@@ -399,7 +399,8 @@ class Design:
             "total": co2_direct_t + n2o + ch4 + co2_power + steam_co2,
             "unit": "t CO2e / t product",
             "scope_note": "Scope 1 (fuel, process CO2, N2O, CH4 slip) and scope 2 (grid power, net steam). "
-                          "Upstream feedstock emissions are not included.",
+                          "Upstream feedstock emissions are not included. Net steam export is credited as "
+                          "avoided gas fired boiler steam, so a large steam exporter can show a total below zero.",
             "grid_kg_kwh": reg["grid_kg_kwh"],
         }
 

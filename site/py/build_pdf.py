@@ -1351,29 +1351,40 @@ def pfd(pdf, d):
         pdf.ellipse(mx - 1.3, my - 1.3, 2.6, 2.6, style="FD")
 
     # unit boxes: tag on top, name below; one font size for every box, small enough that no
-    # word is split and no name needs more than three lines
-    name_size = 6.3
-    while name_size > 5.0:
-        pdf.font("s", name_size, INK)
-        if all(all(pdf.sw(wd) <= box_w - 4.8 for wd in clean(v["u"].get("name") or "").split(" ")) and
-               len(pdf.wrap(v["u"].get("name") or "", box_w - 4.8)) <= 3 for v in ids.values()):
+    # word is split and each name fits in three lines (four on very busy diagrams)
+    def _names_fit(size, max_lines, pad):
+        pdf.font("s", size, INK)
+        if 6.0 + max_lines * (size / 72 * 25.4 * 1.22) > box_h - 0.8:
+            return False
+        return all(all(pdf.sw(wd) <= box_w - 2 * pad for wd in clean(v["u"].get("name") or "").split(" ")) and
+                   len(pdf.wrap(v["u"].get("name") or "", box_w - 2 * pad)) <= max_lines for v in ids.values())
+
+    name_size, max_name_lines, name_pad = 4.6, 4, 1.6
+    found = False
+    for pad_try, max_lines_try in ((2.4, 3), (2.4, 4), (1.6, 4)):
+        s_try = 6.3
+        while s_try >= 4.6 - 1e-9:
+            if _names_fit(s_try, max_lines_try, pad_try):
+                name_size, max_name_lines, name_pad, found = s_try, max_lines_try, pad_try, True
+                break
+            s_try = round(s_try - 0.3, 2)
+        if found:
             break
-        name_size -= 0.3
     for k, v in ids.items():
         u = v["u"]
         pdf.rrect(v["x"], v["y"], box_w, box_h, fill=WHITE, border=LINE, r=RADIUS, lw=0.3)
         pdf.font("s", 6.4, ACCENT)
-        pdf.put(v["x"] + 2.4, v["y"] + 2.0, u.get("id") or "")
+        pdf.put(v["x"] + name_pad, v["y"] + 2.0, u.get("id") or "")
         name = u.get("name") or ""
         size = name_size
         pdf.font("s", size, INK)
-        lines = pdf.wrap(name, box_w - 4.8)
-        if len(lines) > 3:
-            lines = lines[:3]
-            lines[2] = lines[2].rstrip(" ,.") + "\u2026"
+        lines = pdf.wrap(name, box_w - 2 * name_pad)
+        if len(lines) > max_name_lines:
+            lines = lines[:max_name_lines]
+            lines[-1] = lines[-1].rstrip(" ,.") + "\u2026"
         lh = size / 72 * 25.4 * 1.22
         for i, ln in enumerate(lines):
-            pdf.put(v["x"] + 2.4, v["y"] + 6.0 + i * lh, ln)
+            pdf.put(v["x"] + name_pad, v["y"] + 6.0 + i * lh, ln)
 
     # stream id pills: on the line where there is room, otherwise just beside it; never on a
     # box, an arrow head, another pill or (where avoidable) another stream
