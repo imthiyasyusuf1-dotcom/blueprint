@@ -53,6 +53,21 @@ COMPONENTS = {
     "Glycerol": ("glycerol", "C3H8O3", "Glycerol"),
     "NaOH": ("sodium hydroxide", "NaOH", "Sodium hydroxide"),
     "KOH": ("potassium hydroxide", "KOH", "Potassium hydroxide"),
+    # batch A (chlor-alkali, hydrogen peroxide, e-methanol, ammonium nitrate, soda ash)
+    "Cl2": ("chlorine", "Cl2", "Chlorine"),
+    "HCl": ("hydrochloric acid", "HCl", "Hydrogen chloride"),
+    "NaCl": ("sodium chloride", "NaCl", "Sodium chloride (salt)"),
+    "H2O2": ("hydrogen peroxide", "H2O2", "Hydrogen peroxide"),
+    "Na2CO3": ("sodium carbonate", "Na2CO3", "Sodium carbonate (soda ash)"),
+    "NaHCO3": ("sodium bicarbonate", "NaHCO3", "Sodium bicarbonate"),
+    "CaCO3": ("calcium carbonate", "CaCO3", "Calcium carbonate (limestone)"),
+    "CaO": ("calcium oxide", "CaO", "Calcium oxide (quicklime)"),
+    "CaOH2": ("calcium hydroxide", "CaO2H2", "Calcium hydroxide (slaked lime)"),
+    "CaCl2": ("calcium chloride", "CaCl2", "Calcium chloride"),
+    "NH4Cl": ("ammonium chloride", "NH4Cl", "Ammonium chloride"),
+    "NH4NO3": ("ammonium nitrate", "N2H4O3", "Ammonium nitrate"),
+    "EAQ": ("2-ethylanthraquinone", "C16H12O2", "2-Ethylanthraquinone"),
+    "C": ("carbon", "C", "Carbon (coke, as graphite)"),
 }
 
 # Standard heats of combustion (lower heating value) are computed by chemicals.
@@ -62,6 +77,8 @@ HF_STD_CITED = {
     # NIST WebBook, triolein (https://webbook.nist.gov/cgi/cbook.cgi?ID=C122327&Mask=2), from the heat of
     # combustion of Freedman, Bagby et al. (1989): "Corresponding Δ f Hº liquid = -2193.7 kJ/mol"
     "Triolein": (-2193700.0, "NIST WebBook C122327, Freedman, Bagby et al. 1989, liquid"),
+    # Graphite is the reference state of carbon, so its standard heat of formation is zero by definition.
+    "C": (0.0, "Reference state of the element (graphite), zero by definition"),
 }
 
 # Pseudo components that the chemicals package does not hold. Corn is split into starch
