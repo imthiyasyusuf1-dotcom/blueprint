@@ -1,0 +1,232 @@
+{
+ "processes": [
+  {
+   "id": "ammonia",
+   "label": "Ammonia",
+   "default_tpd": 2000,
+   "aliases": [
+    "ammonia",
+    "nh3",
+    "haber",
+    "haber bosch",
+    "anhydrous ammonia"
+   ],
+   "live": true,
+   "params": {
+    "capacity_tpd": 2000.0,
+    "steam_to_carbon": 3.3,
+    "primary_T_C": 790.0,
+    "reform_P_bar": 32.0,
+    "loop_P_bar": 150.0,
+    "converter_out_C": 450.0,
+    "approach_C": 15.0,
+    "inerts_loop_pct": 12.0,
+    "separator_C": -5.0,
+    "furnace_eff": 0.91
+   },
+   "summary": "2,000 t/d of liquid ammonia from natural gas. Typical of a single train world scale plant."
+  },
+  {
+   "id": "methanol",
+   "label": "Methanol",
+   "default_tpd": 2500,
+   "aliases": [
+    "methanol",
+    "meoh",
+    "ch3oh",
+    "methyl alcohol",
+    "wood alcohol"
+   ],
+   "live": true,
+   "params": {
+    "capacity_tpd": 2500.0,
+    "steam_to_carbon": 3.0,
+    "reformer_T_C": 880.0,
+    "reformer_P_bar": 20.0,
+    "loop_P_bar": 80.0,
+    "converter_T_C": 250.0,
+    "approach_C": 10.0,
+    "recycle_ratio": 4.0,
+    "reflux_ratio": 1.5,
+    "furnace_eff": 0.92
+   },
+   "summary": "2,500 t/d of AA grade methanol from natural gas."
+  },
+  {
+   "id": "hydrogen",
+   "label": "Hydrogen",
+   "default_tpd": 100,
+   "aliases": [
+    "hydrogen",
+    "h2",
+    "grey hydrogen",
+    "smr",
+    "steam methane reforming",
+    "blue hydrogen"
+   ],
+   "live": false
+  },
+  {
+   "id": "urea",
+   "label": "Urea",
+   "default_tpd": 2000,
+   "aliases": [
+    "urea",
+    "carbamide",
+    "co(nh2)2",
+    "fertiliser",
+    "fertilizer"
+   ],
+   "live": false
+  },
+  {
+   "id": "nitric_acid",
+   "label": "Nitric acid",
+   "default_tpd": 1000,
+   "aliases": [
+    "nitric acid",
+    "hno3",
+    "ostwald",
+    "aqua fortis"
+   ],
+   "live": false
+  },
+  {
+   "id": "sulphuric_acid",
+   "label": "Sulphuric acid",
+   "default_tpd": 2000,
+   "aliases": [
+    "sulphuric acid",
+    "sulfuric acid",
+    "h2so4",
+    "contact process",
+    "oil of vitriol"
+   ],
+   "live": false
+  },
+  {
+   "id": "ethanol",
+   "label": "Ethanol",
+   "default_tpd": 1000,
+   "aliases": [
+    "ethanol",
+    "bioethanol",
+    "etoh",
+    "c2h5oh",
+    "ethyl alcohol",
+    "fuel ethanol",
+    "corn ethanol"
+   ],
+   "live": false
+  },
+  {
+   "id": "biodiesel",
+   "label": "Biodiesel",
+   "default_tpd": 300,
+   "aliases": [
+    "biodiesel",
+    "fame",
+    "fatty acid methyl ester",
+    "rme",
+    "transesterification"
+   ],
+   "live": false
+  },
+  {
+   "id": "ethylene_oxide",
+   "label": "Ethylene oxide",
+   "default_tpd": 1000,
+   "aliases": [
+    "ethylene oxide",
+    "eo",
+    "c2h4o",
+    "oxirane",
+    "epoxyethane"
+   ],
+   "live": false
+  },
+  {
+   "id": "styrene",
+   "label": "Styrene",
+   "default_tpd": 1500,
+   "aliases": [
+    "styrene",
+    "styrene monomer",
+    "sm",
+    "vinylbenzene",
+    "phenylethene",
+    "c8h8"
+   ],
+   "live": false
+  },
+  {
+   "id": "aspirin",
+   "label": "Aspirin",
+   "default_tpd": 10,
+   "aliases": [
+    "aspirin",
+    "acetylsalicylic acid",
+    "asa",
+    "c9h8o4"
+   ],
+   "live": false
+  }
+ ],
+ "coming_soon": [
+  "acetic acid",
+  "acetone",
+  "acrylic acid",
+  "adipic acid",
+  "benzene",
+  "bisphenol a",
+  "butadiene",
+  "caprolactam",
+  "chlorine",
+  "caustic soda",
+  "sodium hydroxide",
+  "cumene",
+  "dimethyl ether",
+  "ethylene",
+  "ethylene glycol",
+  "formaldehyde",
+  "green ammonia",
+  "green hydrogen",
+  "hydrogen peroxide",
+  "isopropanol",
+  "maleic anhydride",
+  "melamine",
+  "mtbe",
+  "nylon",
+  "paracetamol",
+  "phenol",
+  "phosphoric acid",
+  "polyethylene",
+  "polypropylene",
+  "propylene",
+  "propylene oxide",
+  "pta",
+  "terephthalic acid",
+  "soda ash",
+  "sodium carbonate",
+  "titanium dioxide",
+  "toluene",
+  "vinyl chloride",
+  "pvc",
+  "xylene",
+  "e-methanol",
+  "sustainable aviation fuel",
+  "saf",
+  "lithium hydroxide",
+  "ammonium nitrate",
+  "glycerol",
+  "lactic acid",
+  "succinic acid",
+  "butanol",
+  "hydrochloric acid"
+ ],
+ "regions": {
+  "US": "United States",
+  "EU": "European Union",
+  "UK": "United Kingdom"
+ }
+}

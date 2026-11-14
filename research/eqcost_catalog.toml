@@ -1,0 +1,193 @@
+# Bundled default costing data (Turton bare-module method).
+#
+# This file is the single source of truth for equipment correlations, material
+# factors, and the CEPCI index. Override it with `eqcost ... --config <path>`.
+# All constants are tied to CEPCI = 397 (year 2001), Turton's correlation basis.
+#
+# Equipment entries support two bare-module models:
+#   factor  — set `b = [B1, B2]` and `fm` holds material *factors*; an optional
+#             `pressure_c = [C1, C2, C3]` over `pressure_range` gives Fp.
+#   direct  — omit `b`; `fm` holds the bare-module factor F_BM directly per
+#             material (e.g. compressors). No pressure factor.
+
+[cepci]
+base_year = 2001
+# Chemical Engineering Plant Cost Index, annual averages (interpolated between).
+2001 = 397.0
+2018 = 603.1
+2019 = 607.5
+2020 = 596.2
+2021 = 708.8
+2022 = 816.0
+2023 = 797.9
+2024 = 800.0
+
+# --- equipment ---------------------------------------------------------------
+
+[equipment.pump_centrifugal]
+name = "Centrifugal pump"
+size_unit = "kW (shaft power)"
+k = [3.3892, 0.0536, 0.1538]
+size_range = [1.0, 300.0]
+b = [1.89, 1.35]
+pressure_c = [-0.3935, 0.3957, -0.00226]
+pressure_range = [10.0, 100.0]
+[equipment.pump_centrifugal.fm]
+cast_iron = 1.00
+CS = 1.60
+SS = 2.30
+Ni_alloy = 4.40
+
+[equipment.heat_exchanger]
+name = "Shell-and-tube heat exchanger (floating head)"
+size_unit = "m2 (area)"
+k = [4.8306, -0.8509, 0.3187]
+size_range = [10.0, 1000.0]
+b = [1.63, 1.66]
+pressure_c = [0.03881, -0.11272, 0.08183]
+pressure_range = [5.0, 140.0]
+[equipment.heat_exchanger.fm]
+CS = 1.00
+SS = 2.73
+Ni_alloy = 3.73
+Ti = 11.4
+
+[equipment.heat_exchanger_fixed_tube]
+name = "Shell-and-tube heat exchanger (fixed tube sheet)"
+size_unit = "m2 (area)"
+k = [4.3247, -0.3030, 0.1634]
+size_range = [10.0, 1000.0]
+b = [1.63, 1.66]
+pressure_c = [0.03881, -0.11272, 0.08183]
+pressure_range = [5.0, 140.0]
+[equipment.heat_exchanger_fixed_tube.fm]
+CS = 1.00
+SS = 2.73
+Ni_alloy = 3.73
+Ti = 11.4
+
+[equipment.heat_exchanger_u_tube]
+name = "Shell-and-tube heat exchanger (U-tube)"
+size_unit = "m2 (area)"
+k = [4.1884, -0.2503, 0.1974]
+size_range = [10.0, 1000.0]
+b = [1.63, 1.66]
+pressure_c = [0.03881, -0.11272, 0.08183]
+pressure_range = [5.0, 140.0]
+[equipment.heat_exchanger_u_tube.fm]
+CS = 1.00
+SS = 2.73
+Ni_alloy = 3.73
+Ti = 11.4
+
+[equipment.fired_heater]
+name = "Fired heater (nonreactive)"
+size_unit = "kW (duty)"
+k = [7.3488, -1.1666, 0.2028]
+size_range = [1000.0, 100000.0]
+# Direct bare-module form with a multiplicative pressure factor and per-material
+# (tube alloy) factors: C_BM = Cp0 * F_BM(material) * Fp.
+#   log10(Fp) = 0.1347 - 0.2368 log10(P) + 0.1021 (log10 P)^2,  10 <= P <= 200 barg
+#   F_BM: CS 2.13, Cr-Mo 2.51, SS 2.81  (Turton ids 53-55)
+# Source: Turton et al., Analysis, Synthesis & Design of Chemical Processes,
+# 3rd ed., App. A, Tables A.2 (Eq. A.3 pressure factor) and A.6 (bare-module).
+pressure_c = [0.1347, -0.2368, 0.1021]
+pressure_range = [10.0, 200.0]
+[equipment.fired_heater.fm]
+CS = 2.13
+Cr_Mo = 2.51
+SS = 2.81
+
+[equipment.tray_sieve]
+name = "Sieve tray (per tray)"
+size_unit = "m2 (tray area)"
+k = [2.9949, 0.4465, 0.3961]
+size_range = [0.07, 12.3]
+# Per single tray. Compose a tray tower as vessel_vertical (shell) + N x
+# tray_sieve via `eqcost batch`. Direct F_BM ~1.0 (sieve, CS).
+[equipment.tray_sieve.fm]
+CS = 1.00
+
+[equipment.vessel_vertical]
+name = "Vertical process vessel"
+size_unit = "m3 (volume)"
+k = [3.4974, 0.4485, 0.1074]
+size_range = [0.3, 520.0]
+b = [2.25, 1.82]
+# Wall-thickness pressure factor; diameter taken from volume at this L/D.
+pressure_model = "vessel"
+ld_ratio = 3.0
+[equipment.vessel_vertical.fm]
+CS = 1.00
+SS = 3.10
+Ni_alloy = 5.40
+Ti = 7.70
+
+[equipment.vessel_horizontal]
+name = "Horizontal process vessel"
+size_unit = "m3 (volume)"
+k = [3.5565, 0.3776, 0.0905]
+size_range = [0.1, 628.0]
+b = [2.25, 1.82]
+pressure_model = "vessel"
+ld_ratio = 3.0
+[equipment.vessel_horizontal.fm]
+CS = 1.00
+SS = 3.10
+Ni_alloy = 5.40
+Ti = 7.70
+
+# Composite type: a tray tower = vertical-vessel shell + N x tray, with Turton's
+# tray-quantity factor F_q applied to the tray group. Sized by column diameter +
+# number of trays; shell height = n_trays*tray_spacing + extra_height (a layout
+# assumption — edit for your column internals; F_q & the sub-correlations are the
+# verified Turton parts). Materials come from the shell entry.
+[equipment.tower_sieve]
+name = "Sieve-tray distillation tower"
+model = "composite"
+shell = "vessel_vertical"
+tray = "tray_sieve"
+size_unit = "m (column diameter)"
+tray_spacing = 0.61   # 24 in (Turton default tray spacing)
+extra_height = 3.0    # top vapor disengagement + bottom liquid sump
+
+[equipment.fan_centrifugal_backward]
+name = "Centrifugal fan (backward-curved, w/ drive)"
+size_unit = "m3/s (gas flow)"
+k = [3.3471, -0.0734, 0.3090]
+size_range = [1.0, 100.0]
+# Direct form C_BM = Cp0 * F_BM(material) * Fp. The pressure factor is keyed on
+# pressure RISE in kPa (not barg): log10(Fp) = 0 + 0.20899 log10(dP) - 0.0328
+# (log10 dP)^2 over 1-16 kPa (Fp = 1 below 1 kPa). Cp0 + Fp are verified Turton
+# App. A (Tables A.1 / A.2).
+pressure_c = [0.0, 0.20899, -0.0328]
+pressure_range = [1.0, 16.0]
+pressure_unit = "kPa (rise)"
+# F_BM material factors are read from Turton Fig. A.19 (a chart, not a table), so
+# these are APPROXIMATE pending verification off the figure for your materials.
+[equipment.fan_centrifugal_backward.fm]
+CS = 2.1   # APPROX (Fig. A.19) — verify
+SS = 5.8   # APPROX (Fig. A.19) — verify
+
+[equipment.storage_tank_fixed_roof]
+name = "Fixed-roof storage tank (API)"
+size_unit = "m3 (volume)"
+k = [4.8509, -0.3973, 0.1445]
+size_range = [90.0, 30000.0]
+# Direct form, no pressure factor (atmospheric; Fp = 1 up to ~0.07 barg — above
+# that a tank becomes a pressure vessel, use vessel_* instead). Cp0 is verified
+# Turton App. A (Table A.1). F_BM read from Fig. A.19 -> APPROXIMATE, verify.
+[equipment.storage_tank_fixed_roof.fm]
+CS = 2.5   # APPROX (Fig. A.19) — verify
+SS = 5.0   # APPROX (Fig. A.19) — verify
+
+[equipment.compressor_centrifugal]
+name = "Centrifugal compressor"
+size_unit = "kW (fluid power)"
+k = [2.2897, 1.3604, -0.1027]
+size_range = [450.0, 3000.0]
+# direct form: no `b`, no pressure factor; fm holds F_BM directly.
+[equipment.compressor_centrifugal.fm]
+CS = 2.70
+SS = 5.80
+Ni_alloy = 11.50
