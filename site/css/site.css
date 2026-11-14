@@ -206,7 +206,7 @@ hr { border: 0; border-top: 1px solid var(--line); margin: var(--s6) 0; }
 
 .chips { display: flex; flex-wrap: wrap; gap: var(--s2); }
 .chip {
-  display: inline-flex; align-items: center; height: 34px; padding: 0 14px; border-radius: var(--r-pill);
+  display: inline-flex; align-items: center; height: 40px; padding: 0 16px; border-radius: var(--r-pill);
   background: var(--white); border: 1px solid var(--line-2); color: var(--ink-2);
   font: inherit; font-size: 0.875rem; font-weight: 500; cursor: pointer;
   transition: border-color 0.15s var(--ease), color 0.15s var(--ease), background-color 0.15s var(--ease);
