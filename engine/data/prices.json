@@ -7,7 +7,8 @@
       "Fields marked derived are arithmetic on quoted figures, formula shown in basis.",
       "Turton utility costs are textbook values at the book's cost basis; escalate with CEPCI before use.",
       "null value means no source was found."
-    ]
+    ],
+    "batch_b_added": "2026-11-14: phenol, acetone, benzene, propylene, formaldehyde, CO, ethane, MEG, DEG, TEG, pygas (naphtha proxy). Engine value is the US quote; EU kept under regional. No UK specific chemical quotes were found; UK designs use these with UK energy prices."
   },
   "prices": {
     "ammonia": {
@@ -421,6 +422,192 @@
         "url": "https://www.expertmarketresearch.com/price-forecast/carbon-dioxide-price-trends",
         "quote": "Carbon Dioxide prices in the United States, the highest-cost reporting region, rose 7.8% in Q2 2026 to USD 910.00/MT from USD 844.00/MT"
       }
+    },
+    "phenol": {
+      "value": 1080.0,
+      "unit": "USD/t",
+      "basis": "United States, Q2 2026 average",
+      "year": 2026,
+      "source": "Expert Market Research (free page)",
+      "url": "https://www.expertmarketresearch.com/price-forecast/phenol-price-trends",
+      "quote": "US Phenol prices averaged USD 1,080.00/MT in Q2 2026",
+      "regional": {
+        "US": {
+          "value": 1080.0,
+          "quote": "US Phenol prices averaged USD 1,080.00/MT in Q2 2026"
+        },
+        "EU": {
+          "value": 1120,
+          "basis": "Germany, Q2 2026 average",
+          "quote": "German prices averaged USD 1,120.00/MT in Q2 2026, the highest of any region tracked here"
+        }
+      }
+    },
+    "acetone": {
+      "value": 1270.0,
+      "unit": "USD/t",
+      "basis": "United States, Q2 2026 average",
+      "year": 2026,
+      "source": "Expert Market Research (free page)",
+      "url": "https://www.expertmarketresearch.com/price-forecast/acetone-prices-trends",
+      "quote": "Acetone prices in the United States, the highest-cost reporting region, rose 4.5% in Q2 2026 to USD 1,270.00/MT",
+      "regional": {
+        "US": {
+          "value": 1270.0,
+          "quote": "Acetone prices in the United States, the highest-cost reporting region, rose 4.5% in Q2 2026 to USD 1,270.00/MT"
+        },
+        "EU": {
+          "value": 1225,
+          "basis": "Germany, Q2 2026",
+          "quote": "Acetone Q2 2026 prices: US USD 1,270/MT, Germany USD 1,225/MT, China USD 1,180/MT and South Africa USD 880/MT on firm feedstock costs."
+        }
+      }
+    },
+    "benzene": {
+      "value": 1080.0,
+      "unit": "USD/t",
+      "basis": "United States, Q2 2026 average",
+      "year": 2026,
+      "source": "Expert Market Research (free page)",
+      "url": "https://www.expertmarketresearch.com/price-forecast/benzene-price-trends",
+      "quote": "US prices averaged USD 1,080.00/MT in Q2 2026, up 10.2% from USD 980.00/MT in Q1",
+      "regional": {
+        "US": {
+          "value": 1080.0,
+          "quote": "US prices averaged USD 1,080.00/MT in Q2 2026, up 10.2% from USD 980.00/MT in Q1"
+        },
+        "EU": {
+          "value": 1110,
+          "basis": "Germany, Q2 2026 average",
+          "quote": "German Benzene prices averaged USD 1,110.00/MT in Q2 2026"
+        }
+      }
+    },
+    "propylene": {
+      "value": 590.0,
+      "unit": "USD/t",
+      "basis": "United States, Q2 2026 average",
+      "year": 2026,
+      "source": "Expert Market Research (free page)",
+      "url": "https://www.expertmarketresearch.com/price-forecast/propylene-price-trends",
+      "quote": "US Propylene prices, the lowest of any region tracked here, averaged USD 590.00/MT in Q2 2026",
+      "regional": {
+        "US": {
+          "value": 590.0,
+          "quote": "US Propylene prices, the lowest of any region tracked here, averaged USD 590.00/MT in Q2 2026"
+        },
+        "EU": {
+          "value": 980,
+          "basis": "Germany, Q2 2026 average",
+          "quote": "German Propylene prices averaged USD 980.00/MT in Q2 2026, down 6.7% from USD 1,050.00/MT in Q1"
+        }
+      }
+    },
+    "formaldehyde": {
+      "value": 440.0,
+      "unit": "USD/t",
+      "basis": "United States, Q1 2026, per t of solution as sold (source does not state the strength; taken as 37 wt% formalin, so about 1,190 USD/t of 100% HCHO, derived)",
+      "year": 2026,
+      "source": "Expert Market Research (free page)",
+      "url": "https://www.expertmarketresearch.com/price-forecast/formaldehyde-price-trends",
+      "quote": "US formaldehyde prices averaged USD 0.44/KG in Q1 2026, up 10.0% from USD 0.40/KG in Q4 2025.",
+      "regional": {
+        "US": {
+          "value": 440.0,
+          "quote": "US formaldehyde prices averaged USD 0.44/KG in Q1 2026, up 10.0% from USD 0.40/KG in Q4 2025."
+        },
+        "EU": {
+          "value": 580.0,
+          "quote": "Inspect Q1 2026 Formaldehyde Prices: United States USD 0.44/KG, China USD 0.33/KG, Germany USD 0.58/KG & India USD 0.43/KG."
+        }
+      }
+    },
+    "carbon_monoxide": {
+      "value": 200,
+      "unit": "USD/t",
+      "basis": "Average market price, global, 2014-2018 range USD 0.17-0.26/kg; NREL figure cited secondhand by Credence Research; CO is mostly captive, priced at cost",
+      "year": 2018,
+      "source": "Credence Research, Carbon Monoxide Plant Project Report 2026 (citing US NREL)",
+      "url": "https://www.credenceresearch.com/plant-projects/carbon-monoxide-manufacturing-plant-project-report",
+      "quote": "The U.S. National Renewable Energy Laboratory puts global production at about 150 million metric tons a year, with an average market price of about USD 0.20 per kilogram, ranging from USD 0.17 to USD 0.26 between 2014 and 2018."
+    },
+    "ethylene_glycol": {
+      "value": 450,
+      "unit": "USD/t",
+      "basis": "United States, Q1 2026 (held 0.43-0.47 USD/kg through Aug 2026)",
+      "year": 2026,
+      "source": "Expert Market Research (free snippet)",
+      "url": "https://www.expertmarketresearch.com/price-forecast/mono-ethylene-glycol-price-trends",
+      "quote": "Global MEG prices in Q1 2026 stood at USD 0.62 per KG in Germany, the highest among tracked markets, USD 0.56 per KG in China, USD 0.53 per KG in India, and USD 0.45 per KG in the United States",
+      "regional": {
+        "US": {
+          "value": 450,
+          "quote": "Global MEG prices in Q1 2026 stood at USD 0.62 per KG in Germany, the highest among tracked markets, USD 0.56 per KG in China, USD 0.53 per KG in India, and USD 0.45 per KG in the United States"
+        },
+        "EU": {
+          "value": 620,
+          "basis": "Germany, Q1 2026",
+          "quote": "Global MEG prices in Q1 2026 stood at USD 0.62 per KG in Germany",
+          "url": "https://www.expertmarketresearch.com/price-forecast/mono-ethylene-glycol-price-trends"
+        }
+      }
+    },
+    "diethylene_glycol": {
+      "value": 1165.67,
+      "unit": "USD/t",
+      "basis": "North America, FCA USG, Q3 2026 average",
+      "year": 2026,
+      "source": "ChemAnalyst (free page)",
+      "url": "https://www.chemanalyst.com/Pricing-data/diethylene-glycol-66",
+      "quote": "North America Diethylene Glycol FCA USG, USA 1165.67 20.75% ▲ Up",
+      "regional": {
+        "US": {
+          "value": 1165.67,
+          "quote": "North America Diethylene Glycol FCA USG, USA 1165.67 20.75% ▲ Up"
+        },
+        "EU": {
+          "value": 1463.33,
+          "basis": "Europe, CFR Hamburg, Q3 2026 average",
+          "quote": "Europe Diethylene Glycol CFR Hamburg, Germany 1463.33 14.44% ▲ Up",
+          "url": "https://www.chemanalyst.com/Pricing-data/diethylene-glycol-66"
+        }
+      }
+    },
+    "triethylene_glycol": {
+      "value": 1560,
+      "unit": "USD/t",
+      "basis": "United States, Q1 2026 average",
+      "year": 2026,
+      "source": "Expert Market Research (free snippet)",
+      "url": "https://www.expertmarketresearch.com/price-forecast/triethylene-glycol-price-trends",
+      "quote": "US prices averaged USD 1.56 per KG in Q1 2026, down 1.3 percent from Q4 2025"
+    },
+    "ethane": {
+      "value": 268,
+      "unit": "USD/t",
+      "basis": "Mont Belvieu purity ethane spot, Q3 2026 average 36.1 US cents/gal. Conversion: 0.361 USD/gal x 742 gal/t = 268 USD/t, where 742 gal/t is the factor implied by the source's own stated equivalence (36.1 c/gal = USD 268/MT); consistent with liquid ethane density about 0.356 kg/L at 60F (density not separately cited)",
+      "year": 2026,
+      "source": "Nexchem Intelligence (free page)",
+      "url": "https://www.nexchemintelligence.com/price-trends/ethane-north-america",
+      "quote": "Purity ethane at Mont Belvieu averaged 36.1 US cents per gallon across Q3 2026, equivalent to USD 268 per metric tonne",
+      "alt": {
+        "value": 152,
+        "unit": "USD/t",
+        "basis": "US, export spot fob Mont Belvieu, April 2026",
+        "year": 2026,
+        "source": "Intratec (free preview)",
+        "url": "https://www.intratec.us/solutions/primary-commodity-prices/commodity/ethane-prices",
+        "quote": "the price of Ethane (United States) decreased during April 2026 to 152 USD per metric ton"
+      }
+    },
+    "pyrolysis_gasoline": {
+      "value": 580,
+      "unit": "USD/t",
+      "basis": "PROXY: naphtha, United States, Q1 2026 (no free pyrolysis gasoline quote found)",
+      "year": 2026,
+      "source": "Expert Market Research (free snippet)",
+      "url": "https://www.expertmarketresearch.com/price-forecast/naphtha-price-trends",
+      "quote": "Global naphtha prices in Q1 2026 stood at USD 0.65 per KG in China, the highest among tracked markets, USD 0.63 per KG in Saudi Arabia, USD 0.62 per KG in India, and USD 0.58 per KG in the United States"
     }
   },
   "emission_factors": {

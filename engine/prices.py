@@ -50,6 +50,23 @@ PRICE_T = {
     "CO2": _v("co2"),
 }
 
+# batch B (US quotes; formaldehyde is quoted per t of solution, taken as 37 wt% formalin, so the
+# price per t of contained 100% HCHO is value / 0.37)
+FORMALIN_WT = 0.37
+PRICE_T.update({
+    "Phenol": _v("phenol"),
+    "Acetone": _v("acetone"),
+    "Benzene": _v("benzene"),
+    "C3H6": _v("propylene"),
+    "HCHO": _v("formaldehyde") / FORMALIN_WT,
+    "CO": _v("carbon_monoxide"),
+    "C2H6": _v("ethane"),
+    "MEG": _v("ethylene_glycol"),
+    "DEG": _v("diethylene_glycol"),
+    "TEG": _v("triethylene_glycol"),
+    "Pygas": _v("pyrolysis_gasoline"),
+})
+
 REGIONS = {
     "US": {
         "label": "United States",
@@ -102,6 +119,11 @@ PRICE_KEYS = {
     "Triolein": "soybean_oil", "Glycerol": "crude_glycerol", "Corn": "corn", "DDGS": "ddgs",
     "CO2": "co2",
 }
+PRICE_KEYS.update({
+    "Phenol": "phenol", "Acetone": "acetone", "Benzene": "benzene", "C3H6": "propylene",
+    "HCHO": "formaldehyde", "CO": "carbon_monoxide", "C2H6": "ethane", "MEG": "ethylene_glycol",
+    "DEG": "diethylene_glycol", "TEG": "triethylene_glycol", "Pygas": "pyrolysis_gasoline",
+})
 
 
 def price_source(cid):
