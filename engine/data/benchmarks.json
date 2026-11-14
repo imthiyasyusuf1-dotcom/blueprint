@@ -1615,6 +1615,87 @@
       "model_type": "energy"
     }
   ],
+  "e_methanol": [
+    {
+      "metric": "Hydrogen per tonne of methanol",
+      "value": 0.188,
+      "unit": "t H2/t MeOH",
+      "conditions": "Stoichiometric",
+      "source": "IRENA and Methanol Institute, Innovation Outlook: Renewable Methanol (2021), section 2.3",
+      "url": "https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2021/Jan/IRENA_Innovation_Renewable_Methanol_2021.pdf",
+      "quote": "To produce 1 t of methanol, 0.188 t of H2 and 1.373 t of CO2 are needed.",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "CO2 per tonne of methanol",
+      "value": 1.373,
+      "unit": "t CO2/t MeOH",
+      "conditions": "Stoichiometric",
+      "source": "IRENA and Methanol Institute, Innovation Outlook: Renewable Methanol (2021), section 2.3",
+      "url": "https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2021/Jan/IRENA_Innovation_Renewable_Methanol_2021.pdf",
+      "quote": "To produce 1 t of methanol, 0.188 t of H2 and 1.373 t of CO2 are needed.",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Electricity per tonne including electrolysis",
+      "value": [
+        10,
+        11
+      ],
+      "unit": "MWh/t MeOH",
+      "conditions": "CO2 provided",
+      "source": "IRENA and Methanol Institute, Innovation Outlook: Renewable Methanol (2021)",
+      "url": "https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2021/Jan/IRENA_Innovation_Renewable_Methanol_2021.pdf",
+      "quote": "About 10-11 MWh of electricity are required to produce one tonne of e-methanol; most of it for the electrolysis of water (assuming CO2 is provided).",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Electrolysis electricity per tonne of hydrogen",
+      "value": 50,
+      "unit": "MWh/t H2",
+      "conditions": "Practical; 39.4 theoretical on HHV",
+      "source": "IRENA and Methanol Institute, Innovation Outlook: Renewable Methanol (2021), section 2.3",
+      "url": "https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2021/Jan/IRENA_Innovation_Renewable_Methanol_2021.pdf",
+      "quote": "Producing 1 t of hydrogen with a 100% theoretical efficiency requires 39.4 MWh of electricity (HHV of H2; 33.3 MWh/t for the LHV of H2). In practice, however, it is closer to 50 MWh/t",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Fixed capital, CRI Norway CO2 to methanol plant",
+      "value": 200000000.0,
+      "unit": "USD (2019), 300 t/d, 100 000 t/y",
+      "conditions": "CO2 and H2 feed; 2 000 USD per t/y",
+      "source": "IRENA and Methanol Institute, Innovation Outlook: Renewable Methanol (2021), Table 25 (Stefansson, 2019)",
+      "url": "https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2021/Jan/IRENA_Innovation_Renewable_Methanol_2021.pdf",
+      "quote": "CRI (Norway) CO2 and H2 300 100 000 200 2 000 Stefansson, 2019",
+      "model_type": "capex"
+    },
+    {
+      "metric": "Production cost, e-methanol from combined renewable CO2",
+      "value": [
+        820,
+        1620
+      ],
+      "unit": "USD/t MeOH",
+      "conditions": "Estimated 2015-2018 costs, no carbon credit, green H2 4 000 to 8 000 USD/t, CO2 10 to 50 USD/t",
+      "source": "IRENA and Methanol Institute, Innovation Outlook: Renewable Methanol (2021), Table 15",
+      "url": "https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2021/Jan/IRENA_Innovation_Renewable_Methanol_2021.pdf",
+      "quote": "Cost of methanol (USD/t MeOH) (b) With no carbon credit 820-1 620",
+      "model_type": "cost"
+    },
+    {
+      "metric": "Synthesis and distillation share of cost",
+      "value": [
+        30,
+        50
+      ],
+      "unit": "USD/t MeOH",
+      "conditions": "Once CO2 and H2 are supplied",
+      "source": "IRENA and Methanol Institute, Innovation Outlook: Renewable Methanol (2021), section 2.3 (Boulamanti and Moya, 2017)",
+      "url": "https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2021/Jan/IRENA_Innovation_Renewable_Methanol_2021.pdf",
+      "quote": "It will only represent about USD 30 to USD 50/t of the total cost of methanol production (Boulamanti and Moya, 2017).",
+      "model_type": "cost"
+    }
+  ],
   "_meta": {
     "compiled": "2026-11-14",
     "notes": "Every quote was seen in the source text. Gaps: methanol capex, NH3 equilibrium mole % table, sulphuric acid t steam/t acid.",
