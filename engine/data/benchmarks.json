@@ -719,13 +719,6 @@
       "model_type": "mass_balance"
     }
   ],
-  "_meta": {
-    "compiled": "2026-11-14",
-    "notes": "Every quote was seen in the source text. Gaps: methanol capex, NH3 equilibrium mole % table, sulphuric acid t steam/t acid.",
-    "aspirin_added": "2026-11-14: patent and HSDB figures, quotes checked against the live page text.",
-    "organics_added": "2026-11-14: ethanol, biodiesel, ethylene oxide and styrene figures re-checked against the source text; en dashes in source ranges written as hyphens.",
-    "batch_b_added": "2026-11-14: phenol and acetone, acetic acid, formaldehyde, ethylene (ethane cracking), ethylene glycol. Quotes seen in the source text; en dashes in ranges written as hyphens."
-  },
   "phenol_acetone": [
     {
       "metric": "Cumene per t phenol",
@@ -1332,5 +1325,302 @@
       "quote": "The estimated total capital investment for the direct hydration ethylene oxide process (EO-MEG) and indirect hydration through ethylene carbonate (EC-MEG) process used to produce MEG are both approximately the same amount of $70 million and the difference is within the uncertainty expected from the preliminary economic analysis (± 25%).",
       "model_type": "capex"
     }
-  ]
+  ],
+  "chlor_alkali": [
+    {
+      "metric": "Electricity for electrolysis, bipolar membrane cells (AC)",
+      "value": [
+        2279,
+        2865
+      ],
+      "unit": "kWh/t Cl2",
+      "conditions": "33 bipolar plants, EU-27 and EFTA, 2008 to 2010; average 2,574, median 2,573",
+      "source": "EU BREF Production of Chlor-alkali (JRC, 2014), Table 3.10",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/CAK_BREF_102014.pdf",
+      "quote": "Electrical energy use for electrolysis (alternating current) AC kWh/t Cl2 produced 2 279 2 865 2 574 2 573",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Electricity, cells plus other equipment (membrane, median plant)",
+      "value": 2800,
+      "unit": "kWh/t Cl2",
+      "conditions": "Median electrolysis 2,600 DC plus other electrical equipment about 200",
+      "source": "EU BREF Production of Chlor-alkali (JRC, 2014), Table 3.13 and section 3.3.4.5",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/CAK_BREF_102014.pdf",
+      "quote": "Electricity consumption DC kWh /t Cl2 produced 2 860 2 600 ... the median being approximately 200 kWh/t Cl2 produced (Table 3.12)",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Salt consumption",
+      "value": 1700,
+      "unit": "kg NaCl/t Cl2",
+      "conditions": "Brine recirculation plants, 62 data from 58 plants, 2008 to 2011; minimum 1,608",
+      "source": "EU BREF Production of Chlor-alkali (JRC, 2014), Table 3.3",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/CAK_BREF_102014.pdf",
+      "quote": "NaCl (2) 1 608 1 651 1 674 1 700 1 787 1 936 2 339",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Steam for caustic evaporation to 50%",
+      "value": [
+        0.46,
+        1.5
+      ],
+      "unit": "t steam/t NaOH (100%)",
+      "conditions": "40 membrane cell plants; average 0.736, median 0.703",
+      "source": "EU BREF Production of Chlor-alkali (JRC, 2014), Table 3.11",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/CAK_BREF_102014.pdf",
+      "quote": "Steam consumption for caustic evaporation (50 %) t steam/t caustic (100 %) 0.460 1.500 0.736 0.703",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Steam for brine and equipment heating",
+      "value": [
+        0.08,
+        1.27
+      ],
+      "unit": "t steam/t Cl2",
+      "conditions": "All cell techniques",
+      "source": "EU BREF Production of Chlor-alkali (JRC, 2014), section 3.3.4.5 and Table 3.12",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/CAK_BREF_102014.pdf",
+      "quote": "Reported consumption figures range from approximately 0.1 to 1.3 t steam/t Cl2 produced, the median being approximately 0.2 t steam/t Cl2 produced (Table 3.12).",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Chlorine liquefaction electricity",
+      "value": [
+        8,
+        200
+      ],
+      "unit": "kWh/t Cl2 liquefied",
+      "conditions": "All cell techniques, median about 50",
+      "source": "EU BREF Production of Chlor-alkali (JRC, 2014), section 3.3.4.5 and Table 3.12",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/CAK_BREF_102014.pdf",
+      "quote": "Reported electrical energy consumption figures for chlorine liquefaction range from approximately 10 to 200 kWh/t Cl2 liquefied, the median being approximately 50 kWh/t Cl2 liquefied.",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Caustic soda per tonne of chlorine",
+      "value": 1.128,
+      "unit": "t NaOH/t Cl2",
+      "conditions": "Stoichiometric ratio; practice 1.070 to 1.128",
+      "source": "EU BREF Production of Chlor-alkali (JRC, 2014), section 2.1",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/CAK_BREF_102014.pdf",
+      "quote": "more or less equal to the ratio of the molecular weights (40.00 / 35.45 = 1.128) ... In practice, the ratio ranges from 1.070 to 1.128 [ 3, Euro Chlor 2011 ].",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Fixed capital, new membrane cell plant",
+      "value": 1000,
+      "unit": "EUR (2010)/t annual Cl2 capacity, 100 kt/yr",
+      "conditions": "Size scaling PC = (100/C)^0.3 P100 (BREF Equation 2)",
+      "source": "EU BREF Production of Chlor-alkali (JRC, 2014), mercury cell conversion costs, PDF page 162 (Euro Chlor 2010)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/CAK_BREF_102014.pdf",
+      "quote": "By comparison, the costs for a completely new membrane cell plant are estimated to be approximately EUR 1 000/t annual Cl2 capacity.",
+      "model_type": "capex"
+    }
+  ],
+  "soda_ash": [
+    {
+      "metric": "Salt consumption (as brine)",
+      "value": [
+        1530,
+        1800
+      ],
+      "unit": "kg NaCl/t soda ash",
+      "conditions": "Indicative ranges of annual averages, EU Solvay plants (CEFIC-ESAPA 2004)",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Solids and Others (JRC, 2007), soda ash chapter, Table 2.11",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic-s_bref_0907.pdf",
+      "quote": "Raw brine NaCl (1530 - 1800) + water (4500 - 5200)",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Salt consumption",
+      "value": [
+        1.6,
+        1.7
+      ],
+      "unit": "t NaCl/t soda ash",
+      "conditions": "Practice with good grade brine",
+      "source": "Te-Pang Hou, Manufacture of Soda with Special Reference to the Ammonia Process (ACS Monograph, 1942)",
+      "url": "https://archive.org/details/dli.ernet.4162",
+      "quote": "The rate of consumption of salt per ton of soda ash made is thus 1.6-1.7 tons, which is the figure obtained in practice with a good grade of salt (brine).",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Limestone to lime kilns",
+      "value": [
+        1050,
+        1600
+      ],
+      "unit": "kg/t soda ash",
+      "conditions": "Inlet lime kiln (1,090 to 1,820 inlet plant)",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Solids and Others (JRC, 2007), soda ash chapter, Table 2.11",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic-s_bref_0907.pdf",
+      "quote": "Limestone 1050 - 1600 (inlet lime kiln) 1090 - 1820 (inlet plant)",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Kiln fuel",
+      "value": [
+        2.2,
+        2.8
+      ],
+      "unit": "GJ/t soda ash",
+      "conditions": "Lime kiln fuels",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Solids and Others (JRC, 2007), soda ash chapter, Table 2.11",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic-s_bref_0907.pdf",
+      "quote": "Fuels (lime kiln) 2.2 - 2.8",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Ammonia make-up",
+      "value": [
+        0.8,
+        2.1
+      ],
+      "unit": "kg NH3/t soda ash",
+      "conditions": "",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Solids and Others (JRC, 2007), soda ash chapter, Table 2.11",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic-s_bref_0907.pdf",
+      "quote": "NH3 make up 0.8 - 2.1 (8)",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Ammonia circulating",
+      "value": [
+        500,
+        550
+      ],
+      "unit": "kg NH3/t soda ash",
+      "conditions": "Loss under 0.5% of the loop",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Solids and Others (JRC, 2007), soda ash chapter, section 2.2.1.2.7",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic-s_bref_0907.pdf",
+      "quote": "This loop circulates roughly 500 to 550 kg NH 3/t soda ash from which the ammonia loss is less than 0.5 % of this flowrate.",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Steam for ammonia recovery",
+      "value": [
+        1300,
+        2400
+      ],
+      "unit": "kg/t soda ash",
+      "conditions": "LP steam",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Solids and Others (JRC, 2007), soda ash chapter, section 2.3.2.1",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic-s_bref_0907.pdf",
+      "quote": "for recovery of ammonia (depending on the process applied): 1300 to 2400 kg/t soda ash",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Steam for bicarbonate decomposition",
+      "value": [
+        1100,
+        1300
+      ],
+      "unit": "kg/t soda ash",
+      "conditions": "IP steam, light ash",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Solids and Others (JRC, 2007), soda ash chapter, section 2.3.2.1",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic-s_bref_0907.pdf",
+      "quote": "for decomposition of sodium bicarbonate: 1100 to 1300 kg/t soda ash",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Process fuels including electricity",
+      "value": [
+        7.5,
+        10.8
+      ],
+      "unit": "GJ/t soda ash (dense)",
+      "conditions": "Excludes lime kiln fuel; includes about 0.9 GJ/t for densification (light ash basis 6.6 to 9.9)",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Solids and Others (JRC, 2007), soda ash chapter, Table 2.11",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic-s_bref_0907.pdf",
+      "quote": "Fuels (soda ash)(2), including electricity 7.5 - 10.8 ... the energy required for densification to convert soda ash light into soda ash dense amounts approximately to 0.9 GJ/t soda ash",
+      "model_type": "energy"
+    },
+    {
+      "metric": "CO2 to air",
+      "value": [
+        200,
+        400
+      ],
+      "unit": "kg/t soda ash",
+      "conditions": "",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Solids and Others (JRC, 2007), soda ash chapter, Table 2.11",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic-s_bref_0907.pdf",
+      "quote": "CO2 200 - 400",
+      "model_type": "emission"
+    },
+    {
+      "metric": "Distiller waste, chloride / calcium / sodium / suspended solids",
+      "value": {
+        "Cl-": [
+          850,
+          1100
+        ],
+        "Ca2+": [
+          340,
+          400
+        ],
+        "Na+": [
+          160,
+          220
+        ],
+        "suspended solids": [
+          90,
+          700
+        ]
+      },
+      "unit": "kg/t soda ash",
+      "conditions": "Outlet distillation",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Solids and Others (JRC, 2007), soda ash chapter, Table 2.11",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic-s_bref_0907.pdf",
+      "quote": "Cl- 850 - 1100 Ca2+ 340 - 400 Na+ 160 - 220 ... Suspended solids 90 - 700",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Distiller waste volume",
+      "value": 10,
+      "unit": "m3/t soda ash",
+      "conditions": "Illustrative specific blow-off volume",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Solids and Others (JRC, 2007), soda ash chapter, Table 2.13 note",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic-s_bref_0907.pdf",
+      "quote": "For a specific volume blow-off of NH3 recovery: 10 m3/t soda ash",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Burnt lime CaO content",
+      "value": [
+        75,
+        90
+      ],
+      "unit": "%",
+      "conditions": "Raw burned lime from soda ash kilns",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Solids and Others (JRC, 2007), soda ash chapter, section 2.2.1.2",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic-s_bref_0907.pdf",
+      "quote": "Raw burned lime produced by lime kilns associated with a soda ash plant contains approximately 75 to 90 % of CaO.",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Electricity",
+      "value": [
+        50,
+        130
+      ],
+      "unit": "kWh/t soda ash",
+      "conditions": "",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Solids and Others (JRC, 2007), soda ash chapter, section 2.3.2.4",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic-s_bref_0907.pdf",
+      "quote": "with the consumption of electricity in a range of between 50 and 130 kWh/t soda ash",
+      "model_type": "energy"
+    }
+  ],
+  "_meta": {
+    "compiled": "2026-11-14",
+    "notes": "Every quote was seen in the source text. Gaps: methanol capex, NH3 equilibrium mole % table, sulphuric acid t steam/t acid.",
+    "aspirin_added": "2026-11-14: patent and HSDB figures, quotes checked against the live page text.",
+    "organics_added": "2026-11-14: ethanol, biodiesel, ethylene oxide and styrene figures re-checked against the source text; en dashes in source ranges written as hyphens.",
+    "batch_b_added": "2026-11-14: phenol and acetone, acetic acid, formaldehyde, ethylene (ethane cracking), ethylene glycol. Quotes seen in the source text; en dashes in ranges written as hyphens.",
+    "batch_a_added": "2026-11-14: chlor-alkali (CAK BREF 2014), soda ash (LVIC-S BREF 2007, Hou 1942), hydrogen peroxide, ammonium nitrate, e-methanol. Quotes seen in the source text; en dashes in ranges written as hyphens."
+  }
 }

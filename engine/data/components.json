@@ -3008,6 +3008,52 @@
     "max_rel_err": 0.06571912922235379
    }
   },
+  "SiO2": {
+   "id": "SiO2",
+   "name": "Silica (limestone impurities)",
+   "formula": "SiO2",
+   "CAS": "7631-86-9",
+   "MW": 60.0843,
+   "Tb": 2503.15,
+   "Tm": 437.65,
+   "Tc": 3899.7704,
+   "Pc": 61207607.0,
+   "omega": 1.1409116,
+   "Hf_gas": -305430.0,
+   "Gf_gas": -306914.787,
+   "S0_gas": 228.98,
+   "Hf_std": null,
+   "phase_298": "s",
+   "Hvap_Tb": 424490.75690210046,
+   "Hvap_298": null,
+   "LHV": null,
+   "Cp_liquid_298": 85.7719772298286,
+   "Cp_solid_298": 46.54658625003293,
+   "rho_298": 3440.1670826418326,
+   "flash_point_K": null,
+   "autoignition_K": null,
+   "LFL": null,
+   "UFL": null,
+   "TWA": null,
+   "STEL": null,
+   "cp_gas": {
+    "a": 61.70358995860363,
+    "b": 9.412793541472506e-05,
+    "c": 7.884110540435167e-17,
+    "d": -3.4320115499929443e-20,
+    "Tmin": 298.15,
+    "Tmax": 1200.0,
+    "max_rel_err": 2.290526736126472e-14
+   },
+   "antoine": {
+    "A": 29.397530312750813,
+    "B": 45405.77545795219,
+    "C": 39.96135908724116,
+    "Tmin": 1501.89,
+    "Tmax": 3379.2525000000005,
+    "max_rel_err": 0.015275209200108053
+   }
+  },
   "Starch": {
    "id": "Starch",
    "name": "Starch (as anhydroglucose)",

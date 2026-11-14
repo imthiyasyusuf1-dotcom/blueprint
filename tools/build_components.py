@@ -85,6 +85,8 @@ COMPONENTS = {
     # hydrogen peroxide working solution: the aromatic quinone solvent (EU BREF LVOC 2017, 12.3.3 lists
     # trimethylbenzene among the alkylanthraquinone solvents)
     "TMB": ("1,2,4-trimethylbenzene", "C9H12", "1,2,4-Trimethylbenzene (aromatic solvent)"),
+    # soda ash: inert limestone impurities (silica and clay), lumped as quartz
+    "SiO2": ("silicon dioxide", "SiO2", "Silica (limestone impurities)"),
 }
 
 # Standard heats of combustion (lower heating value) are computed by chemicals.

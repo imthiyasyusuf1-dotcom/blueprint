@@ -608,6 +608,81 @@
       "source": "Expert Market Research (free snippet)",
       "url": "https://www.expertmarketresearch.com/price-forecast/naphtha-price-trends",
       "quote": "Global naphtha prices in Q1 2026 stood at USD 0.65 per KG in China, the highest among tracked markets, USD 0.63 per KG in Saudi Arabia, USD 0.62 per KG in India, and USD 0.58 per KG in the United States"
+    },
+    "chlorine": {
+      "value": 645.54,
+      "unit": "USD/t",
+      "basis": "USA FOB, liquid chlorine, October 2026 (Germany FOB about 379 in August 2026)",
+      "year": 2026,
+      "source": "Procurement Resource (free snippet)",
+      "url": "https://www.procurementresource.com/resource-center/chlorine-price-trends",
+      "quote": "| Chlorine | USA | FOB | USD 645.54/MT | October 2026 |",
+      "alt": {
+        "value": 680,
+        "source": "IMARC Group chlorine pricing report",
+        "url": "https://www.imarcgroup.com/chlorine-pricing-report",
+        "quote": "The chlorine prices in September 2026 were 0.33 USD/Kg in Northeast Asia, 0.36 USD/Kg in Europe, and 0.68 USD/Kg in North America."
+      }
+    },
+    "caustic_soda": {
+      "value": 372.0,
+      "unit": "USD/t",
+      "basis": "USA, September 2026. Source does not state the concentration basis; US caustic is conventionally quoted per tonne of 100% NaOH (dry basis) for 50% liquor, so the model prices tonnes of NaOH (100%). If the figure were per tonne of 50% liquor the 100% basis value would be about double, so this reading is the conservative one.",
+      "year": 2026,
+      "source": "IMARC Group caustic soda pricing report",
+      "url": "https://www.imarcgroup.com/caustic-soda-pricing-report",
+      "quote": "During the third quarter of 2026, the caustic soda prices in the USA reached 372 USD/MT in September.",
+      "alt": {
+        "value": 399.13,
+        "source": "Procurement Resource (free snippet)",
+        "url": "https://www.procurementresource.com/resource-center/caustic-soda-price-trends",
+        "quote": "In the USA, average caustic soda prices declined from nearly USD 412.00/MT (FOB) in July to roughly USD 399.13/MT in August, down ~3.1%."
+      }
+    },
+    "salt_rock": {
+      "value": 54.0,
+      "unit": "USD/t",
+      "basis": "US rock salt, average unit value f.o.b. mine and plant, 2025 estimate (2024: 52.95). Vacuum and open pan salt 260, salt in brine 11.",
+      "year": 2025,
+      "source": "USGS Mineral Commodity Summaries 2026, Salt",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-salt.pdf",
+      "quote": "Price, average unit value of bulk, pellets and packaged salt, free on board (f.o.b.) mine and plant, dollars per metric ton: Vacuum and open pan salt 203.72 217.58 238.51 259.69 260 Solar salt 153.52 128.87 142.80 152.87 150 Rock salt 59.88 56.86 52.28 52.95 54 Salt in brine 8.14 9.11 10.20 10.56 11"
+    },
+    "salt_brine": {
+      "value": 11.0,
+      "unit": "USD/t",
+      "basis": "US salt in brine, average unit value f.o.b. mine and plant, per tonne of NaCl contained, 2025 estimate (2024: 10.56)",
+      "year": 2025,
+      "source": "USGS Mineral Commodity Summaries 2026, Salt",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-salt.pdf",
+      "quote": "Rock salt 59.88 56.86 52.28 52.95 54 Salt in brine 8.14 9.11 10.20 10.56 11"
+    },
+    "soda_ash": {
+      "value": 150.0,
+      "unit": "USD/t",
+      "basis": "US natural soda ash, average unit value of sales f.o.b. mine or plant, 2025 estimate (2024: 169.35)",
+      "year": 2025,
+      "source": "USGS Mineral Commodity Summaries 2026, Soda ash",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-soda-ash.pdf",
+      "quote": "Price, average unit value of sales (natural source), free on board (f.o.b.) mine or plant: Dollars per metric ton 133.37 178.52 211.48 169.35 150"
+    },
+    "limestone": {
+      "value": 18.5,
+      "unit": "USD/t",
+      "basis": "US crushed stone (about 70% limestone and dolomite), average unit value, 2025 estimate",
+      "year": 2025,
+      "source": "USGS Mineral Commodity Summaries 2026, Stone (crushed)",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-stone-crushed.pdf",
+      "quote": "Price, average unit value, dollars per metric ton 13.26 14.31 15.86 e17.50 18.50"
+    },
+    "coke": {
+      "value": 328.41,
+      "unit": "USD/t",
+      "basis": "Metallurgical/foundry coke FOB, midpoint of the August 2026 regional range 294.81 (Australia) to 362.01 (Poland)",
+      "year": 2026,
+      "source": "SourceBySpec, Foundry coke price 2026",
+      "url": "https://www.sourcebyspec.com/news/foundry-coke-price-2026-regional-fob-quotes-market-sizing-and-cost-drivers.html",
+      "quote": "with China at USD 361.55/MT, India at USD 357.00/MT, Colombia at USD 300.00/MT, Poland at USD 362.01/MT, and Australia at USD 294.81/MT, all as of August 2026"
     }
   },
   "emission_factors": {
