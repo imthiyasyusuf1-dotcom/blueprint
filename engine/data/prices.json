@@ -116,22 +116,46 @@
       }
     },
     "acetylsalicylic_acid": {
-      "value": 2887,
+      "value": 2488,
       "unit": "USD/t",
-      "basis": "Bulk API, United States, Q4 2025 (2.887 USD/kg)",
+      "basis": "Bulk aspirin, China, December 2025 (Q4 2025). Grade not stated.",
       "year": 2025,
-      "source": "Expert Market Research (free snippet)",
-      "url": "https://www.expertmarketresearch.com/price-forecast/acetylsalicylic-acid-price-trends",
-      "quote": "Prices there firmed from USD 2.70/KG in Q1 to USD 2.887/KG by Q4, up 6.9%"
+      "source": "IMARC Group, Aspirin Pricing Report",
+      "url": "https://www.imarcgroup.com/aspirin-pricing-report",
+      "quote": "During the fourth quarter of 2025, the aspirin prices in China reached 2488 USD/MT in December.",
+      "alt": {
+        "value": 2887,
+        "unit": "USD/t",
+        "basis": "USA, December 2025, same report",
+        "quote": "During the fourth quarter of 2025, the aspirin prices in the USA reached 2887 USD/MT in December."
+      },
+      "previous": {
+        "value": 2887,
+        "unit": "USD/t",
+        "basis": "Bulk API, United States, Q4 2025 (2.887 USD/kg)",
+        "year": 2025,
+        "source": "Expert Market Research (free snippet)",
+        "url": "https://www.expertmarketresearch.com/price-forecast/acetylsalicylic-acid-price-trends",
+        "quote": "Prices there firmed from USD 2.70/KG in Q1 to USD 2.887/KG by Q4, up 6.9%"
+      }
     },
     "salicylic_acid": {
-      "value": 5600,
+      "value": 2100,
       "unit": "USD/t",
-      "basis": "Germany (highest-cost region), Q2 2026",
-      "year": 2026,
-      "source": "Expert Market Research (free snippet)",
-      "url": "https://www.expertmarketresearch.com/price-forecast/salicylic-acid-price-trends",
-      "quote": "Salicylic Acid prices in Germany, the highest-cost reporting region, rose 1.8% in Q2 2026 to USD 5,600.00/MT from USD 5,500.00/MT"
+      "basis": "Northeast Asia, December 2025 (Q4 2025), 2.10 USD/kg. Same publisher, region and month as the aspirin price. Grade not stated.",
+      "year": 2025,
+      "source": "IMARC Group, Salicylic Acid Pricing Report",
+      "url": "https://www.imarcgroup.com/salicylic-acid-pricing-report",
+      "quote": "Northeast Asia: The salicylic acid prices in Northeast Asia reached 2.10 USD/KG in December 2025.",
+      "previous": {
+        "value": 5600,
+        "unit": "USD/t",
+        "basis": "Germany (highest-cost region), Q2 2026",
+        "year": 2026,
+        "source": "Expert Market Research (free snippet)",
+        "url": "https://www.expertmarketresearch.com/price-forecast/salicylic-acid-price-trends",
+        "quote": "Salicylic Acid prices in Germany, the highest-cost reporting region, rose 1.8% in Q2 2026 to USD 5,600.00/MT from USD 5,500.00/MT"
+      }
     },
     "acetic_anhydride": {
       "value": 890,

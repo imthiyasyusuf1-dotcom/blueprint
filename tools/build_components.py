@@ -57,6 +57,33 @@ COMPONENTS = {
 
 # Standard heats of combustion (lower heating value) are computed by chemicals.
 
+# Liquid heats of formation the packages lack, taken from cited measurements.
+HF_STD_CITED = {
+    # NIST WebBook, triolein (https://webbook.nist.gov/cgi/cbook.cgi?ID=C122327&Mask=2), from the heat of
+    # combustion of Freedman, Bagby et al. (1989): "Corresponding Δ f Hº liquid = -2193.7 kJ/mol"
+    "Triolein": (-2193700.0, "NIST WebBook C122327, Freedman, Bagby et al. 1989, liquid"),
+}
+
+# Pseudo components that the chemicals package does not hold. Corn is split into starch
+# (anhydroglucose units) and the non fermentable solids that leave as distillers grains.
+# Starch: heat of formation from solid glucose (NIST, -1273.3 kJ/mol) less liquid water
+# (-285.83 kJ/mol), so hydrolysis is taken as thermoneutral. Corn solids pass through
+# unreacted, so their heat of formation cancels; Cp about 1.5 kJ/kg K for dry grain.
+MANUAL = {
+    "Starch": {"id": "Starch", "name": "Starch (as anhydroglucose)", "formula": "C6H10O5", "CAS": "9005-25-8",
+               "MW": 162.1406, "Tb": None, "Tm": None, "Tc": None, "Pc": None, "omega": None,
+               "Hf_gas": -987470.0, "Gf_gas": None, "S0_gas": None, "Hf_std": -987470.0, "phase_298": "s",
+               "Hvap_Tb": None, "Hvap_298": None, "LHV": None, "Cp_liquid_298": 243.0, "Cp_solid_298": 243.0,
+               "rho_298": 1500.0, "flash_point_K": None, "autoignition_K": None, "LFL": None, "UFL": None,
+               "TWA": None, "STEL": None, "cp_gas": None, "antoine": None},
+    "CornSolids": {"id": "CornSolids", "name": "Corn protein, fibre, oil and ash", "formula": "C6H10O5", "CAS": "",
+                   "MW": 162.1406, "Tb": None, "Tm": None, "Tc": None, "Pc": None, "omega": None,
+                   "Hf_gas": -987470.0, "Gf_gas": None, "S0_gas": None, "Hf_std": -987470.0, "phase_298": "s",
+                   "Hvap_Tb": None, "Hvap_298": None, "LHV": None, "Cp_liquid_298": 243.0, "Cp_solid_298": 243.0,
+                   "rho_298": 1300.0, "flash_point_K": None, "autoignition_K": None, "LFL": None, "UFL": None,
+                   "TWA": None, "STEL": None, "cp_gas": None, "antoine": None},
+}
+
 
 def fit_cp(chem, T_lo=298.15, T_hi=1200.0, n=40):
     """Least squares fit Cp_ig [J/mol/K] = a + bT + cT^2 + dT^3 over T_lo..T_hi."""
@@ -203,6 +230,10 @@ def main():
             pass
         rec["antoine"] = fit_antoine(c)
         out[cid] = rec
+    out.update(MANUAL)
+    for cid, (hf, why) in HF_STD_CITED.items():
+        out[cid]["Hf_std"] = hf
+        out[cid]["Hf_std_source"] = why
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     meta = {
         "_source": "Generated from the open source Python packages chemicals and thermo (Caleb Bell, MIT licence). "

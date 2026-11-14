@@ -139,12 +139,12 @@
       "metric": "Theoretical ethanol yield from glucose",
       "value": 0.511,
       "unit": "g ethanol / g glucose",
-      "conditions": "Gay-Lussac stoichiometry; industrial 0.46-0.48 g/g",
+      "conditions": "Gay-Lussac stoichiometry (2 x 46.07 / 180.16)",
       "source": "Fermentation Yield Calculation, bioprocesstools.com",
       "url": "https://bioprocesstools.com/blog/fermentation-yield-calculation/",
-      "quote": "For ethanol from glucose, industrial YP/S values reach 0.46-0.48 g/g against a theoretical maximum of 0.511 g/g.",
+      "quote": "the theoretical Y P/S ceiling for ethanol from glucose is 0.511 g/g",
       "model_type": "mass_balance",
-      "note": "Quote taken from search-result snippet; secondary source. Value is pure stoichiometry (2 x 46.07 / 180.16)."
+      "note": "Secondary source; the value is pure stoichiometry. Quote re-checked against the live page text."
     },
     {
       "metric": "Plant construction cost per annual gallon",
@@ -158,6 +158,46 @@
       "year": 2007,
       "currency": "USD",
       "capacity": "100 million gal/yr"
+    },
+    {
+      "metric": "Electricity use, dry mill",
+      "value": 0.75,
+      "unit": "kWh / gal ethanol",
+      "conditions": "2012 survey average (2008 value 0.73)",
+      "source": "2012 Corn Ethanol: Emerging Plant Energy and Environmental Technologies, Mueller and Kwik, 2013",
+      "url": "https://d35t1syewk4d42.cloudfront.net/file/1462/2012-Corn-Ethanol-Emerging-Plant-Energy-and-Environmental-Technologies.pdf",
+      "quote": "Electricity Use (kWh/gallon) 0.75 0.73",
+      "model_type": "energy"
+    },
+    {
+      "metric": "DDG yield, dry basis",
+      "value": 15.73,
+      "unit": "lb / bushel corn",
+      "conditions": "2012 survey average, includes corn oil left in the DDG",
+      "source": "2012 Corn Ethanol: Emerging Plant Energy and Environmental Technologies, Mueller and Kwik, 2013",
+      "url": "https://d35t1syewk4d42.cloudfront.net/file/1462/2012-Corn-Ethanol-Emerging-Plant-Energy-and-Environmental-Technologies.pdf",
+      "quote": "DDG Yield (dry basis) including corn oil (lbs/bu) 15.73 15.81",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Fresh water use",
+      "value": 2.7,
+      "unit": "gal water / gal ethanol",
+      "conditions": "2012 survey average",
+      "source": "2012 Corn Ethanol: Emerging Plant Energy and Environmental Technologies, Mueller and Kwik, 2013",
+      "url": "https://d35t1syewk4d42.cloudfront.net/file/1462/2012-Corn-Ethanol-Emerging-Plant-Energy-and-Environmental-Technologies.pdf",
+      "quote": "Water Use (gallon/gallon) 2.70 2.72",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Corn starch content",
+      "value": 72.0,
+      "unit": "% of dry matter",
+      "conditions": "Yellow dent corn, dry basis",
+      "source": "Corn Grain Composition (ID-328), Purdue University Extension",
+      "url": "https://www.extension.purdue.edu/extmedia/ID/ID-328.pdf",
+      "quote": "Starch 72",
+      "model_type": "input"
     }
   ],
   "hydrogen": [
@@ -355,7 +395,61 @@
       "model_type": "equilibrium"
     }
   ],
-  "aspirin": [],
+  "aspirin": [
+    {
+      "metric": "Overall yield, earlier commercial aspirin processes (crystallisation route)",
+      "value": 91,
+      "unit": "% of theoretical (on salicylic acid)",
+      "conditions": "Salicylic acid + acetic anhydride, crystallisation, filtration and mother liquor rework; cited as prior art",
+      "source": "US Patent 3,235,583, Preparation of aspirin (1966)",
+      "url": "https://patents.google.com/patent/US3235583A/en",
+      "quote": "earlier aspirin processes where the over-all yield of aspirin was in the range of 91% of theoretical",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Commercial batch yield, catalysed process",
+      "value": 97.4,
+      "unit": "% of theoretical",
+      "conditions": "1,400 lb salicylic acid batch, acetic anhydride in excess, acetic acid diluent, about 85 C, distilled to dryness under vacuum",
+      "source": "US Patent 3,373,187, Method of preparing aspirin (1968)",
+      "url": "https://patents.google.com/patent/US3373187A/en",
+      "quote": "The yield was 97.4% based on the theoretical yield.",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Crystals recovered on cooling",
+      "value": 95,
+      "unit": "% of theoretical (lower bound)",
+      "conditions": "Same process, crystals recovered directly by cooling the vessel",
+      "source": "US Patent 3,373,187 (1968)",
+      "url": "https://patents.google.com/patent/US3373187A/en",
+      "quote": "upwards of 95% of theoretical",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Acetic anhydride excess over stoichiometric",
+      "value": [
+        2,
+        20
+      ],
+      "unit": "% molar excess (18% preferred)",
+      "conditions": "Reaction at 40 to 95 C under progressive vacuum",
+      "source": "US Patent 3,235,583 (1966)",
+      "url": "https://patents.google.com/patent/US3235583A/en",
+      "quote": "by about 2% to about 20% (18% being preferred)",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Reaction temperature, industrial acetylation",
+      "value": 90,
+      "unit": "C (upper limit)",
+      "conditions": "In a solvent (acetic acid, aromatic or chlorinated hydrocarbons) or with acid or tertiary amine catalysts",
+      "source": "PubChem HSDB, Methods of Manufacturing, citing Ullmann's Encyclopedia of Industrial Chemistry 6th ed. (2003)",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/2244/JSON?heading=Methods+of+Manufacturing",
+      "quote": "Acetylsalicylic acid is prepared by reacting acetic anhydride with salicylic acid at a temperature of <90 °C either in a solvent (e.g., acetic acid or aromatic, acyclic, or chlorinated hydrocarbons) or by the addition of catalysts such as acids or tertiary amines.",
+      "model_type": "energy"
+    }
+  ],
   "urea": [
     {
       "metric": "NH3 consumption, CO2 stripping (Stamicarbon) total recycle",
@@ -542,22 +636,22 @@
       "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
       "quote": "Air Process [default process] Default (70) 0.90 0.863 75 0.85 0.663 80 0.80 0.5",
       "model_type": "mass_balance"
+    },
+    {
+      "metric": "Electricity use, EO manufacture",
+      "value": [
+        360,
+        627
+      ],
+      "unit": "Btu / lb EO",
+      "conditions": "US 1997 range, average 494",
+      "source": "Energy and Environmental Profile of the U.S. Chemical Industry, US DOE Office of Industrial Technologies, 2000, Table 2-5",
+      "url": "https://www.osti.gov/servlets/purl/1218625",
+      "quote": "Table 2-5. Estimated Energy Use in Ethylene Oxide Manufacture - 1997 ... Electricitya 360 -627 494",
+      "model_type": "energy"
     }
   ],
   "styrene": [
-    {
-      "metric": "Ethylbenzene conversion",
-      "value": [
-        80,
-        90
-      ],
-      "unit": "%",
-      "conditions": "Adiabatic EB dehydrogenation with steam, multi-stage (overall with recycle)",
-      "source": "Energy and Environmental Profile of the U.S. Chemical Industry, US DOE Office of Industrial Technologies, 2000",
-      "url": "https://www.osti.gov/servlets/purl/1218625",
-      "quote": "Conversion of ethylbenzene can be as high as 80-90 percent.",
-      "model_type": "mass_balance"
-    },
     {
       "metric": "Styrene yield from EB dehydrogenation",
       "value": [
@@ -574,12 +668,35 @@
     },
     {
       "metric": "Process energy, styrene manufacture",
-      "value": 16891,
+      "value": [
+        14370,
+        19412
+      ],
       "unit": "Btu / lb styrene",
-      "conditions": "US average, EB dehydrogenation",
+      "conditions": "US 1997 range, average 16,891, EB dehydrogenation",
       "source": "Energy and Environmental Profile of the U.S. Chemical Industry, US DOE Office of Industrial Technologies, 2000",
       "url": "https://www.osti.gov/servlets/purl/1218625",
-      "quote": "Key Energy and Environmental Facts - Styrene Manufacture ... Process Energy: 16,891 Btu/lb",
+      "quote": "Table 4-6. Estimated Energy Use in Styrene Manufacture - 1997 ... NET PROCESS ENERGY 14370 - 19,412 16,891",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Ethylbenzene per lb styrene",
+      "value": 1.085,
+      "unit": "lb / lb styrene",
+      "conditions": "Net use, unreacted EB recycled",
+      "source": "Energy and Environmental Profile of the U.S. Chemical Industry, US DOE Office of Industrial Technologies, 2000, Table 4-6 note d",
+      "url": "https://www.osti.gov/servlets/purl/1218625",
+      "quote": "Stoichiometric ratios: 1.085 lbs ethylbenzene for every lb of styrene",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Heat of combustion of the ethylbenzene feed",
+      "value": 20058,
+      "unit": "Btu / lb styrene",
+      "conditions": "Feedstock energy, US 1997",
+      "source": "Energy and Environmental Profile of the U.S. Chemical Industry, US DOE Office of Industrial Technologies, 2000, Table 4-6",
+      "url": "https://www.osti.gov/servlets/purl/1218625",
+      "quote": "20,058 - 20,058 20,058 130.4 ... d Feedstock energy based on heat of combustion of ethylbenzene (Perry 1984)",
       "model_type": "energy"
     }
   ],
@@ -604,6 +721,8 @@
   ],
   "_meta": {
     "compiled": "2026-11-14",
-    "notes": "Every quote was seen in the source text. Gaps: aspirin (no accessible industrial source), methanol capex, NH3 equilibrium mole % table, sulphuric acid t steam/t acid."
+    "notes": "Every quote was seen in the source text. Gaps: methanol capex, NH3 equilibrium mole % table, sulphuric acid t steam/t acid.",
+    "aspirin_added": "2026-11-14: patent and HSDB figures, quotes checked against the live page text.",
+    "organics_added": "2026-11-14: ethanol, biodiesel, ethylene oxide and styrene figures re-checked against the source text; en dashes in source ranges written as hyphens."
   }
 }
