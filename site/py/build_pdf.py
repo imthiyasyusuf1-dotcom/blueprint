@@ -839,7 +839,7 @@ def cover(pdf, d):
         ("Net present value", money(e.get("npv")),
          "At {} discount rate".format(pct(rate, 0, frac=True)) if rate is not None else None),
         ("Internal rate of return", pct(irr, 1, frac=True) if irr is not None else "None",
-         "After tax at {}".format(pct(tax, 0, frac=True)) if tax is not None else None),
+         ("After tax at {}".format(pct(tax, 0, frac=True)) if tax is not None else None) if irr is not None else "Never pays back"),
         ("Payback period", (ffix(pb, 1) + " years") if pb is not None else "-",
          "After start-up" if pb is not None else None),
     ]
@@ -2054,7 +2054,7 @@ def economics_page(pdf, d):
              ("Cost of manufacture", money(e.get("com")), "per year"),
              ("Profit before tax", money(e.get("annual_profit_before_tax")), "per year"),
              ("Net present value", money(e.get("npv")), None),
-             ("Internal rate of return", pct(irr, 1, frac=True) if irr is not None else "None, never pays back", None),
+             ("Internal rate of return", pct(irr, 1, frac=True) if irr is not None else "None", None if irr is not None else "Never pays back"),
              ("Payback", ffix(pb, 1) + " years" if pb is not None else "-", None)]
     for i, (lab, val, sub) in enumerate(cards):
         pdf.stat_card(x0 + (i % 3) * (w3 + gap), y + (i // 3) * (19 + gap), w3, 19, lab, val, sub)
