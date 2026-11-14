@@ -1794,6 +1794,122 @@
       "model_type": "energy"
     }
   ],
+  "hydrogen_peroxide": [
+    {
+      "metric": "Hydrogen per tonne",
+      "value": [
+        60,
+        70
+      ],
+      "unit": "kg/t H2O2",
+      "conditions": "Anthraquinone autoxidation process, per tonne of H2O2 (100%)",
+      "source": "EU BREF Large Volume Organic Chemicals (2017), chapter 12, Table 12.4",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/JRC109279_LVOC_Bref.pdf",
+      "quote": "Table 12.4: Input of a hydrogen peroxide plant Raw material kg/t of H2O2 produced (100 %) Hydrogen 60-70 Oxygen 1 000-1 300 (1) Quinone 0.5-2.5 (2) Solvents 2-5 ... Demineralised water 1-2 m3/t ... (1) Corresponding to 3 300-4 600 Nm3 of air.",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Oxygen per tonne",
+      "value": [
+        1000,
+        1300
+      ],
+      "unit": "kg/t H2O2",
+      "conditions": "Anthraquinone autoxidation process, per tonne of H2O2 (100%)",
+      "source": "EU BREF Large Volume Organic Chemicals (2017), chapter 12, Table 12.4",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/JRC109279_LVOC_Bref.pdf",
+      "quote": "Table 12.4: Input of a hydrogen peroxide plant Raw material kg/t of H2O2 produced (100 %) Hydrogen 60-70 Oxygen 1 000-1 300 (1) Quinone 0.5-2.5 (2) Solvents 2-5 ... Demineralised water 1-2 m3/t ... (1) Corresponding to 3 300-4 600 Nm3 of air.",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Process air",
+      "value": [
+        3300,
+        4600
+      ],
+      "unit": "Nm3/t H2O2",
+      "conditions": "Anthraquinone autoxidation process, per tonne of H2O2 (100%)",
+      "source": "EU BREF Large Volume Organic Chemicals (2017), chapter 12, Table 12.4",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/JRC109279_LVOC_Bref.pdf",
+      "quote": "Table 12.4: Input of a hydrogen peroxide plant Raw material kg/t of H2O2 produced (100 %) Hydrogen 60-70 Oxygen 1 000-1 300 (1) Quinone 0.5-2.5 (2) Solvents 2-5 ... Demineralised water 1-2 m3/t ... (1) Corresponding to 3 300-4 600 Nm3 of air.",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Quinone make up",
+      "value": [
+        0.5,
+        2.5
+      ],
+      "unit": "kg/t H2O2",
+      "conditions": "Anthraquinone autoxidation process, per tonne of H2O2 (100%)",
+      "source": "EU BREF Large Volume Organic Chemicals (2017), chapter 12, Table 12.4",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/JRC109279_LVOC_Bref.pdf",
+      "quote": "Table 12.4: Input of a hydrogen peroxide plant Raw material kg/t of H2O2 produced (100 %) Hydrogen 60-70 Oxygen 1 000-1 300 (1) Quinone 0.5-2.5 (2) Solvents 2-5 ... Demineralised water 1-2 m3/t ... (1) Corresponding to 3 300-4 600 Nm3 of air.",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Demineralised water",
+      "value": [
+        1,
+        2
+      ],
+      "unit": "m3/t H2O2",
+      "conditions": "Anthraquinone autoxidation process, per tonne of H2O2 (100%)",
+      "source": "EU BREF Large Volume Organic Chemicals (2017), chapter 12, Table 12.4",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/JRC109279_LVOC_Bref.pdf",
+      "quote": "Table 12.4: Input of a hydrogen peroxide plant Raw material kg/t of H2O2 produced (100 %) Hydrogen 60-70 Oxygen 1 000-1 300 (1) Quinone 0.5-2.5 (2) Solvents 2-5 ... Demineralised water 1-2 m3/t ... (1) Corresponding to 3 300-4 600 Nm3 of air.",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Total net energy",
+      "value": [
+        2.9,
+        5.7
+      ],
+      "unit": "GJ/t H2O2",
+      "conditions": "Anthraquinone autoxidation process, per tonne of H2O2 (100%), three plants, 50% product",
+      "source": "EU BREF Large Volume Organic Chemicals (2017), chapter 12, Table 12.5",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/JRC109279_LVOC_Bref.pdf",
+      "quote": "Table 12.5: Energy data from the data collection (2012) Energy (GJ/t of H2O2) Total net consumption 2.9-5.7 Distillation net consumption 0.3-1.5 (1) Compression of air 1.4 (2) Heat recovery from process (mainly vapour recompression and heat exchangers) 1.7-4.2 (1) Referring to a hydrogen peroxide product concentration of 50 wt-%.",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Distillation net energy",
+      "value": [
+        0.3,
+        1.5
+      ],
+      "unit": "GJ/t H2O2",
+      "conditions": "Anthraquinone autoxidation process, per tonne of H2O2 (100%), 50% product",
+      "source": "EU BREF Large Volume Organic Chemicals (2017), chapter 12, Table 12.5",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/JRC109279_LVOC_Bref.pdf",
+      "quote": "Table 12.5: Energy data from the data collection (2012) Energy (GJ/t of H2O2) Total net consumption 2.9-5.7 Distillation net consumption 0.3-1.5 (1) Compression of air 1.4 (2) Heat recovery from process (mainly vapour recompression and heat exchangers) 1.7-4.2 (1) Referring to a hydrogen peroxide product concentration of 50 wt-%.",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Air compression energy",
+      "value": 1.4,
+      "unit": "GJ/t H2O2",
+      "conditions": "Anthraquinone autoxidation process, per tonne of H2O2 (100%), air oxidation",
+      "source": "EU BREF Large Volume Organic Chemicals (2017), chapter 12, Table 12.5",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/JRC109279_LVOC_Bref.pdf",
+      "quote": "Table 12.5: Energy data from the data collection (2012) Energy (GJ/t of H2O2) Total net consumption 2.9-5.7 Distillation net consumption 0.3-1.5 (1) Compression of air 1.4 (2) Heat recovery from process (mainly vapour recompression and heat exchangers) 1.7-4.2 (1) Referring to a hydrogen peroxide product concentration of 50 wt-%.",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Crude peroxide concentration",
+      "value": [
+        20,
+        50
+      ],
+      "unit": "wt% H2O2",
+      "conditions": "Extractor outlet",
+      "source": "EU BREF Large Volume Organic Chemicals (2017), chapter 12, section 12.2",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/JRC109279_LVOC_Bref.pdf",
+      "quote": "The crude aqueous hydrogen peroxide from the extractor has a H2O2 concentration of 20-50 wt- %.",
+      "model_type": "process"
+    }
+  ],
   "_meta": {
     "compiled": "2026-11-14",
     "notes": "Every quote was seen in the source text. Gaps: methanol capex, NH3 equilibrium mole % table, sulphuric acid t steam/t acid.",
