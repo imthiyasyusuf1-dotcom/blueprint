@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""ping.py "text"  -> posts into Yusuf's Blueprint Telegram thread (32877) as Builder.
+"""ping.py "text"  -> posts into Yusuf's Blueprint Telegram thread (33047) as Builder.
 Token is read from the blahbot profile .env and never printed."""
 import json
 import sys
@@ -9,7 +9,7 @@ import urllib.request
 from pathlib import Path
 
 H = Path.home() / ".hermes"
-CHAT, THREAD = "6352851713", "32877"
+CHAT, THREAD = "6352851713", "33047"
 
 
 def token():
