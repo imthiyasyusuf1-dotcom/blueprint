@@ -224,6 +224,82 @@
       "model_type": "capex",
       "year": 2023,
       "currency": "USD"
+    },
+    {
+      "metric": "Natural gas consumption, feed plus fuel, SMR without capture",
+      "value": 14.212,
+      "unit": "MJ (LHV) / Nm3 H2",
+      "conditions": "Merchant SMR, PSA, 100,000 Nm3/h H2 (about 216 t/d), base case without CCS, steam exported",
+      "source": "IEAGHG Technical Report 2017/02, Techno-Economic Evaluation of SMR Based Standalone (Merchant) Hydrogen Plant with CCS, Table 2",
+      "url": "https://ieaghg.org/publications/2017-02%20Techno%20-%20Economic%20Evaluation%20of%20SMR%20Based%20Standalone%20(Merchant)%20Hydrogen%20Plant%20with%20CCS.pdf",
+      "quote": "Total (Feedstock + Fuel)  MJ/Nm3 H2  14.212",
+      "model_type": "energy_balance"
+    },
+    {
+      "metric": "Direct CO2, SMR without capture",
+      "value": 0.8091,
+      "unit": "kg CO2 / Nm3 H2",
+      "conditions": "Same base case",
+      "source": "IEAGHG Technical Report 2017/02",
+      "url": "https://ieaghg.org/publications/2017-02%20Techno%20-%20Economic%20Evaluation%20of%20SMR%20Based%20Standalone%20(Merchant)%20Hydrogen%20Plant%20with%20CCS.pdf",
+      "quote": "Specific CO2 Emissions  kg/Nm3 H2  0.8091",
+      "model_type": "energy_balance"
+    },
+    {
+      "metric": "Plant stack CO2, SMR without capture",
+      "value": 9.3,
+      "unit": "kg CO2 / kg H2",
+      "conditions": "NETL Case 1, 483,014 kg H2/day, lb/lb in the source",
+      "source": "NETL 2022, Comparison of Commercial, State-of-the-Art, Fossil-Based Hydrogen Production Technologies (DOE/NETL-2022/3241)",
+      "url": "https://netl.doe.gov/projects/files/ComparisonofCommercialStateofArtFossilBasedHydrogenProductionTechnologies_041222.pdf",
+      "quote": "| CO2B | 51 (118) | 1,482,893 (1,634,610) | 9.3 |",
+      "model_type": "energy_balance"
+    },
+    {
+      "metric": "Methane conversion in the reformer",
+      "value": 77,
+      "unit": "% (lower bound)",
+      "conditions": "S/C 2.56, 870 C, 2.8 MPa",
+      "source": "NETL 2022 (DOE/NETL-2022/3241), Case 1",
+      "url": "https://netl.doe.gov/projects/files/ComparisonofCommercialStateofArtFossilBasedHydrogenProductionTechnologies_041222.pdf",
+      "quote": "The process employs a molar steam-to-carbon ratio of 2.56 entering the reactor. The raw syngas exits the reactor at a temperature of 870 °C (1,600 °F) and pressures of 2.8 MPa (411 psia) to convert more than 77 percent of the methane in the primary reformer feed.",
+      "model_type": "equilibrium"
+    },
+    {
+      "metric": "Export steam, SMR without capture",
+      "value": 26,
+      "unit": "MJ / kg H2",
+      "conditions": "NETL Case 1 modelled steam output",
+      "source": "NETL 2022 (DOE/NETL-2022/3241)",
+      "url": "https://netl.doe.gov/projects/files/ComparisonofCommercialStateofArtFossilBasedHydrogenProductionTechnologies_041222.pdf",
+      "quote": "calculated using the Case 1 modeled steam output of 514 GJ/hr, or 26 MJ/kg H2",
+      "model_type": "energy_balance"
+    },
+    {
+      "metric": "PSA hydrogen recovery and purity",
+      "value": [
+        85,
+        90
+      ],
+      "unit": "% recovery, 99.9+% purity",
+      "conditions": "PSA tail gas fuels the reformer burners",
+      "source": "IEAGHG Technical Report 2017/02",
+      "url": "https://ieaghg.org/publications/2017-02%20Techno%20-%20Economic%20Evaluation%20of%20SMR%20Based%20Standalone%20(Merchant)%20Hydrogen%20Plant%20with%20CCS.pdf",
+      "quote": "This is then fed into the PSA where around 85-90% of H2 with a purity of 99.9+% are recovered. The PSA tail gas is collected and fed into the burners of the SMR as its primary fuel.",
+      "model_type": "design_basis"
+    },
+    {
+      "metric": "CAPEX, SMR without CCUS",
+      "value": [
+        500,
+        900
+      ],
+      "unit": "USD (2018) / kW H2 (LHV)",
+      "conditions": "2018 cost basis",
+      "source": "IEA, The Future of Hydrogen, 2019",
+      "url": "https://iea.blob.core.windows.net/assets/9e3a3493-b9a6-4b7d-b499-7ca48e357561/The_Future_of_Hydrogen.pdf",
+      "quote": "CAPEX in 2018: SMR without CCUS = USD 500-900 per kilowatt hydrogen (kWH2)",
+      "model_type": "capex"
     }
   ],
   "sulphuric_acid": [
@@ -324,6 +400,19 @@
       "url": "https://www.fertilizerseurope.com/wp-content/uploads/2019/08/Booklet_5_final.pdf",
       "quote": "NH3 Stripping 0.567 0.735 0.760(108)ST 80 76",
       "model_type": "mass_balance"
+    },
+    {
+      "metric": "Cooling water and electricity, CO2 stripping with prilling",
+      "value": {
+        "cooling_water_m3_t": 70,
+        "electricity_MJ_t": 54
+      },
+      "unit": "per t urea",
+      "conditions": "CO2 compressor on steam turbine, cooling water dT 10 C",
+      "source": "Fertilizers Europe BAT Booklet No. 5, Production of Urea and Urea Ammonium Nitrate (2000), section 4.3, Typical Inputs for BAT Synthesis/Prilling Processes",
+      "url": "https://www.fertilizerseurope.com/wp-content/uploads/2019/08/Booklet_5_final.pdf",
+      "quote": "Cooling water ∆T = 10°C ... Synthesis/ NH3 CO2 Steam Cool. Elec. Prilling Process ... CO2 Stripping 0.57 0.75 0.770(120)ST 70 54",
+      "model_type": "energy_balance"
     }
   ],
   "nitric_acid": [
@@ -375,6 +464,58 @@
       "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
       "quote": "Medium pressure combustion plants 7 kg N2O/tonne nitric acid ±20% High pressure plants 9 kg N2O/tonne nitric acid ±40%",
       "model_type": "emissions"
+    },
+    {
+      "metric": "N2O emission factor with abatement",
+      "value": {
+        "NSCR": 2,
+        "process_integrated_or_tailgas_destruction": 2.5
+      },
+      "unit": "kg N2O / t HNO3 (100%)",
+      "conditions": "Default factors, +/-10%",
+      "source": "IPCC 2006 GL Vol 3 Ch 3, Table 3.3",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+      "quote": "Plants with process-integrated or tailgas N2O destruction  2.5 kg N2O/tonne nitric acid ±10%",
+      "model_type": "emission_factor"
+    },
+    {
+      "metric": "Gauze temperature, 1.7 to 6.5 bar oxidation",
+      "value": [
+        850,
+        900
+      ],
+      "unit": "C",
+      "conditions": "Pt-Rh gauze, NO yield 96% in this band",
+      "source": "Fertilizers Europe BAT Booklet No. 2, Production of Nitric Acid (2000), section 2.2.1",
+      "url": "https://www.fertilizerseurope.com/wp-content/uploads/2019/08/Booklet_2_final.pdf",
+      "quote": "Pressure (bar) Temperature (°C) NO yield (%) below 1.7 810 - 850 97 1.7 to 6.5 850 - 900 96 above 6.5 900 - 940 95",
+      "model_type": "energy_balance"
+    },
+    {
+      "metric": "Absorber tail gas flow",
+      "value": [
+        3100,
+        3400
+      ],
+      "unit": "Nm3 / t HNO3 (100%)",
+      "conditions": "Stable operation, absorber outlet",
+      "source": "Fertilizers Europe BAT Booklet No. 2, Production of Nitric Acid (2000), section 4.1.1.1",
+      "url": "https://www.fertilizerseurope.com/wp-content/uploads/2019/08/Booklet_2_final.pdf",
+      "quote": "NOx 100 to 3,500ppmv N2O 300 to 3,500ppmv O2 1 to 4% by volume H2O 0.3 to 2% by volume N2 balance Flow 3,100 to 3,400Nm3.t-1 100% HNO3",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "N2O in absorber tail gas",
+      "value": [
+        300,
+        3500
+      ],
+      "unit": "ppmv",
+      "conditions": "Stable operation, absorber outlet, before any N2O abatement",
+      "source": "Fertilizers Europe BAT Booklet No. 2, Production of Nitric Acid (2000), section 4.1.1.1",
+      "url": "https://www.fertilizerseurope.com/wp-content/uploads/2019/08/Booklet_2_final.pdf",
+      "quote": "NOx 100 to 3,500ppmv N2O 300 to 3,500ppmv O2 1 to 4% by volume H2O 0.3 to 2% by volume N2 balance Flow 3,100 to 3,400Nm3.t-1 100% HNO3",
+      "model_type": "emission_factor"
     }
   ],
   "ethylene_oxide": [

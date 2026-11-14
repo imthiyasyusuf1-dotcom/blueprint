@@ -89,13 +89,31 @@
       "quote": "Sulfuric Acid China FOB USD 244.63/MT October 2026 Sulfuric Acid USA CIF USD 436.35/MT October 2026 Sulfuric Acid Germany FOB USD 319.14/MT October 2026"
     },
     "sulphur": {
-      "value": 600,
+      "value": 180,
       "unit": "USD/t",
-      "basis": "China, Q1 2026 (India 640). US value not visible in snippet",
-      "year": 2026,
-      "source": "Expert Market Research (free snippet)",
-      "url": "https://www.expertmarketresearch.com/price-forecast/sulfur-price-trends",
-      "quote": "Global sulphur prices in Q1 2026 stood at USD 0.64 per KG in India, the highest among tracked markets, USD 0.60 per KG in China"
+      "basis": "United States average unit value of elemental sulphur, free on board mine and/or plant, 2025 (USGS estimate)",
+      "year": 2025,
+      "source": "USGS Mineral Commodity Summaries 2026, Sulfur",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-sulfur.pdf",
+      "quote": "Total shipments in 2025 were valued at about $1.4 billion, $1 billion more than the value of shipments in 2024 owing to the price increasing to $180 per ton from $46 per ton.",
+      "alt": {
+        "value": 805,
+        "unit": "USD/t",
+        "basis": "QatarEnergy official selling price, FOB Ras Laffan and Mesaieed, June 2026 (trade press report, not Argus)",
+        "year": 2026,
+        "source": "Discovery Alert, 31 May 2026",
+        "url": "https://discoveryalert.com/qatar-sulphur-price-hormuz-freight-india-demand-2026/",
+        "quote": "set its official selling price for sulphur exported from its Ras Laffan and Mesaieed industrial terminals at $805 per tonne on a free-on-board basis for June 2026"
+      },
+      "previous": {
+        "value": 600,
+        "unit": "USD/t",
+        "basis": "China, Q1 2026 (India 640). US value not visible in snippet",
+        "year": 2026,
+        "source": "Expert Market Research (free snippet)",
+        "url": "https://www.expertmarketresearch.com/price-forecast/sulfur-price-trends",
+        "quote": "Global sulphur prices in Q1 2026 stood at USD 0.64 per KG in India, the highest among tracked markets, USD 0.60 per KG in China"
+      }
     },
     "acetylsalicylic_acid": {
       "value": 2887,
@@ -351,13 +369,34 @@
       }
     },
     "co2": {
-      "value": 910,
+      "value": 19.0,
       "unit": "USD/t",
-      "basis": "United States merchant CO2 (likely food/industrial grade liquid), Q2 2026. Not a pipeline or carbon price",
-      "year": 2026,
-      "source": "Expert Market Research (free snippet)",
-      "url": "https://www.expertmarketresearch.com/price-forecast/carbon-dioxide-price-trends",
-      "quote": "Carbon Dioxide prices in the United States, the highest-cost reporting region, rose 7.8% in Q2 2026 to USD 910.00/MT from USD 844.00/MT"
+      "basis": "Captive CO2 from an ammonia plant (98 to 100% pure stream), cost of capture and compression, December 2018 USD. Over the fence transfer to urea, not merchant liquid CO2",
+      "year": 2018,
+      "source": "NETL, Cost of Capturing CO2 from Industrial Sources (2022 revision), Exhibit ES-2",
+      "url": "https://www.netl.doe.gov/projects/files/CostofCapturingCO2fromIndustrialSources_071522.pdf",
+      "quote": "Ammonia 6.1 3.9 2.7 6.3 19.0 19.0",
+      "alt": {
+        "value_range": [
+          25,
+          35
+        ],
+        "unit": "USD/t",
+        "basis": "Ammonia plant CO2 capture cost range",
+        "year": 2019,
+        "source": "IEA, Putting CO2 to Use (2019), Table 1",
+        "url": "https://iea.blob.core.windows.net/assets/50652405-26db-4c41-82dc-c23657893059/Putting_CO2_to_Use.pdf",
+        "quote": "Ammonia 98 - 100 25 - 35"
+      },
+      "previous": {
+        "value": 910,
+        "unit": "USD/t",
+        "basis": "United States merchant CO2 (likely food/industrial grade liquid), Q2 2026. Not a pipeline or carbon price",
+        "year": 2026,
+        "source": "Expert Market Research (free snippet)",
+        "url": "https://www.expertmarketresearch.com/price-forecast/carbon-dioxide-price-trends",
+        "quote": "Carbon Dioxide prices in the United States, the highest-cost reporting region, rose 7.8% in Q2 2026 to USD 910.00/MT from USD 844.00/MT"
+      }
     }
   },
   "emission_factors": {
