@@ -25,7 +25,8 @@ def npv(cashflows, rate):
 
 
 def irr(cashflows):
-    lo, hi = -0.99, 1.0
+    """Bisection between -99% and 1000%. None when there is no sign change (the project never pays back)."""
+    lo, hi = -0.99, 10.0
     f_lo, f_hi = npv(cashflows, lo), npv(cashflows, hi)
     if f_lo * f_hi > 0:
         return None

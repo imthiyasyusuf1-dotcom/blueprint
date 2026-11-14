@@ -76,7 +76,7 @@
       stat('Levelised cost', usd(eco.levelised_cost_per_tonne), '/t', '', 'Includes capital recovery') +
       stat('Revenue', usd(eco.revenue), '/yr') +
       stat('NPV', usd(eco.npv), '', '', finite(eco.rate) ? 'At ' + BP.pct(eco.rate * 100, 0) + ', ' + eco.life + ' years' : '') +
-      stat('IRR', finite(eco.irr) ? BP.pct(eco.irr * 100, 1) : 'n/a') +
+      stat('IRR', finite(eco.irr) ? BP.pct(eco.irr * 100, 1) : 'None') +
       stat('Carbon', num(carbon.total), 't CO<sub>2</sub>e/t') +
       '</div>';
     if (arr(d.kpis).length) {
@@ -284,7 +284,7 @@
       stat('Revenue', usd(e.revenue), '/yr', '', finite(e.byproduct_credit) && e.byproduct_credit ? 'Includes ' + usd(e.byproduct_credit) + ' by product credit' : '') +
       stat('Profit before tax', usd(e.annual_profit_before_tax), '/yr') +
       stat('NPV', usd(e.npv), '', 'hl', finite(e.rate) ? 'At ' + BP.pct(e.rate * 100, 0) + ' over ' + e.life + ' years, ' + BP.pct(e.tax * 100, 0) + ' tax' : '') +
-      stat('IRR', finite(e.irr) ? BP.pct(e.irr * 100, 1) : 'n/a') +
+      stat('IRR', finite(e.irr) ? BP.pct(e.irr * 100, 1) : 'None') +
       stat('Payback', finite(e.payback_years) ? num(e.payback_years, 1) : 'n/a', 'years', '', 'From start up') +
       stat('Cost of manufacture', usd(e.cost_per_tonne), '/t') +
       stat('Levelised cost', usd(e.levelised_cost_per_tonne), '/t', '', 'Cost plus capital recovery') +

@@ -18,7 +18,7 @@
   },
   {
    "path": "engine/economics.py",
-   "bytes": 3707
+   "bytes": 3817
   },
   {
    "path": "engine/formula.py",
@@ -102,7 +102,7 @@
   },
   {
    "path": "build_pdf.py",
-   "bytes": 105819
+   "bytes": 105842
   }
  ],
  "fonts": [
