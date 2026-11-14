@@ -15,6 +15,8 @@ H_TEXT = {
     "H226": "Flammable liquid and vapour",
     "H230": "May react explosively even without air",
     "H270": "May cause or intensify fire; oxidiser",
+    "H271": "May cause fire or explosion; strong oxidiser",
+    "H242": "Heating may cause a fire",
     "H272": "May intensify fire; oxidiser",
     "H280": "Contains gas under pressure; may explode if heated",
     "H290": "May be corrosive to metals",
@@ -22,9 +24,11 @@ H_TEXT = {
     "H302": "Harmful if swallowed",
     "H304": "May be fatal if swallowed and enters airways",
     "H311": "Toxic in contact with skin",
+    "H312": "Harmful in contact with skin",
     "H314": "Causes severe skin burns and eye damage",
     "H315": "Causes skin irritation",
     "H318": "Causes serious eye damage",
+    "H317": "May cause an allergic skin reaction",
     "H319": "Causes serious eye irritation",
     "H330": "Fatal if inhaled",
     "H331": "Toxic if inhaled",
@@ -32,6 +36,7 @@ H_TEXT = {
     "H335": "May cause respiratory irritation",
     "H336": "May cause drowsiness or dizziness",
     "H340": "May cause genetic defects",
+    "H341": "Suspected of causing genetic defects",
     "H350": "May cause cancer",
     "H360D": "May damage the unborn child",
     "H360Fd": "May damage fertility; suspected of damaging the unborn child",
@@ -82,9 +87,38 @@ GHS = {
     "KOH": ["H290", "H302", "H314"],
     "Glucose": [],
     "H2O": [],
+    # batch A species (EU CLP Annex VI harmonised entries; NH4NO3 and EAQ are not harmonised,
+    # supplier self classification used for NH4NO3)
+    "Cl2": ["H270", "H280", "H315", "H319", "H331", "H335", "H400"],
+    "HCl": ["H280", "H314", "H331"],
+    "NaCl": [],
+    "H2O2": ["H271", "H302", "H314", "H332", "H335"],
+    "Na2CO3": ["H319"],
+    "NaHCO3": [],
+    "CaCO3": [],
+    "CaO": ["H315", "H318", "H335"],
+    "CaOH2": ["H315", "H318", "H335"],
+    "CaCl2": ["H319"],
+    "NH4Cl": ["H302", "H319"],
+    "NH4NO3": ["H272", "H319"],
+    "C": ["DUST"],
+    # batch B species (EU CLP Annex VI harmonised entries; DIPB and TEG are not harmonised)
+    "C2H6": ["H220", "H280"],
+    "C3H6": ["H220", "H280"],
+    "C4H6": ["H220", "H280", "H340", "H350"],
+    "Cumene": ["H226", "H304", "H335", "H411"],
+    "DIPB": [],
+    "CHP": ["H242", "H302", "H312", "H314", "H331", "H373", "H411"],
+    "Phenol": ["H301", "H311", "H314", "H331", "H341", "H373"],
+    "Acetone": ["H225", "H319", "H336"],
+    "AMS": ["H226", "H319", "H335", "H411"],
+    "HCHO": ["H301", "H311", "H314", "H317", "H331", "H335", "H341", "H350"],
+    "MEG": ["H302", "H373"],
+    "DEG": ["H302"],
+    "TEG": [],
 }
 
-SEVERE = {"H220", "H221", "H225", "H230", "H270", "H272", "H314", "H330", "H331", "H340", "H350", "H360D", "H360Fd"}
+SEVERE = {"H220", "H221", "H225", "H230", "H270", "H271", "H272", "H314", "H330", "H331", "H340", "H350", "H360D", "H360Fd"}
 
 
 def assess(design):

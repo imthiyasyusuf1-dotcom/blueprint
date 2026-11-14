@@ -16,12 +16,14 @@ Founded and built by Yusuf Imthiyas.
 - Hazards and a mini HAZOP
 - Carbon footprint (scope 1 and 2) and a greener route
 - Validation against published plant figures, with the percentage error shown
-- A 13 to 15 page PDF report, and a custom re-run in your browser (change capacity and conditions)
+- A 13 to 20 page PDF report, and a custom re-run in your browser (change capacity and conditions)
 
 ## Processes live now
 
 Ammonia, methanol, hydrogen (SMR), urea, nitric acid, sulphuric acid, ethanol (dry grind),
-biodiesel, ethylene oxide, styrene, aspirin. Anything else goes to a request page.
+biodiesel, ethylene oxide, styrene, aspirin, chlorine and caustic soda (membrane cell), hydrogen
+peroxide, e-methanol, ammonium nitrate, soda ash (Solvay), phenol and acetone (cumene), acetic acid
+(Cativa), formaldehyde, ethylene (ethane cracker), ethylene glycol. Anything else goes to a request page.
 
 ## How it works
 

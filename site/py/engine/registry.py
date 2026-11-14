@@ -18,17 +18,41 @@ PROCESSES = [
     ("ethylene_oxide", "Ethylene oxide", 1000, ["ethylene oxide", "eo", "c2h4o", "oxirane", "epoxyethane"]),
     ("styrene", "Styrene", 1500, ["styrene", "styrene monomer", "sm", "vinylbenzene", "phenylethene", "c8h8"]),
     ("aspirin", "Aspirin", 10, ["aspirin", "acetylsalicylic acid", "asa", "c9h8o4"]),
+    # batch A
+    ("chlor_alkali", "Chlorine and caustic soda", 500, ["chlor alkali", "chloralkali", "chlorine", "cl2", "caustic soda",
+                                                        "sodium hydroxide", "naoh", "caustic", "lye", "membrane cell",
+                                                        "brine electrolysis", "chlorine caustic"]),
+    ("hydrogen_peroxide", "Hydrogen peroxide", 200, ["hydrogen peroxide", "h2o2", "peroxide", "perhydrol",
+                                                     "anthraquinone process", "ao process"]),
+    ("e_methanol", "e-Methanol", 300, ["e methanol", "emethanol", "green methanol", "renewable methanol",
+                                       "power to methanol", "co2 to methanol", "electro methanol", "synthetic methanol"]),
+    ("ammonium_nitrate", "Ammonium nitrate", 1200, ["ammonium nitrate", "nh4no3", "an fertiliser", "an fertilizer",
+                                                    "nitram", "prilled ammonium nitrate"]),
+    ("soda_ash", "Soda ash", 1000, ["soda ash", "sodium carbonate", "na2co3", "solvay", "solvay process",
+                                    "ammonia soda process", "washing soda"]),
+    # batch B
+    ("phenol_acetone", "Phenol and acetone", 600, ["phenol", "acetone", "phenol acetone", "phenol and acetone",
+                                                "c6h5oh", "c6h6o", "carbolic acid", "hydroxybenzene", "propanone",
+                                                "dimethyl ketone", "c3h6o", "(ch3)2co", "cumene", "cumene process",
+                                                "hock process", "cumene hydroperoxide"]),
+    ("acetic_acid", "Acetic acid", 1500, ["acetic acid", "ethanoic acid", "acoh", "ch3cooh", "c2h4o2",
+                                         "glacial acetic acid", "methanol carbonylation", "cativa", "monsanto process"]),
+    ("formaldehyde", "Formaldehyde", 300, ["formaldehyde", "hcho", "ch2o", "methanal", "formalin",
+                                          "formol", "formox", "methylene oxide"]),
+    ("ethylene", "Ethylene", 3000, ["ethylene", "ethene", "c2h4", "ethane cracker", "steam cracker",
+                                   "ethane cracking", "steam cracking", "olefins"]),
+    ("ethylene_glycol", "Ethylene glycol", 1500, ["ethylene glycol", "meg", "monoethylene glycol", "mono ethylene glycol",
+                                                 "glycol", "ethane 1,2 diol", "ethanediol", "c2h6o2", "antifreeze",
+                                                 "diethylene glycol", "deg", "triethylene glycol", "teg"]),
 ]
 
 # Recognised but not yet modelled. Shown as coming soon so the request is captured.
 COMING_SOON = [
-    "acetic acid", "acetone", "acrylic acid", "adipic acid", "benzene", "bisphenol a", "butadiene", "caprolactam",
-    "chlorine", "caustic soda", "sodium hydroxide", "cumene", "dimethyl ether", "ethylene", "ethylene glycol",
-    "formaldehyde", "green ammonia", "green hydrogen", "hydrogen peroxide", "isopropanol", "maleic anhydride",
-    "melamine", "mtbe", "nylon", "paracetamol", "phenol", "phosphoric acid", "polyethylene", "polypropylene",
-    "propylene", "propylene oxide", "pta", "terephthalic acid", "soda ash", "sodium carbonate", "titanium dioxide",
-    "toluene", "vinyl chloride", "pvc", "xylene", "e-methanol", "sustainable aviation fuel", "saf", "lithium hydroxide",
-    "ammonium nitrate", "glycerol", "lactic acid", "succinic acid", "butanol", "hydrochloric acid",
+    "acrylic acid", "adipic acid", "benzene", "bisphenol a", "butadiene", "caprolactam", "dimethyl ether",
+    "green ammonia", "green hydrogen", "isopropanol", "maleic anhydride", "melamine", "mtbe", "nylon", "paracetamol",
+    "phosphoric acid", "polyethylene", "polypropylene", "propylene", "propylene oxide", "pta", "terephthalic acid",
+    "titanium dioxide", "toluene", "vinyl chloride", "pvc", "xylene", "sustainable aviation fuel", "saf",
+    "lithium hydroxide", "glycerol", "lactic acid", "succinic acid", "butanol", "hydrochloric acid",
 ]
 
 

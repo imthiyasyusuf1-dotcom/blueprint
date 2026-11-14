@@ -774,13 +774,16 @@ def build_method(designs, built_order):
         return ('<div class="table-scroll"><table class="t"><thead><tr>{}</tr></thead><tbody>{}</tbody></table></div>'
                 .format("".join('<th{}>{}</th>'.format(' class="r"' if h == "Value" else "", h) for h in head), rows))
 
+    labels = {p["id"]: p["label"] for p in load(os.path.join(DATA, "index.json"))["processes"]}
     bench_rows = []
     for key, items in bench.items():
         if key.startswith("_") or not isinstance(items, list):
             continue
         sources = sorted({(b.get("source") or "", b.get("url") or "") for b in items if isinstance(b, dict)})
-        label = key.replace("_", " ")
-        label = label[:1].upper() + label[1:]
+        label = labels.get(key)
+        if not label:
+            label = key.replace("_", " ")
+            label = label[:1].upper() + label[1:]
         links = "; ".join('<a href="{}" target="_blank" rel="noopener">{}</a>'.format(esc(u), esc(s)) if u else esc(s)
                           for s, u in sources if s)
         bench_rows.append('<tr><td class="nw">{}</td><td class="r">{}</td><td>{}</td></tr>'.format(esc(label), len(items), links))

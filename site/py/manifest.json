@@ -26,15 +26,15 @@
   },
   {
    "path": "engine/hazards.py",
-   "bytes": 5891
+   "bytes": 7332
   },
   {
    "path": "engine/prices.py",
-   "bytes": 3697
+   "bytes": 5193
   },
   {
    "path": "engine/registry.py",
-   "bytes": 3671
+   "bytes": 5999
   },
   {
    "path": "engine/thermo.py",
@@ -45,8 +45,16 @@
    "bytes": 0
   },
   {
+   "path": "engine/processes/acetic_acid.py",
+   "bytes": 17170
+  },
+  {
    "path": "engine/processes/ammonia.py",
    "bytes": 25575
+  },
+  {
+   "path": "engine/processes/ammonium_nitrate.py",
+   "bytes": 20698
   },
   {
    "path": "engine/processes/aspirin.py",
@@ -57,16 +65,40 @@
    "bytes": 16597
   },
   {
+   "path": "engine/processes/chlor_alkali.py",
+   "bytes": 32882
+  },
+  {
+   "path": "engine/processes/e_methanol.py",
+   "bytes": 15174
+  },
+  {
    "path": "engine/processes/ethanol.py",
    "bytes": 29725
+  },
+  {
+   "path": "engine/processes/ethylene.py",
+   "bytes": 20152
+  },
+  {
+   "path": "engine/processes/ethylene_glycol.py",
+   "bytes": 17293
   },
   {
    "path": "engine/processes/ethylene_oxide.py",
    "bytes": 17829
   },
   {
+   "path": "engine/processes/formaldehyde.py",
+   "bytes": 15312
+  },
+  {
    "path": "engine/processes/hydrogen.py",
    "bytes": 19360
+  },
+  {
+   "path": "engine/processes/hydrogen_peroxide.py",
+   "bytes": 16848
   },
   {
    "path": "engine/processes/methanol.py",
@@ -75,6 +107,14 @@
   {
    "path": "engine/processes/nitric_acid.py",
    "bytes": 20391
+  },
+  {
+   "path": "engine/processes/phenol_acetone.py",
+   "bytes": 24591
+  },
+  {
+   "path": "engine/processes/soda_ash.py",
+   "bytes": 28018
   },
   {
    "path": "engine/processes/styrene.py",
@@ -90,15 +130,15 @@
   },
   {
    "path": "engine/data/benchmarks.json",
-   "bytes": 35030
+   "bytes": 104743
   },
   {
    "path": "engine/data/components.json",
-   "bytes": 40239
+   "bytes": 71021
   },
   {
    "path": "engine/data/prices.json",
-   "bytes": 34370
+   "bytes": 50282
   },
   {
    "path": "build_pdf.py",

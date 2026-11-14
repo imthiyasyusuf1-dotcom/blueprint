@@ -48,7 +48,34 @@ PRICE_T = {
     "Corn": P["corn"]["value_usd_per_t"],
     "DDGS": P["ddgs"]["value_usd_per_t"],
     "CO2": _v("co2"),
+    "Cl2": _v("chlorine"),
+    "NaOH": _v("caustic_soda"),
+    "NaCl": _v("salt_rock"),
+    "Na2CO3": _v("soda_ash"),
+    "CaCO3": _v("limestone"),
+    "C": _v("coke"),
+    "NaCl_brine": _v("salt_brine"),
+    "NH4NO3": _v("ammonium_nitrate"),
+    "H2O2": _v("hydrogen_peroxide") * 2,  # source price per t of 50% solution
+    "EAQ": _v("ethylanthraquinone"),
 }
+
+# batch B (US quotes; formaldehyde is quoted per t of solution, taken as 37 wt% formalin, so the
+# price per t of contained 100% HCHO is value / 0.37)
+FORMALIN_WT = 0.37
+PRICE_T.update({
+    "Phenol": _v("phenol"),
+    "Acetone": _v("acetone"),
+    "Benzene": _v("benzene"),
+    "C3H6": _v("propylene"),
+    "HCHO": _v("formaldehyde") / FORMALIN_WT,
+    "CO": _v("carbon_monoxide"),
+    "C2H6": _v("ethane"),
+    "MEG": _v("ethylene_glycol"),
+    "DEG": _v("diethylene_glycol"),
+    "TEG": _v("triethylene_glycol"),
+    "Pygas": _v("pyrolysis_gasoline"),
+})
 
 REGIONS = {
     "US": {
@@ -101,7 +128,22 @@ PRICE_KEYS = {
     "EO": "ethylene_oxide", "EB": "ethylbenzene", "Styrene": "styrene", "FAME": "biodiesel_fame",
     "Triolein": "soybean_oil", "Glycerol": "crude_glycerol", "Corn": "corn", "DDGS": "ddgs",
     "CO2": "co2",
+    "Cl2": "chlorine",
+    "NaOH": "caustic_soda",
+    "NaCl": "salt_rock",
+    "Na2CO3": "soda_ash",
+    "CaCO3": "limestone",
+    "C": "coke",
+    "NaCl_brine": "salt_brine",
+    "NH4NO3": "ammonium_nitrate",
+    "H2O2": "hydrogen_peroxide",
+    "EAQ": "ethylanthraquinone",
 }
+PRICE_KEYS.update({
+    "Phenol": "phenol", "Acetone": "acetone", "Benzene": "benzene", "C3H6": "propylene",
+    "HCHO": "formaldehyde", "CO": "carbon_monoxide", "C2H6": "ethane", "MEG": "ethylene_glycol",
+    "DEG": "diethylene_glycol", "TEG": "triethylene_glycol", "Pygas": "pyrolysis_gasoline",
+})
 
 
 def price_source(cid):

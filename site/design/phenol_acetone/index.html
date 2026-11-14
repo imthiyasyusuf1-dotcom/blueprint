@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Phenol and acetone plant design: 600 t/d | Blueprint</title>
+<meta name="description" content="First pass phenol and acetone plant design at 600 t/d: 600 t/d of phenol and 370 t/d of acetone from 536 t/d of benzene and 289 t/d of propylene, through 824 t/d of cumene. Flow diagram, mass and energy balance, kit list, capex, opex, hazards and carbon, validated against published figures.">
+<link rel="canonical" href="https://imthiyasyusuf1-dotcom.github.io/blueprint/design/phenol_acetone/">
+<meta name="theme-color" content="#FCFCFD">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Blueprint">
+<meta property="og:title" content="Phenol and acetone plant design: 600 t/d | Blueprint">
+<meta property="og:description" content="First pass phenol and acetone plant design at 600 t/d: 600 t/d of phenol and 370 t/d of acetone from 536 t/d of benzene and 289 t/d of propylene, through 824 t/d of cumene. Flow diagram, mass and energy balance, kit list, capex, opex, hazards and carbon, validated against published figures.">
+<meta property="og:url" content="https://imthiyasyusuf1-dotcom.github.io/blueprint/design/phenol_acetone/">
+<meta property="og:image" content="https://imthiyasyusuf1-dotcom.github.io/blueprint/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Blueprint: type a chemical, get a first pass plant design">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Phenol and acetone plant design: 600 t/d | Blueprint">
+<meta name="twitter:description" content="First pass phenol and acetone plant design at 600 t/d: 600 t/d of phenol and 370 t/d of acetone from 536 t/d of benzene and 289 t/d of propylene, through 824 t/d of cumene. Flow diagram, mass and energy balance, kit list, capex, opex, hazards and carbon, validated against published figures.">
+<meta name="twitter:image" content="https://imthiyasyusuf1-dotcom.github.io/blueprint/assets/og.png">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preload" href="../../fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../css/site.css">
+<script type="application/json" id="bp-config">{"id":"phenol_acetone","label":"Phenol and acetone","default_tpd":600,"cap_min":150.0,"cap_max":2400,"params":[{"key":"benzene_propylene_ratio","label":"Benzene propylene ratio","unit":"","kind":"number","default":3.0,"min":1.5,"max":6.0,"step":"any","label_html":"Benzene propylene ratio"},{"key":"alk_cumene_sel","label":"Alk cumene selectivity","unit":"fraction","kind":"number","default":0.9,"min":0.45,"max":1.0,"step":"any","label_html":"Alk cumene selectivity"},{"key":"dipb_purge","label":"Dipb purge","unit":"fraction","kind":"number","default":0.02,"min":0.01,"max":0.03,"step":"any","label_html":"Dipb purge"},{"key":"trans_benzene_ratio","label":"Trans benzene ratio","unit":"","kind":"number","default":4.0,"min":2.0,"max":8.0,"step":"any","label_html":"Trans benzene ratio"},{"key":"alk_T_C","label":"Alk temperature","unit":"\u00b0C","kind":"number","default":190.0,"min":140.0,"max":240.0,"step":"any","label_html":"Alk temperature"},{"key":"alk_P_bar","label":"Alk pressure","unit":"bar","kind":"number","default":35.0,"min":17.5,"max":70.0,"step":"any","label_html":"Alk pressure"},{"key":"ox_conversion","label":"Ox conversion","unit":"fraction","kind":"number","default":0.25,"min":0.125,"max":0.375,"step":"any","label_html":"Ox conversion"},{"key":"ox_selectivity","label":"Ox selectivity","unit":"fraction","kind":"number","default":0.93,"min":0.465,"max":1.0,"step":"any","label_html":"Ox selectivity"},{"key":"ox_T_C","label":"Ox temperature","unit":"\u00b0C","kind":"number","default":100.0,"min":50.0,"max":150.0,"step":"any","label_html":"Ox temperature"},{"key":"ox_P_bar","label":"Ox pressure","unit":"bar","kind":"number","default":5.0,"min":2.5,"max":10.0,"step":"any","label_html":"Ox pressure"},{"key":"ox_residence_h","label":"Ox residence","unit":"h","kind":"number","default":8.0,"min":2.0,"max":32.0,"step":"any","label_html":"Ox residence"},{"key":"offgas_o2","label":"Offgas O2","unit":"fraction","kind":"number","default":0.05,"min":0.025,"max":0.075,"step":"any","label_html":"Offgas O<sub>2<\/sub>"},{"key":"chp_conc_wt","label":"Chp conc","unit":"fraction","kind":"number","default":0.8,"min":0.4,"max":1.0,"step":"any","label_html":"Chp conc"},{"key":"cleave_T_C","label":"Cleave temperature","unit":"\u00b0C","kind":"number","default":60.0,"min":10.0,"max":110.0,"step":"any","label_html":"Cleave temperature"},{"key":"lhsv_h","label":"Liquid hourly space velocity","unit":"1/h","kind":"number","default":1.0,"min":0.5,"max":2.0,"step":"any","label_html":"Liquid hourly space velocity"},{"key":"reflux_benzene","label":"Reflux benzene","unit":"","kind":"number","default":1.0,"min":0.5,"max":2.0,"step":"any","label_html":"Reflux benzene"},{"key":"reflux_cumene","label":"Reflux cumene","unit":"","kind":"number","default":1.5,"min":0.75,"max":3.0,"step":"any","label_html":"Reflux cumene"},{"key":"reflux_acetone","label":"Reflux acetone","unit":"","kind":"number","default":2.0,"min":1.0,"max":4.0,"step":"any","label_html":"Reflux acetone"},{"key":"reflux_ams","label":"Reflux ams","unit":"","kind":"number","default":3.0,"min":1.5,"max":6.0,"step":"any","label_html":"Reflux ams"},{"key":"reflux_phenol","label":"Reflux phenol","unit":"","kind":"number","default":1.5,"min":0.75,"max":3.0,"step":"any","label_html":"Reflux phenol"},{"key":"storage_days","label":"Product storage","unit":"days","kind":"int","default":14,"min":7.0,"max":28.0,"step":1,"label_html":"Product storage"}],"regions":{"US":"United States","EU":"European Union","UK":"United Kingdom"},"default_region":"US","pdfs":["US","EU","UK"]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../../" aria-label="Blueprint home"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#2347F5"/><rect x="6.5" y="8.5" width="8" height="8" rx="1.5" fill="none" stroke="#fff" stroke-width="2"/><path d="M14.5 12.5h4.5v7.5" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><rect x="15" y="19" width="10.5" height="5.5" rx="1.5" fill="#fff"/></svg><span>Blueprint</span></a>
+    <nav class="nav" aria-label="Main"><a href="../../examples/">Examples</a><a href="../../method/">Method</a><a href="../../about/">About</a></nav>
+  </div>
+</header>
+<main id="main">
+<div class="design-head">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">Home</a><span class="sep">/</span><a href="../../examples/">Designs</a><span class="sep">/</span><span aria-current="page">Phenol and acetone</span></nav>
+    <h1 id="d-title">Phenol and acetone plant (cumene process)</h1>
+    <p class="lede" id="d-summary">600 t/d of phenol and 370 t/d of acetone from 536 t/d of benzene and 289 t/d of propylene, through 824 t/d of cumene.</p>
+    <div class="head-meta" id="d-meta">
+      <span class="pill" id="m-region">United States</span>
+      <span class="pill num" id="m-cap">600 t/d</span>
+      <span class="pill " id="m-val"><span class="dot"></span>7 of 9 checks pass</span>
+    </div>
+    <div class="toolbar">
+      <div class="seg" role="group" aria-label="Price region"><button type="button" data-region="US" aria-pressed="true" title="United States">US</button><button type="button" data-region="EU" aria-pressed="false" title="European Union">EU</button><button type="button" data-region="UK" aria-pressed="false" title="United Kingdom">UK</button></div>
+      <span class="spacer"></span>
+      <button class="btn btn-secondary" type="button" id="btn-inputs" aria-expanded="false" aria-controls="inputs"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 4.5h6m3 0h2m-11 7h2m3 0h6M8.5 3v3m-3 4v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Change inputs</button>
+      <a class="btn btn-primary" id="btn-pdf" href="../../pdf/phenol_acetone.US.pdf" download><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2.5v8m0 0L4.75 7.25M8 10.5l3.25-3.25M2.75 13.25h10.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Download PDF</a>
+    </div>
+    <div class="status-bar" id="status" role="status" aria-live="polite"></div>
+    <div class="inputs" id="inputs" hidden>
+      <form class="card" id="inputs-form" novalidate>
+        <div class="inputs-grid" id="inputs-grid"></div>
+        <div class="inputs-actions">
+          <button class="btn btn-primary" type="submit" id="btn-run">Run design</button>
+          <button class="btn btn-ghost" type="button" id="btn-reset">Reset to defaults</button>
+          <span class="note">Runs the same Python engine in your browser. The first run downloads Python (about 10 MB) and takes 10 to 30 seconds.</span>
+        </div>
+        <div class="progress" id="progress" hidden>
+          <ol class="steps"><li data-step="python">Loading Python</li><li data-step="engine">Loading engine</li><li data-step="solve">Solving</li></ol>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<nav class="secnav" aria-label="Sections"><div class="wrap"><ul><li><a href="#overview">Overview</a></li><li><a href="#flow">Flow diagram</a></li><li><a href="#balance">Mass and energy balance</a></li><li><a href="#kit">Kit list</a></li><li><a href="#costs">Capex and opex</a></li><li><a href="#hazards">Hazards</a></li><li><a href="#carbon">Carbon</a></li><li><a href="#validation">Validation</a></li><li><a href="#assumptions">Assumptions and notes</a></li></ul></div></nav>
+<section class="dsec" id="overview" aria-labelledby="overview-h">
+  <div class="wrap">
+    <h2 id="overview-h">Overview</h2>
+    <p class="intro">Route, conditions, reactions and the headline numbers.</p>
+    <div data-sec="overview"><p class="route">Benzene is alkylated with propylene over a zeolite to cumene. Cumene is oxidised with air to cumene hydroperoxide, which is concentrated and split with a trace of sulphuric acid into phenol and acetone. Both are purified by distillation; about 0.6 t of acetone comes with every tonne of phenol.</p></div>
+  </div>
+</section>
+<section class="dsec" id="flow" aria-labelledby="flow-h">
+  <div class="wrap">
+    <h2 id="flow-h">Flow diagram</h2>
+    <p class="intro">Tap any stream or unit for its conditions and composition.</p>
+    <div data-sec="flow"></div>
+  </div>
+</section>
+<section class="dsec" id="balance" aria-labelledby="balance-h">
+  <div class="wrap">
+    <h2 id="balance-h">Mass and energy balance</h2>
+    <p class="intro">Every stream in kg/h, closure and atom balance errors, and utilities.</p>
+    <div data-sec="balance"></div>
+  </div>
+</section>
+<section class="dsec" id="kit" aria-labelledby="kit-h">
+  <div class="wrap">
+    <h2 id="kit-h">Kit list</h2>
+    <p class="intro">Major equipment, sized and costed with Turton bare module factors.</p>
+    <div data-sec="kit"></div>
+  </div>
+</section>
+<section class="dsec" id="costs" aria-labelledby="costs-h">
+  <div class="wrap">
+    <h2 id="costs-h">Capex and opex</h2>
+    <p class="intro">Fixed capital, cost of manufacture and returns over the plant life.</p>
+    <div data-sec="costs"></div>
+  </div>
+</section>
+<section class="dsec" id="hazards" aria-labelledby="hazards-h">
+  <div class="wrap">
+    <h2 id="hazards-h">Hazards</h2>
+    <p class="intro">Substance hazards, process hazard flags and a starter HAZOP.</p>
+    <div data-sec="hazards"></div>
+  </div>
+</section>
+<section class="dsec" id="carbon" aria-labelledby="carbon-h">
+  <div class="wrap">
+    <h2 id="carbon-h">Carbon</h2>
+    <p class="intro">Scope 1 and 2 emissions per tonne of product.</p>
+    <div data-sec="carbon"></div>
+  </div>
+</section>
+<section class="dsec" id="validation" aria-labelledby="validation-h">
+  <div class="wrap">
+    <h2 id="validation-h">Validation</h2>
+    <p class="intro">Model results against published plant figures.</p>
+    <div data-sec="validation"></div>
+  </div>
+</section>
+<section class="dsec" id="assumptions" aria-labelledby="assumptions-h">
+  <div class="wrap">
+    <h2 id="assumptions-h">Assumptions and notes</h2>
+    <p class="intro">What the model takes as given.</p>
+    <div data-sec="assumptions"></div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <a class="brand" href="../../" aria-label="Blueprint home"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#2347F5"/><rect x="6.5" y="8.5" width="8" height="8" rx="1.5" fill="none" stroke="#fff" stroke-width="2"/><path d="M14.5 12.5h4.5v7.5" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><rect x="15" y="19" width="10.5" height="5.5" rx="1.5" fill="#fff"/></svg><span>Blueprint</span></a>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="../../examples/">Examples</a>
+        <a href="../../method/">Method</a>
+        <a href="../../about/">About</a>
+        <a href="../../privacy/">Privacy</a>
+      </nav>
+    </div>
+    <div class="foot-fine">
+      <span>Screening tool, not for construction.</span>
+      <span>Founded and built by Yusuf Imthiyas.</span>
+    </div>
+  </div>
+</footer>
+<script src="../../js/config.js" defer></script>
+<script src="../../js/common.js" defer></script>
+<script src="../../js/design.js" defer></script>
+</body>
+</html>

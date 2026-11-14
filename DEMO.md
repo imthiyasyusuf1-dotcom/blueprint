@@ -20,7 +20,7 @@ the whole design in your browser in a few seconds."
 
 48 to 55 s. Download the PDF. "Fifteen page report, ready to send."
 
-55 to 60 s. "Eleven processes live, all free. Built by me. Link below."
+55 to 60 s. "21 processes live, all free. Built by me. Link below."
 
 ## LinkedIn post (copy)
 
@@ -30,7 +30,7 @@ Flow diagram, solved mass and energy balance, sized equipment, capex and opex, h
 footprint, and a PDF report. Every design is checked against published plant data and shows its
 own error.
 
-11 processes live so far, from ammonia to aspirin. Free to try:
+21 processes live so far, from ammonia and chlorine to aspirin and hydrogen peroxide. Free to try:
 https://imthiyasyusuf1-dotcom.github.io/blueprint/
 
 Which chemical should I add next?

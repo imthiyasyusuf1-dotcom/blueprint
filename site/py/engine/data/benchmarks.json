@@ -719,10 +719,1203 @@
       "model_type": "mass_balance"
     }
   ],
+  "phenol_acetone": [
+    {
+      "metric": "Cumene per t phenol",
+      "value": [
+        1.31,
+        1.38
+      ],
+      "unit": "t / t phenol",
+      "conditions": "Typical EU plant range; cumene consumption expressed per total production of acetone, phenol and AMS, quoted per tonne phenol",
+      "source": "EU BREF Large Volume Organic Chemical Industry, JRC Science for Policy Report JRC109279, 2017, Section 8.3.3 (p. 408)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/JRC109279_LVOC_Bref.pdf",
+      "quote": "Cumene consumption is typically in the range 1.31-1.38 tonnes per tonne of phenol",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Cumene per lb phenol/acetone product",
+      "value": 0.81,
+      "unit": "lb / lb phenol+acetone product",
+      "conditions": "Stoichiometric ratio, combined phenol plus acetone product basis (HP 1999)",
+      "source": "Energy and Environmental Profile of the U.S. Chemical Industry, US DOE Office of Industrial Technologies, 2000, Table 4-9 note d",
+      "url": "https://www.osti.gov/servlets/purl/1218625",
+      "quote": "Stoichiometric ratios: 0.81 lbs cumene for every lb of phenol/acetone product",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Benzene per lb cumene",
+      "value": 0.651,
+      "unit": "lb / lb cumene",
+      "conditions": "Stoichiometric ratio for cumene step (HP 1999); multiply by cumene per t phenol for benzene per t phenol",
+      "source": "Energy and Environmental Profile of the U.S. Chemical Industry, US DOE Office of Industrial Technologies, 2000, Table 4-8 note d",
+      "url": "https://www.osti.gov/servlets/purl/1218625",
+      "quote": "Stoichiometric ratios: 0.651 lbs benzene and 0.351 lbs propylene for every lb of cumene",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Propylene per lb cumene",
+      "value": 0.351,
+      "unit": "lb / lb cumene",
+      "conditions": "Stoichiometric ratio for cumene step (HP 1999)",
+      "source": "Energy and Environmental Profile of the U.S. Chemical Industry, US DOE Office of Industrial Technologies, 2000, Table 4-8 note d",
+      "url": "https://www.osti.gov/servlets/purl/1218625",
+      "quote": "Stoichiometric ratios: 0.651 lbs benzene and 0.351 lbs propylene for every lb of cumene",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Cumene yield (zeolite alkylation + transalkylation)",
+      "value": 99.97,
+      "unit": "wt % yield on cumene",
+      "conditions": "Zeolite process with DIPB transalkylation; yield of nearly 100 percent",
+      "source": "Energy and Environmental Profile of the U.S. Chemical Industry, US DOE Office of Industrial Technologies, 2000, Section 4 cumene process text (p. 114)",
+      "url": "https://www.osti.gov/servlets/purl/1218625",
+      "quote": "Yields of cumene of up to 99.97 percent by weight and better are routinely achieved with this process.",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Acetone co-product per kg phenol",
+      "value": 0.63,
+      "unit": "kg / kg phenol",
+      "conditions": "ecoinvent 3.6 dataset description (Gallardo Hipolito 2011), RoW",
+      "source": "GLAD / ecoinvent 3.6 dataset 'phenol production, from cumene', RoW",
+      "url": "https://www.globallcadataaccess.org/phenol-production-cumene-upr-ecoinvent-36-allocation-cut-0",
+      "quote": "For each kg of phenol produced, 0.63 kg of acetone are produced (Gallardo Hipolito 2011).",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Net process energy, phenol/acetone",
+      "value": [
+        6020,
+        9680
+      ],
+      "unit": "Btu / lb phenol+acetone product",
+      "conditions": "Average 7,850 Btu/lb; includes electricity, fuel oil/LPG, natural gas, coal/coke and other (net purchased steam); excludes feedstock heat; US 1997",
+      "source": "Energy and Environmental Profile of the U.S. Chemical Industry, US DOE Office of Industrial Technologies, 2000, Table 4-9",
+      "url": "https://www.osti.gov/servlets/purl/1218625",
+      "quote": "NET PROCESS ENERGY 6020 - 9680 7,850 57.3",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Net process energy, cumene",
+      "value": [
+        582,
+        809
+      ],
+      "unit": "Btu / lb cumene",
+      "conditions": "Average 696 Btu/lb before energy export; energy export (982)-(1243) Btu/lb makes the cumene unit a net exporter (total process energy about -394 Btu/lb); US 1997",
+      "source": "Energy and Environmental Profile of the U.S. Chemical Industry, US DOE Office of Industrial Technologies, 2000, Table 4-8",
+      "url": "https://www.osti.gov/servlets/purl/1218625",
+      "quote": "NET PROCESS ENERGY 582 - 809 696 4.0",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Cumene unit energy export",
+      "value": [
+        982,
+        1243
+      ],
+      "unit": "Btu / lb cumene",
+      "conditions": "Exported energy (average 1,113 Btu/lb), shown in brackets as negative; US 1997",
+      "source": "Energy and Environmental Profile of the U.S. Chemical Industry, US DOE Office of Industrial Technologies, 2000, Table 4-8",
+      "url": "https://www.osti.gov/servlets/purl/1218625",
+      "quote": "Energy Export (982) - (1243) (1,113) (6.5)",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Steam use, phenol plant",
+      "value": [
+        2.3,
+        2.8
+      ],
+      "unit": "t / t phenol",
+      "conditions": "Plant A: 1.9 t/t 18 bar steam plus 0.4-0.9 t/t 5 bar steam, 190 kWh/t electricity; a second plant reports 6.32 t/t steam and 326 kWh/t (Eni-polimeri 2009, IPP 2009). Value here is the summed plant A range",
+      "source": "EU BREF Large Volume Organic Chemical Industry, JRC Science for Policy Report JRC109279, 2017, Table 8.5 (p. 410)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/JRC109279_LVOC_Bref.pdf",
+      "quote": "Table 8.5: Energy usage in phenol plants Steam (t/t) Electrical (kWh/t) 1.9 (18 bar) 0.4-0.9 (5 bar) 190 6.32 326",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Electricity, phenol plant",
+      "value": [
+        190,
+        326
+      ],
+      "unit": "kWh / t phenol",
+      "conditions": "Two literature plants (Eni-polimeri 2009, IPP 2009)",
+      "source": "EU BREF Large Volume Organic Chemical Industry, JRC Science for Policy Report JRC109279, 2017, Table 8.5 (p. 410)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/JRC109279_LVOC_Bref.pdf",
+      "quote": "Table 8.5: Energy usage in phenol plants Steam (t/t) Electrical (kWh/t) 1.9 (18 bar) 0.4-0.9 (5 bar) 190 6.32 326",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Capex, integrated phenol/acetone plant",
+      "value": 630,
+      "unit": "USD million",
+      "conditions": "Haldia Petrochemicals/Adperma, Haldia India, 345,000 t/y phenol + 215,000 t/y acetone, Lummus technology, integrated with existing benzene/propylene supply; total investment INR 60 billion, commissioned Oct 2026 (2026 USD)",
+      "source": "ChemNet News, 2026-10-19",
+      "url": "https://news.chemnet.com/news-10860.html",
+      "quote": "The total investment of this project is 60 billion Indian rupees, equivalent to about 630 million US dollars. The unit has a designed annual production capacity of 345,000 tons of phenol and 215,000 tons of acetone",
+      "model_type": "capex"
+    }
+  ],
+  "acetic_acid": [
+    {
+      "metric": "Selectivity on methanol (Monsanto Rh)",
+      "value": 99,
+      "unit": "% (greater than)",
+      "conditions": "Rh catalyst, 30-60 atm, 150-200 C",
+      "source": "Jones, J.H., The Cativa Process for the Manufacture of Acetic Acid, Platinum Metals Review 44(3) 94-105, 2000 (BP Chemicals)",
+      "url": "https://technology.matthey.com/article/44/3/94-105/",
+      "quote": "The process gives selectivity of over 99 per cent for the major feed-stock, methanol (1).",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Yield on CO (Monsanto Rh)",
+      "value": 85,
+      "unit": "% (greater than)",
+      "conditions": "Losses from water gas shift and vent gas",
+      "source": "Jones, J.H., The Cativa Process for the Manufacture of Acetic Acid, Platinum Metals Review 44(3) 94-105, 2000 (BP Chemicals)",
+      "url": "https://technology.matthey.com/article/44/3/94-105/",
+      "quote": "However, the yield on CO is good (> 85 per cent), but there is room for improvement (3, 4).",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "CO utilisation (Cativa Ir vs Monsanto)",
+      "value": [
+        85,
+        94
+      ],
+      "unit": "% CO utilisation",
+      "conditions": "Monsanto about 85%, Cativa above 94%",
+      "source": "Jones, J.H., The Cativa Process for the Manufacture of Acetic Acid, Platinum Metals Review 44(3) 94-105, 2000 (BP Chemicals)",
+      "url": "https://technology.matthey.com/article/44/3/94-105/",
+      "quote": "In particular, steam usage is reduced by 30 per cent, while CO utilisation is increased from ~ 85 per cent to > 94 per cent.",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "CO consumption per t acetic acid",
+      "value": 0.47,
+      "unit": "t CO / t acetic acid",
+      "conditions": "Approximate industry figure in a 2026 market report (theoretical stoichiometric is about 0.466)",
+      "source": "Credence Research, Carbon Monoxide Plant Project Report 2026 (free page)",
+      "url": "https://www.credenceresearch.com/plant-projects/carbon-monoxide-manufacturing-plant-project-report",
+      "quote": "Acetic acid takes about 0.47 ton of CO per ton, tying CO demand to the acetic acid market.",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Steam use, Cativa relative to Monsanto",
+      "value": -30,
+      "unit": "% change",
+      "conditions": "Steam and cooling water both reduced 30% vs Rh system; no absolute t/t figure given",
+      "source": "Jones, J.H., The Cativa Process for the Manufacture of Acetic Acid, Platinum Metals Review 44(3) 94-105, 2000 (BP Chemicals)",
+      "url": "https://technology.matthey.com/article/44/3/94-105/",
+      "quote": "Steam and cooling water requirements are reduced by 30 per cent compared to the rhodium system.",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Capex, Cativa relative to Monsanto",
+      "value": -30,
+      "unit": "% change",
+      "conditions": "Cost of a new core acetic acid plant, Cativa vs Monsanto (2000)",
+      "source": "Jones, J.H., The Cativa Process for the Manufacture of Acetic Acid, Platinum Metals Review 44(3) 94-105, 2000 (BP Chemicals)",
+      "url": "https://technology.matthey.com/article/44/3/94-105/",
+      "quote": "The Cativa process also allows simplification of the production plant, which reduces the cost of a new core acetic acid plant by ~ 30 per cent.",
+      "model_type": "capex"
+    },
+    {
+      "metric": "Capex, 1 Mt/y acetic acid project",
+      "value": 3852,
+      "unit": "CNY million",
+      "conditions": "Shenghong Refining and Chemical (Lianyungang), China, 1,000,000 t/y acetic acid incl. PSA hydrogen, low temperature methanol wash and cryogenic CO separation units; announced April 2024; total investment",
+      "source": "Chemwin (en.888chem.com) news",
+      "url": "https://en.888chem.com/news/2/20955.html",
+      "quote": "The project is expected to have a total investment of 3.852 billion yuan and a construction period of 2 years.",
+      "model_type": "capex"
+    }
+  ],
+  "formaldehyde": [
+    {
+      "metric": "Methanol per t formaldehyde, silver process",
+      "value": [
+        1185,
+        1226
+      ],
+      "unit": "kg / t 100% formaldehyde",
+      "conditions": "Silver catalyst, high or partial methanol conversion",
+      "source": "EU BREF Large Volume Organic Chemical Industry, JRC Science for Policy Report JRC109279, 2017, Table 6.10 (p. 347)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/JRC109279_LVOC_Bref.pdf",
+      "quote": "Methanol consumption (kg/t of 100 % formaldehyde) 1 185-1 226 1 185-1 226 1 135-1 151",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Methanol per t formaldehyde, oxide (Formox type) process",
+      "value": [
+        1135,
+        1151
+      ],
+      "unit": "kg / t 100% formaldehyde",
+      "conditions": "Metal oxide (iron molybdate) catalyst",
+      "source": "EU BREF Large Volume Organic Chemical Industry, JRC Science for Policy Report JRC109279, 2017, Table 6.10 (p. 347)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/JRC109279_LVOC_Bref.pdf",
+      "quote": "Methanol consumption (kg/t of 100 % formaldehyde) 1 185-1 226 1 185-1 226 1 135-1 151",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Conversion of methanol to formaldehyde",
+      "value": [
+        87,
+        94
+      ],
+      "unit": "%",
+      "conditions": "Silver process 87-90%, oxide process 91-94%",
+      "source": "EU BREF Large Volume Organic Chemical Industry, JRC Science for Policy Report JRC109279, 2017, Table 6.10 (p. 347)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/JRC109279_LVOC_Bref.pdf",
+      "quote": "Conversion of methanol to formaldehyde (%) 87-90 87-90 91-94",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Net steam export, silver process high conversion",
+      "value": 2.6,
+      "unit": "t / t 100% formaldehyde",
+      "conditions": "Roughly 45% from off-gas combustion; 0.4-1.2 t/t without off-gas combustion and for partial conversion",
+      "source": "EU BREF Large Volume Organic Chemical Industry, JRC Science for Policy Report JRC109279, 2017, Table 6.10 (p. 347)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/JRC109279_LVOC_Bref.pdf",
+      "quote": "Net steam export (t/t of 100 % formaldehyde) 2.6 (1) [0.4-1.2 t/t (2)] 0.4-1.2 2.0",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Net steam export, oxide process",
+      "value": 2.0,
+      "unit": "t / t 100% formaldehyde",
+      "conditions": "Metal oxide process",
+      "source": "EU BREF Large Volume Organic Chemical Industry, JRC Science for Policy Report JRC109279, 2017, Table 6.10 (p. 347)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/JRC109279_LVOC_Bref.pdf",
+      "quote": "Net steam export (t/t of 100 % formaldehyde) 2.6 (1) [0.4-1.2 t/t (2)] 0.4-1.2 2.0",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Electricity, silver process",
+      "value": [
+        50,
+        100
+      ],
+      "unit": "kWh / t 100% formaldehyde",
+      "conditions": "Incl. off-gas combustion",
+      "source": "EU BREF Large Volume Organic Chemical Industry, JRC Science for Policy Report JRC109279, 2017, Table 6.10 (p. 347)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/JRC109279_LVOC_Bref.pdf",
+      "quote": "Electricity consumption (incl. off-gas combustion) (kWh/t of 100 % formaldehyde) 50-100 50-100 80-190",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Electricity, oxide process",
+      "value": [
+        80,
+        190
+      ],
+      "unit": "kWh / t 100% formaldehyde",
+      "conditions": "Incl. off-gas combustion; higher due to excess air and larger gas volumes",
+      "source": "EU BREF Large Volume Organic Chemical Industry, JRC Science for Policy Report JRC109279, 2017, Table 6.10 (p. 347)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/JRC109279_LVOC_Bref.pdf",
+      "quote": "Electricity consumption (incl. off-gas combustion) (kWh/t of 100 % formaldehyde) 50-100 50-100 80-190",
+      "model_type": "energy"
+    }
+  ],
+  "ethylene": [
+    {
+      "metric": "Ethylene per t ethane feed (ultimate, with recycle)",
+      "value": 803,
+      "unit": "kg / t ethane",
+      "conditions": "Ultimate yields with ethane and propane recycled ('Ethane and propane after recycle' row = 0); ethane is the 3rd column. Quote is the PDF table row as extracted (cells separated by spaces).",
+      "source": "IPCC 2006 Vol 3 Ch 3, Table 3.25 Ethylene steam cracking feedstock-product matrix (source Neelis, Patel, de Feber 2003)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+      "quote": "TABLE 3.25 ETHYLENE STEAM CRACKING FEEDSTOCK-PRODUCT MATRIX, kg product/tonne feedstock; columns Naphtha, Gas oil, Ethane, Propane, Butane, Others; row: Ethylene 324 250 803 465 441 324",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Hydrogen per t ethane feed",
+      "value": 60,
+      "unit": "kg / t ethane",
+      "conditions": "Ultimate yields with ethane and propane recycled ('Ethane and propane after recycle' row = 0); ethane is the 3rd column. Quote is the PDF table row as extracted (cells separated by spaces).",
+      "source": "IPCC 2006 Vol 3 Ch 3, Table 3.25 Ethylene steam cracking feedstock-product matrix (source Neelis, Patel, de Feber 2003)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+      "quote": "TABLE 3.25 ETHYLENE STEAM CRACKING FEEDSTOCK-PRODUCT MATRIX, kg product/tonne feedstock; columns Naphtha, Gas oil, Ethane, Propane, Butane, Others; row: Hydrogen 11 8 60 15 14 11",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Methane per t ethane feed",
+      "value": 61,
+      "unit": "kg / t ethane",
+      "conditions": "Ultimate yields with ethane and propane recycled ('Ethane and propane after recycle' row = 0); ethane is the 3rd column. Quote is the PDF table row as extracted (cells separated by spaces). Methane normally burnt as cracker fuel.",
+      "source": "IPCC 2006 Vol 3 Ch 3, Table 3.25 Ethylene steam cracking feedstock-product matrix (source Neelis, Patel, de Feber 2003)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+      "quote": "TABLE 3.25 ETHYLENE STEAM CRACKING FEEDSTOCK-PRODUCT MATRIX, kg product/tonne feedstock; columns Naphtha, Gas oil, Ethane, Propane, Butane, Others; row: Methane 139 114 61 267 204 139",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Propylene per t ethane feed",
+      "value": 16,
+      "unit": "kg / t ethane",
+      "conditions": "Ultimate yields with ethane and propane recycled ('Ethane and propane after recycle' row = 0); ethane is the 3rd column. Quote is the PDF table row as extracted (cells separated by spaces).",
+      "source": "IPCC 2006 Vol 3 Ch 3, Table 3.25 Ethylene steam cracking feedstock-product matrix (source Neelis, Patel, de Feber 2003)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+      "quote": "TABLE 3.25 ETHYLENE STEAM CRACKING FEEDSTOCK-PRODUCT MATRIX, kg product/tonne feedstock; columns Naphtha, Gas oil, Ethane, Propane, Butane, Others; row: Propylene 168 144 16 125 151 168",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Butadiene per t ethane feed",
+      "value": 23,
+      "unit": "kg / t ethane",
+      "conditions": "Ultimate yields with ethane and propane recycled ('Ethane and propane after recycle' row = 0); ethane is the 3rd column. Quote is the PDF table row as extracted (cells separated by spaces). Other C4 for ethane = 6 kg/t (row 'Other C4 62 40 6 12 33 62').",
+      "source": "IPCC 2006 Vol 3 Ch 3, Table 3.25 Ethylene steam cracking feedstock-product matrix (source Neelis, Patel, de Feber 2003)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+      "quote": "TABLE 3.25 ETHYLENE STEAM CRACKING FEEDSTOCK-PRODUCT MATRIX, kg product/tonne feedstock; columns Naphtha, Gas oil, Ethane, Propane, Butane, Others; row: Butadiene 50 50 23 48 44 50",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "C5/C6 (pygas proxy) per t ethane feed",
+      "value": 26,
+      "unit": "kg / t ethane",
+      "conditions": "Ultimate yields with ethane and propane recycled ('Ethane and propane after recycle' row = 0); ethane is the 3rd column. Quote is the PDF table row as extracted (cells separated by spaces). Aromatics, C7+ and >430C rows are 0 for ethane, so C5/C6 is the whole pygas-type cut.",
+      "source": "IPCC 2006 Vol 3 Ch 3, Table 3.25 Ethylene steam cracking feedstock-product matrix (source Neelis, Patel, de Feber 2003)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+      "quote": "TABLE 3.25 ETHYLENE STEAM CRACKING FEEDSTOCK-PRODUCT MATRIX, kg product/tonne feedstock; columns Naphtha, Gas oil, Ethane, Propane, Butane, Others; row: C5/C6 40 21 26 63 108 40",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "High value chemicals per t ethane feed",
+      "value": 842,
+      "unit": "kg / t ethane",
+      "conditions": "Ultimate yields with ethane and propane recycled ('Ethane and propane after recycle' row = 0); ethane is the 3rd column. Quote is the PDF table row as extracted (cells separated by spaces). HVC = ethylene+propylene+butadiene+aromatics; fuel grade products and backflows 157 kg/t; losses 5 kg/t.",
+      "source": "IPCC 2006 Vol 3 Ch 3, Table 3.25 Ethylene steam cracking feedstock-product matrix (source Neelis, Patel, de Feber 2003)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+      "quote": "TABLE 3.25 ETHYLENE STEAM CRACKING FEEDSTOCK-PRODUCT MATRIX, kg product/tonne feedstock; columns Naphtha, Gas oil, Ethane, Propane, Butane, Others; row: High Value Chemicals 645 569 842 638 635 645",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Ethylene final yield on ethane",
+      "value": [
+        80,
+        84
+      ],
+      "unit": "wt% of ethane feed",
+      "conditions": "Final yield after separation and recycling, mass basis (paper defines yield as final yield after recycle). Same table: methane 4.2 wt%, hydrogen 4.3 wt%, propylene 1-1.6 wt%, butadiene 1-1.4 wt%, aromatics and C4+ 2-3 wt%.",
+      "source": "Ren T, Patel MK, Blok K (2006) Olefins from conventional and heavy feedstocks: Energy use in steam cracking and alternative processes, Energy 31(4) 425-451, Table 2",
+      "url": "https://dspace.library.uu.nl/server/api/core/bitstreams/1b3f5619-52c6-45d4-ac17-a71b18f04195/content",
+      "quote": "Ethylene yield (wt%)c 80-84 ... c Yield data is based on [21,22]. Yields are on mass basis and are all final yields.",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Once-through (per pass) ethylene yield from ethane furnace",
+      "value": 56,
+      "unit": "wt% of furnace feed",
+      "conditions": "Single pass furnace effluent, before ethane recycle; same column shows unconverted ethane 30 wt%, i.e. per pass conversion about 70% (derived). Also hydrogen 4.3, methane 4.2, propylene 1, butadiene 1.6, C5/C6 1.8 wt%.",
+      "source": "EU JRC Best Available Techniques Reference Document for the Production of Large Volume Organic Chemicals (JRC109279), 2017, Table 3.3 (from 2003 LVOC BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/JRC109279_LVOC_Bref.pdf",
+      "quote": "Table 3.3: Typical 'once-through' product yields (1) from a furnace (%) for different feedstocks ... Ethylene 56 ... Ethane 30 ... (1) The quoted yields are exemplary and do not reflect the overall yields which are achieved by recycling of species such as ethane.",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Ethane feed per t ethylene, new world-scale ethane cracker (design)",
+      "value": 1.317,
+      "unit": "t ethane / t ethylene",
+      "conditions": "Derived ratio 1.91/1.45 from the revised EIA design figures for INEOS Project ONE, Antwerp (ethylene yield 0.759 t/t ethane). Co-products per the same source: propylene 230,500 t/y, C4 162,000 t/y, C5 66,750 t/y, pyrolysis oil 12,000 t/y.",
+      "source": "Oil & Gas Journal, 'INEOS plans 2027 startup of Antwerp grassroots ethane cracker', R. Brelsford, 30 July 2026",
+      "url": "https://www.ogj.com/refining-processing/news/55394579/ineos-plans-2027-startup-of-antwerp-grassroots-ethane-cracker",
+      "quote": "Project ONE's ethane cracker-which will be configured to produce 1.45 million tonnes/year (tpy) of ethylene from 1.91 million tpy of ethane feedstock",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Specific energy consumption, ethane cracking",
+      "value": [
+        17,
+        21
+      ],
+      "unit": "GJ / t ethylene",
+      "conditions": "Typical range (maximum range 15-25). Process energy only for pyrolysis and separation; feedstock energy excluded. Net final energy basis. Ethane cracking imports about 15% of SEC (not self-sufficient).",
+      "source": "Ren T, Patel MK, Blok K (2006) Olefins from conventional and heavy feedstocks: Energy use in steam cracking and alternative processes, Energy 31(4) 425-451, Table 2",
+      "url": "https://dspace.library.uu.nl/server/api/core/bitstreams/1b3f5619-52c6-45d4-ac17-a71b18f04195/content",
+      "quote": "SEC (GJ/t ethylene)a 17-21 (typical) and 15-25 (maximum) ... a Energy use is based on [19,21]. SEC here only refers to process energy use in pyrolysis and separation.",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Specific energy consumption, ethane cracking, per t HVC",
+      "value": [
+        16,
+        19
+      ],
+      "unit": "GJ / t HVC",
+      "conditions": "Typical, process energy for pyrolysis and separation, feedstock energy excluded.",
+      "source": "Ren T, Patel MK, Blok K (2006) Olefins from conventional and heavy feedstocks: Energy use in steam cracking and alternative processes, Energy 31(4) 425-451, Table 2 and Table 5 note h",
+      "url": "https://dspace.library.uu.nl/server/api/core/bitstreams/1b3f5619-52c6-45d4-ac17-a71b18f04195/content",
+      "quote": "Typically, current ethane cracking has an average SEC 17-21 GJ/t ethylene and 16-19 GJ/t HVCs.",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Average steam cracking specific energy consumption (all feeds)",
+      "value": 26,
+      "unit": "GJ / t ethylene",
+      "conditions": "Worldwide average process energy, feedstock energy excluded, mixed feedstocks (not ethane only). Split: 13.5-16.2 GJ/t cracking furnace, 3.5-5.2 compression, 6.3-7.3 separation.",
+      "source": "EU JRC Best Available Techniques Reference Document for the Production of Large Volume Organic Chemicals (JRC109279), 2017, Section 3.3.4",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/JRC109279_LVOC_Bref.pdf",
+      "quote": "A breakdown of contributions to total specific energy consumption for ethylene production (26 GJ/t of ethylene, with feedstock energy excluded) by different feedstocks (ethane, naphtha) cracking was reported to be: 55-65 % (13.5-16.2 GJ/t of ethylene) for feedstock heating",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Net process energy, US ethylene manufacture 1997",
+      "value": 8107,
+      "unit": "Btu / lb ethylene",
+      "conditions": "US average across feeds (about 18.9 GJ/t). Net process energy = electricity (405 Btu/lb, no generation losses) + fuels for steam/process heat; range 5,405-10,809 Btu/lb. Energy export credit (6,071 Btu/lb) not deducted; feedstock heat of combustion (31,414 Btu/lb, ethane basis) excluded.",
+      "source": "Energy and Environmental Profile of the U.S. Chemical Industry, US DOE Office of Industrial Technologies, 2000, Table 2-1",
+      "url": "https://www.osti.gov/servlets/purl/1218625",
+      "quote": "| NET PROCESS ENERGY | 5,405 - 10,809 | 8,107 | 392.4 | 196.2 |",
+      "model_type": "energy"
+    },
+    {
+      "metric": "CO2 emission factor, ethane steam cracking",
+      "value": 0.95,
+      "unit": "t CO2 / t ethylene",
+      "conditions": "IPCC Tier 1 default, total process and energy feedstock use (0.76 process feedstock + 0.19 supplemental fuel). Covers whole cracker output allocated to ethylene; excludes flares. Western Europe basis (adjustment 100%).",
+      "source": "2006 IPCC Guidelines for National Greenhouse Gas Inventories, Vol 3 Ch 3 Chemical Industry, Table 3.14",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+      "quote": "TABLE 3.14 STEAM CRACKING ETHYLENE PRODUCTION TIER 1 CO2 EMISSION FACTORS tonnes CO2/tonne ethylene produced ... Ethylene (Total Process and Energy Feedstock Use) 1.73 2.29 0.95 1.04 1.07 1.73",
+      "model_type": "energy"
+    },
+    {
+      "metric": "CO2 emission, ethane cracking (literature)",
+      "value": [
+        1.0,
+        1.2
+      ],
+      "unit": "t CO2 / t ethylene",
+      "conditions": "Typical; from fuel combustion and utilities.",
+      "source": "Ren T, Patel MK, Blok K (2006) Olefins from conventional and heavy feedstocks: Energy use in steam cracking and alternative processes, Energy 31(4) 425-451, Table 2",
+      "url": "https://dspace.library.uu.nl/server/api/core/bitstreams/1b3f5619-52c6-45d4-ac17-a71b18f04195/content",
+      "quote": "CO2 emission (t CO2/t ethylene)b 1.0-1.2 (typical) 1.8-2.0 (typical)",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Capex, grassroots ethane cracker (INEOS Project ONE, Antwerp)",
+      "value": 5000000000,
+      "unit": "EUR",
+      "conditions": "Capacity 1.45 Mt/y ethylene, so about 3,450 EUR per t/y (derived). Cost as reported 2026 (nominal, project budget); scope = whole Project ONE grassroots cracker project at Lillo/Antwerp (furnaces, cracker modules, utilities on site); does not split out ISBL/OSBL. Start-up expected H2 2027.",
+      "source": "Oil & Gas Journal, 'INEOS plans 2027 startup of Antwerp grassroots ethane cracker', R. Brelsford, 30 July 2026",
+      "url": "https://www.ogj.com/refining-processing/news/55394579/ineos-plans-2027-startup-of-antwerp-grassroots-ethane-cracker",
+      "quote": "INEOS Olefins Belgium NV's grassroots €5-billion Project ONE ethane cracker project in Lillo, at the Port of Antwerp, Belgium",
+      "model_type": "capex"
+    }
+  ],
+  "ethylene_glycol": [
+    {
+      "metric": "Ethylene oxide per lb ethylene glycol",
+      "value": 0.75,
+      "unit": "lb EO / lb EG",
+      "conditions": "Direct hydration route, DOE stated stoichiometric ratio (pure stoichiometry is 44/62 = 0.71; 0.75 includes losses). Alt route: 0.68 lb ethylene + 0.79 lb O2 per lb EG.",
+      "source": "Energy and Environmental Profile of the U.S. Chemical Industry, US DOE Office of Industrial Technologies, 2000, Table 2-6 note d",
+      "url": "https://www.osti.gov/servlets/purl/1218625",
+      "quote": "Stoichiometric ratio for direct hydration: 0.75 lbs ethylene oxide for every lb of ethylene glycol.",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Glycol yield on EO",
+      "value": 95,
+      "unit": "% (lower bound)",
+      "conditions": "Acid or thermally catalysed hydration of EO.",
+      "source": "Energy and Environmental Profile of the U.S. Chemical Industry, US DOE Office of Industrial Technologies, 2000, Section 2.1.4",
+      "url": "https://www.osti.gov/servlets/purl/1218625",
+      "quote": "The yield of glycol from this process is usually better than 95 percent.",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "MEG share of crude glycols",
+      "value": [
+        75,
+        92
+      ],
+      "unit": "wt% of glycol products",
+      "conditions": "Commercial uncatalysed units; remainder DEG and some TEG; 100% EO conversion.",
+      "source": "EU JRC Best Available Techniques Reference Document for the Production of Large Volume Organic Chemicals (JRC109279), 2017, Section 7.2.2.5",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/JRC109279_LVOC_Bref.pdf",
+      "quote": "Typically the glycol products consist of 75-92 wt-% MEG, with the remainder being DEG and some TEG. All (100 %) of the EO feed is converted into glycols (either MEG, DEG, TEG or heavy glycols).",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Water to EO molar ratio, thermal hydration",
+      "value": [
+        10,
+        25
+      ],
+      "unit": "mol H2O / mol EO",
+      "conditions": "Conventional uncatalysed direct hydration; about 90% glycol yield. The paper's own HYSYS case uses 10:1.",
+      "source": "Shehata WM et al. (2024) A comparative study of mono ethylene glycol economic production via different techniques, Scientific Reports 14 (open access)",
+      "url": "https://www.nature.com/articles/s41598-024-77713-y",
+      "quote": "a large amount of water is needed, about 10 to 25 moles of water for each one mole of ethylene oxide. This results in the requirement of more energy for the efficient removal of excess water in the distillation step. This method results in a yield of about 90% of ethylene glycol",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Hydration reactor conditions",
+      "value": [
+        150,
+        250
+      ],
+      "unit": "degC",
+      "conditions": "No catalyst, full EO conversion, 10-40 barg to keep EO liquid.",
+      "source": "EU JRC Best Available Techniques Reference Document for the Production of Large Volume Organic Chemicals (JRC109279), 2017, Section 7.2.2.5",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/JRC109279_LVOC_Bref.pdf",
+      "quote": "Glycols are manufactured by feeding a mixture of EO and water to a reactor that is operated at an elevated temperature (typically 150-250 °C). ... A reactor pressure of 10-40 barg is typically applied to avoid vaporisation of the EO.",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "DEG+TEG co-product, direct hydration simulation",
+      "value": 22270,
+      "unit": "t/y per 600,000 t/y MEG",
+      "conditions": "Aspen HYSYS design, 10:1 water:EO; about 3.7 wt% of MEG output (derived). Model result, not plant data.",
+      "source": "Shehata WM et al. (2024) A comparative study of mono ethylene glycol economic production via different techniques, Scientific Reports 14 (open access)",
+      "url": "https://www.nature.com/articles/s41598-024-77713-y",
+      "quote": "The flow rate of the DEG and TEG is 1532 tonne/year, which is very low compared to their flowrate in the direct hydration process (22,270 tones/year).",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Net process energy, ethylene glycol manufacture",
+      "value": 2045,
+      "unit": "Btu / lb EG",
+      "conditions": "US 1997 average (about 4.76 GJ/t); range 1,501-2,589 Btu/lb. Includes electricity 533 Btu/lb (no generation losses) and fuels for steam/process heat (natural gas 1,164, fuel oil/LPG 45, coal 151, other incl. purchased steam 151 Btu/lb). Final energy; feedstock heat of combustion excluded; EO plant energy excluded.",
+      "source": "Energy and Environmental Profile of the U.S. Chemical Industry, US DOE Office of Industrial Technologies, 2000, Table 2-6",
+      "url": "https://www.osti.gov/servlets/purl/1218625",
+      "quote": "| NET PROCESS ENERGY | 1,501 - 2,589 | 2,045 | 11.5 |",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Natural gas for steam/process heat, EG manufacture",
+      "value": 1164,
+      "unit": "Btu / lb EG",
+      "conditions": "US 1997 average (about 2.71 GJ/t); range 865-1,463; mostly evaporation and distillation steam. Best available proxy for steam use; no t steam / t MEG figure found.",
+      "source": "Energy and Environmental Profile of the U.S. Chemical Industry, US DOE Office of Industrial Technologies, 2000, Table 2-6",
+      "url": "https://www.osti.gov/servlets/purl/1218625",
+      "quote": "| Natural Gas | 865 - 1,463 | 1,164 | 6.5 |",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Evaporator train duty, 600 kt/y MEG direct hydration",
+      "value": 17.8,
+      "unit": "MW",
+      "conditions": "Three-effect evaporator, only first effect uses external HP steam, removes about 75% of water; HYSYS model at 10:1 water:EO. Further duties: dehydration column reboiler 10.763 MW, MEG purification reboiler 30.66 MW (HP steam). Total about 59.2 MW, roughly 2.8 GJ/t MEG if 8,000 h/y assumed (derived, hours not stated).",
+      "source": "Shehata WM et al. (2024) A comparative study of mono ethylene glycol economic production via different techniques, Scientific Reports 14 (open access)",
+      "url": "https://www.nature.com/articles/s41598-024-77713-y",
+      "quote": "This stream is introduced to three evaporators with total energy consumption of 17.8 MW. Approximately 75% of water is removed in this section using re-boiling and then introduced to the dehydration column. Only the first evaporator uses external steam",
+      "model_type": "energy"
+    },
+    {
+      "metric": "MEG purification column reboiler duty",
+      "value": 30.66,
+      "unit": "MW",
+      "conditions": "600,000 t/y MEG HYSYS design, HP steam; separates DEG and TEG from MEG.",
+      "source": "Shehata WM et al. (2024) A comparative study of mono ethylene glycol economic production via different techniques, Scientific Reports 14 (open access)",
+      "url": "https://www.nature.com/articles/s41598-024-77713-y",
+      "quote": "The purification column with a reboiler duty of 30.66 MW given by using high-pressure steam is used to separate DEG and TEG from MEG.",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Total capital investment, EO hydration to MEG unit",
+      "value": 70000000,
+      "unit": "USD",
+      "conditions": "600,000 t/y MEG from EO (glycol reaction, evaporation and distillation; EO plant appears excluded); Aspen Process Economic Analyzer estimate, accuracy +/-25%; cost year not stated (paper published 2024); preliminary, not a built plant.",
+      "source": "Shehata WM et al. (2024) A comparative study of mono ethylene glycol economic production via different techniques, Scientific Reports 14 (open access)",
+      "url": "https://www.nature.com/articles/s41598-024-77713-y",
+      "quote": "The estimated total capital investment for the direct hydration ethylene oxide process (EO-MEG) and indirect hydration through ethylene carbonate (EC-MEG) process used to produce MEG are both approximately the same amount of $70 million and the difference is within the uncertainty expected from the preliminary economic analysis (± 25%).",
+      "model_type": "capex"
+    }
+  ],
+  "chlor_alkali": [
+    {
+      "metric": "Electricity for electrolysis, bipolar membrane cells (AC)",
+      "value": [
+        2279,
+        2865
+      ],
+      "unit": "kWh/t Cl2",
+      "conditions": "33 bipolar plants, EU-27 and EFTA, 2008 to 2010; average 2,574, median 2,573",
+      "source": "EU BREF Production of Chlor-alkali (JRC, 2014), Table 3.10",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/CAK_BREF_102014.pdf",
+      "quote": "Electrical energy use for electrolysis (alternating current) AC kWh/t Cl2 produced 2 279 2 865 2 574 2 573",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Electricity, cells plus other equipment (membrane, median plant)",
+      "value": 2800,
+      "unit": "kWh/t Cl2",
+      "conditions": "Median electrolysis 2,600 DC plus other electrical equipment about 200",
+      "source": "EU BREF Production of Chlor-alkali (JRC, 2014), Table 3.13 and section 3.3.4.5",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/CAK_BREF_102014.pdf",
+      "quote": "Electricity consumption DC kWh /t Cl2 produced 2 860 2 600 ... the median being approximately 200 kWh/t Cl2 produced (Table 3.12)",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Salt consumption",
+      "value": 1700,
+      "unit": "kg NaCl/t Cl2",
+      "conditions": "Brine recirculation plants, 62 data from 58 plants, 2008 to 2011; minimum 1,608",
+      "source": "EU BREF Production of Chlor-alkali (JRC, 2014), Table 3.3",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/CAK_BREF_102014.pdf",
+      "quote": "NaCl (2) 1 608 1 651 1 674 1 700 1 787 1 936 2 339",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Steam for caustic evaporation to 50%",
+      "value": [
+        0.46,
+        1.5
+      ],
+      "unit": "t steam/t NaOH (100%)",
+      "conditions": "40 membrane cell plants; average 0.736, median 0.703",
+      "source": "EU BREF Production of Chlor-alkali (JRC, 2014), Table 3.11",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/CAK_BREF_102014.pdf",
+      "quote": "Steam consumption for caustic evaporation (50 %) t steam/t caustic (100 %) 0.460 1.500 0.736 0.703",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Steam for brine and equipment heating",
+      "value": [
+        0.08,
+        1.27
+      ],
+      "unit": "t steam/t Cl2",
+      "conditions": "All cell techniques",
+      "source": "EU BREF Production of Chlor-alkali (JRC, 2014), section 3.3.4.5 and Table 3.12",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/CAK_BREF_102014.pdf",
+      "quote": "Reported consumption figures range from approximately 0.1 to 1.3 t steam/t Cl2 produced, the median being approximately 0.2 t steam/t Cl2 produced (Table 3.12).",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Chlorine liquefaction electricity",
+      "value": [
+        8,
+        200
+      ],
+      "unit": "kWh/t Cl2 liquefied",
+      "conditions": "All cell techniques, median about 50",
+      "source": "EU BREF Production of Chlor-alkali (JRC, 2014), section 3.3.4.5 and Table 3.12",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/CAK_BREF_102014.pdf",
+      "quote": "Reported electrical energy consumption figures for chlorine liquefaction range from approximately 10 to 200 kWh/t Cl2 liquefied, the median being approximately 50 kWh/t Cl2 liquefied.",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Caustic soda per tonne of chlorine",
+      "value": 1.128,
+      "unit": "t NaOH/t Cl2",
+      "conditions": "Stoichiometric ratio; practice 1.070 to 1.128",
+      "source": "EU BREF Production of Chlor-alkali (JRC, 2014), section 2.1",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/CAK_BREF_102014.pdf",
+      "quote": "more or less equal to the ratio of the molecular weights (40.00 / 35.45 = 1.128) ... In practice, the ratio ranges from 1.070 to 1.128 [ 3, Euro Chlor 2011 ].",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Fixed capital, new membrane cell plant",
+      "value": 1000,
+      "unit": "EUR (2010)/t annual Cl2 capacity, 100 kt/yr",
+      "conditions": "Size scaling PC = (100/C)^0.3 P100 (BREF Equation 2)",
+      "source": "EU BREF Production of Chlor-alkali (JRC, 2014), mercury cell conversion costs, PDF page 162 (Euro Chlor 2010)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/CAK_BREF_102014.pdf",
+      "quote": "By comparison, the costs for a completely new membrane cell plant are estimated to be approximately EUR 1 000/t annual Cl2 capacity.",
+      "model_type": "capex"
+    }
+  ],
+  "soda_ash": [
+    {
+      "metric": "Salt consumption (as brine)",
+      "value": [
+        1530,
+        1800
+      ],
+      "unit": "kg NaCl/t soda ash",
+      "conditions": "Indicative ranges of annual averages, EU Solvay plants (CEFIC-ESAPA 2004)",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Solids and Others (JRC, 2007), soda ash chapter, Table 2.11",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic-s_bref_0907.pdf",
+      "quote": "Raw brine NaCl (1530 - 1800) + water (4500 - 5200)",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Salt consumption",
+      "value": [
+        1.6,
+        1.7
+      ],
+      "unit": "t NaCl/t soda ash",
+      "conditions": "Practice with good grade brine",
+      "source": "Te-Pang Hou, Manufacture of Soda with Special Reference to the Ammonia Process (ACS Monograph, 1942)",
+      "url": "https://archive.org/details/dli.ernet.4162",
+      "quote": "The rate of consumption of salt per ton of soda ash made is thus 1.6-1.7 tons, which is the figure obtained in practice with a good grade of salt (brine).",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Limestone to lime kilns",
+      "value": [
+        1050,
+        1600
+      ],
+      "unit": "kg/t soda ash",
+      "conditions": "Inlet lime kiln (1,090 to 1,820 inlet plant)",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Solids and Others (JRC, 2007), soda ash chapter, Table 2.11",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic-s_bref_0907.pdf",
+      "quote": "Limestone 1050 - 1600 (inlet lime kiln) 1090 - 1820 (inlet plant)",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Kiln fuel",
+      "value": [
+        2.2,
+        2.8
+      ],
+      "unit": "GJ/t soda ash",
+      "conditions": "Lime kiln fuels",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Solids and Others (JRC, 2007), soda ash chapter, Table 2.11",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic-s_bref_0907.pdf",
+      "quote": "Fuels (lime kiln) 2.2 - 2.8",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Ammonia make-up",
+      "value": [
+        0.8,
+        2.1
+      ],
+      "unit": "kg NH3/t soda ash",
+      "conditions": "",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Solids and Others (JRC, 2007), soda ash chapter, Table 2.11",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic-s_bref_0907.pdf",
+      "quote": "NH3 make up 0.8 - 2.1 (8)",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Ammonia circulating",
+      "value": [
+        500,
+        550
+      ],
+      "unit": "kg NH3/t soda ash",
+      "conditions": "Loss under 0.5% of the loop",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Solids and Others (JRC, 2007), soda ash chapter, section 2.2.1.2.7",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic-s_bref_0907.pdf",
+      "quote": "This loop circulates roughly 500 to 550 kg NH 3/t soda ash from which the ammonia loss is less than 0.5 % of this flowrate.",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Steam for ammonia recovery",
+      "value": [
+        1300,
+        2400
+      ],
+      "unit": "kg/t soda ash",
+      "conditions": "LP steam",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Solids and Others (JRC, 2007), soda ash chapter, section 2.3.2.1",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic-s_bref_0907.pdf",
+      "quote": "for recovery of ammonia (depending on the process applied): 1300 to 2400 kg/t soda ash",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Steam for bicarbonate decomposition",
+      "value": [
+        1100,
+        1300
+      ],
+      "unit": "kg/t soda ash",
+      "conditions": "IP steam, light ash",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Solids and Others (JRC, 2007), soda ash chapter, section 2.3.2.1",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic-s_bref_0907.pdf",
+      "quote": "for decomposition of sodium bicarbonate: 1100 to 1300 kg/t soda ash",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Process fuels including electricity",
+      "value": [
+        7.5,
+        10.8
+      ],
+      "unit": "GJ/t soda ash (dense)",
+      "conditions": "Excludes lime kiln fuel; includes about 0.9 GJ/t for densification (light ash basis 6.6 to 9.9)",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Solids and Others (JRC, 2007), soda ash chapter, Table 2.11",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic-s_bref_0907.pdf",
+      "quote": "Fuels (soda ash)(2), including electricity 7.5 - 10.8 ... the energy required for densification to convert soda ash light into soda ash dense amounts approximately to 0.9 GJ/t soda ash",
+      "model_type": "energy"
+    },
+    {
+      "metric": "CO2 to air",
+      "value": [
+        200,
+        400
+      ],
+      "unit": "kg/t soda ash",
+      "conditions": "",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Solids and Others (JRC, 2007), soda ash chapter, Table 2.11",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic-s_bref_0907.pdf",
+      "quote": "CO2 200 - 400",
+      "model_type": "emission"
+    },
+    {
+      "metric": "Distiller waste, chloride / calcium / sodium / suspended solids",
+      "value": {
+        "Cl-": [
+          850,
+          1100
+        ],
+        "Ca2+": [
+          340,
+          400
+        ],
+        "Na+": [
+          160,
+          220
+        ],
+        "suspended solids": [
+          90,
+          700
+        ]
+      },
+      "unit": "kg/t soda ash",
+      "conditions": "Outlet distillation",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Solids and Others (JRC, 2007), soda ash chapter, Table 2.11",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic-s_bref_0907.pdf",
+      "quote": "Cl- 850 - 1100 Ca2+ 340 - 400 Na+ 160 - 220 ... Suspended solids 90 - 700",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Distiller waste volume",
+      "value": 10,
+      "unit": "m3/t soda ash",
+      "conditions": "Illustrative specific blow-off volume",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Solids and Others (JRC, 2007), soda ash chapter, Table 2.13 note",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic-s_bref_0907.pdf",
+      "quote": "For a specific volume blow-off of NH3 recovery: 10 m3/t soda ash",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Burnt lime CaO content",
+      "value": [
+        75,
+        90
+      ],
+      "unit": "%",
+      "conditions": "Raw burned lime from soda ash kilns",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Solids and Others (JRC, 2007), soda ash chapter, section 2.2.1.2",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic-s_bref_0907.pdf",
+      "quote": "Raw burned lime produced by lime kilns associated with a soda ash plant contains approximately 75 to 90 % of CaO.",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Electricity",
+      "value": [
+        50,
+        130
+      ],
+      "unit": "kWh/t soda ash",
+      "conditions": "",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Solids and Others (JRC, 2007), soda ash chapter, section 2.3.2.4",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic-s_bref_0907.pdf",
+      "quote": "with the consumption of electricity in a range of between 50 and 130 kWh/t soda ash",
+      "model_type": "energy"
+    }
+  ],
+  "e_methanol": [
+    {
+      "metric": "Hydrogen per tonne of methanol",
+      "value": 0.188,
+      "unit": "t H2/t MeOH",
+      "conditions": "Stoichiometric",
+      "source": "IRENA and Methanol Institute, Innovation Outlook: Renewable Methanol (2021), section 2.3",
+      "url": "https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2021/Jan/IRENA_Innovation_Renewable_Methanol_2021.pdf",
+      "quote": "To produce 1 t of methanol, 0.188 t of H2 and 1.373 t of CO2 are needed.",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "CO2 per tonne of methanol",
+      "value": 1.373,
+      "unit": "t CO2/t MeOH",
+      "conditions": "Stoichiometric",
+      "source": "IRENA and Methanol Institute, Innovation Outlook: Renewable Methanol (2021), section 2.3",
+      "url": "https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2021/Jan/IRENA_Innovation_Renewable_Methanol_2021.pdf",
+      "quote": "To produce 1 t of methanol, 0.188 t of H2 and 1.373 t of CO2 are needed.",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Electricity per tonne including electrolysis",
+      "value": [
+        10,
+        11
+      ],
+      "unit": "MWh/t MeOH",
+      "conditions": "CO2 provided",
+      "source": "IRENA and Methanol Institute, Innovation Outlook: Renewable Methanol (2021)",
+      "url": "https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2021/Jan/IRENA_Innovation_Renewable_Methanol_2021.pdf",
+      "quote": "About 10-11 MWh of electricity are required to produce one tonne of e-methanol; most of it for the electrolysis of water (assuming CO2 is provided).",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Electrolysis electricity per tonne of hydrogen",
+      "value": 50,
+      "unit": "MWh/t H2",
+      "conditions": "Practical; 39.4 theoretical on HHV",
+      "source": "IRENA and Methanol Institute, Innovation Outlook: Renewable Methanol (2021), section 2.3",
+      "url": "https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2021/Jan/IRENA_Innovation_Renewable_Methanol_2021.pdf",
+      "quote": "Producing 1 t of hydrogen with a 100% theoretical efficiency requires 39.4 MWh of electricity (HHV of H2; 33.3 MWh/t for the LHV of H2). In practice, however, it is closer to 50 MWh/t",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Fixed capital, CRI Norway CO2 to methanol plant",
+      "value": 200000000.0,
+      "unit": "USD (2019), 300 t/d, 100 000 t/y",
+      "conditions": "CO2 and H2 feed; 2 000 USD per t/y",
+      "source": "IRENA and Methanol Institute, Innovation Outlook: Renewable Methanol (2021), Table 25 (Stefansson, 2019)",
+      "url": "https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2021/Jan/IRENA_Innovation_Renewable_Methanol_2021.pdf",
+      "quote": "CRI (Norway) CO2 and H2 300 100 000 200 2 000 Stefansson, 2019",
+      "model_type": "capex"
+    },
+    {
+      "metric": "Production cost, e-methanol from combined renewable CO2",
+      "value": [
+        820,
+        1620
+      ],
+      "unit": "USD/t MeOH",
+      "conditions": "Estimated 2015-2018 costs, no carbon credit, green H2 4 000 to 8 000 USD/t, CO2 10 to 50 USD/t",
+      "source": "IRENA and Methanol Institute, Innovation Outlook: Renewable Methanol (2021), Table 15",
+      "url": "https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2021/Jan/IRENA_Innovation_Renewable_Methanol_2021.pdf",
+      "quote": "Cost of methanol (USD/t MeOH) (b) With no carbon credit 820-1 620",
+      "model_type": "cost"
+    },
+    {
+      "metric": "Synthesis and distillation share of cost",
+      "value": [
+        30,
+        50
+      ],
+      "unit": "USD/t MeOH",
+      "conditions": "Once CO2 and H2 are supplied",
+      "source": "IRENA and Methanol Institute, Innovation Outlook: Renewable Methanol (2021), section 2.3 (Boulamanti and Moya, 2017)",
+      "url": "https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2021/Jan/IRENA_Innovation_Renewable_Methanol_2021.pdf",
+      "quote": "It will only represent about USD 30 to USD 50/t of the total cost of methanol production (Boulamanti and Moya, 2017).",
+      "model_type": "cost"
+    }
+  ],
+  "ammonium_nitrate": [
+    {
+      "metric": "Ammonia per tonne",
+      "value": 213,
+      "unit": "kg/t AN",
+      "conditions": "Pressure neutralisation at 4 bar with clean steam production; 60% HNO3, 96% AN solution product",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Ammonia, Acids and Fertilisers (2007), Table 9.8 (Uhde 2003)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic_aaf.pdf",
+      "quote": "At 4 bar with clean steam production ... Steam import, kg/tonne AN 130 (10 bar) 10 52 (10 bar) Steam export, kg/tonne AN None None 240 (5 bar) Cooling water, m3/tonne AN 31.0 22.5 3.8 Electricity, kWh/tonne AN 2.0 3.8 4.8 Ammonia, kg/tonne AN 213 213 213 Nitric acid, kg/tonne AN 789 789 789",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Nitric acid (100%) per tonne",
+      "value": 789,
+      "unit": "kg/t AN",
+      "conditions": "Pressure neutralisation at 4 bar with clean steam production; 60% HNO3, 96% AN solution product",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Ammonia, Acids and Fertilisers (2007), Table 9.8 (Uhde 2003)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic_aaf.pdf",
+      "quote": "At 4 bar with clean steam production ... Steam import, kg/tonne AN 130 (10 bar) 10 52 (10 bar) Steam export, kg/tonne AN None None 240 (5 bar) Cooling water, m3/tonne AN 31.0 22.5 3.8 Electricity, kWh/tonne AN 2.0 3.8 4.8 Ammonia, kg/tonne AN 213 213 213 Nitric acid, kg/tonne AN 789 789 789",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Clean steam export",
+      "value": 240,
+      "unit": "kg/t AN (5 bar)",
+      "conditions": "Pressure neutralisation at 4 bar with clean steam production; 60% HNO3, 96% AN solution product",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Ammonia, Acids and Fertilisers (2007), Table 9.8 (Uhde 2003)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic_aaf.pdf",
+      "quote": "At 4 bar with clean steam production ... Steam import, kg/tonne AN 130 (10 bar) 10 52 (10 bar) Steam export, kg/tonne AN None None 240 (5 bar) Cooling water, m3/tonne AN 31.0 22.5 3.8 Electricity, kWh/tonne AN 2.0 3.8 4.8 Ammonia, kg/tonne AN 213 213 213 Nitric acid, kg/tonne AN 789 789 789",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Steam import to reach 96% solution",
+      "value": 52,
+      "unit": "kg/t AN (10 bar)",
+      "conditions": "Pressure neutralisation at 4 bar with clean steam production; 60% HNO3, 96% AN solution product",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Ammonia, Acids and Fertilisers (2007), Table 9.8 (Uhde 2003)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic_aaf.pdf",
+      "quote": "At 4 bar with clean steam production ... Steam import, kg/tonne AN 130 (10 bar) 10 52 (10 bar) Steam export, kg/tonne AN None None 240 (5 bar) Cooling water, m3/tonne AN 31.0 22.5 3.8 Electricity, kWh/tonne AN 2.0 3.8 4.8 Ammonia, kg/tonne AN 213 213 213 Nitric acid, kg/tonne AN 789 789 789",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Cooling water",
+      "value": 3.8,
+      "unit": "m3/t AN",
+      "conditions": "Pressure neutralisation at 4 bar with clean steam production; 60% HNO3, 96% AN solution product, cooling water dT 10 C",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Ammonia, Acids and Fertilisers (2007), Table 9.8 (Uhde 2003)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic_aaf.pdf",
+      "quote": "At 4 bar with clean steam production ... Steam import, kg/tonne AN 130 (10 bar) 10 52 (10 bar) Steam export, kg/tonne AN None None 240 (5 bar) Cooling water, m3/tonne AN 31.0 22.5 3.8 Electricity, kWh/tonne AN 2.0 3.8 4.8 Ammonia, kg/tonne AN 213 213 213 Nitric acid, kg/tonne AN 789 789 789",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Electricity, 96% solution",
+      "value": 4.8,
+      "unit": "kWh/t AN",
+      "conditions": "Pressure neutralisation at 4 bar with clean steam production; 60% HNO3, 96% AN solution product",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Ammonia, Acids and Fertilisers (2007), Table 9.8 (Uhde 2003)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic_aaf.pdf",
+      "quote": "At 4 bar with clean steam production ... Steam import, kg/tonne AN 130 (10 bar) 10 52 (10 bar) Steam export, kg/tonne AN None None 240 (5 bar) Cooling water, m3/tonne AN 31.0 22.5 3.8 Electricity, kWh/tonne AN 2.0 3.8 4.8 Ammonia, kg/tonne AN 213 213 213 Nitric acid, kg/tonne AN 789 789 789",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Net energy, modern AN plant",
+      "value": [
+        0.09,
+        0.22
+      ],
+      "unit": "GJ/t AN",
+      "conditions": "Modern plants; European average 0.7",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Ammonia, Acids and Fertilisers (2007), section 9.3 (infoMil 2001)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic_aaf.pdf",
+      "quote": "Average energy consumption in Europe is 0.7 GJ/tonne AN produced, but modern AN plants require only 0.09 - 0.22 GJ/tonne AN.",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Electricity, plants making solid product",
+      "value": [
+        10,
+        50
+      ],
+      "unit": "kWh/t product",
+      "conditions": "Solid CAN plants",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Ammonia, Acids and Fertilisers (2007), section 9.4.3 (EFMA 2000)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic_aaf.pdf",
+      "quote": "Plants that make solid CAN also need around 150 - 200 kg steam per tonne of product, together with electrical power of 10 - 50 kWh/tonne of product",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Steam export, solution only plants",
+      "value": 170,
+      "unit": "kg/t AN (maximum)",
+      "conditions": "Plants making only AN solution",
+      "source": "EU BREF Large Volume Inorganic Chemicals, Ammonia, Acids and Fertilisers (2007), section 9.4.3",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/lvic_aaf.pdf",
+      "quote": "If the plant only makes ANS, steam can be exported at a rate of up to 170 kg/tonne of AN",
+      "model_type": "energy"
+    }
+  ],
+  "hydrogen_peroxide": [
+    {
+      "metric": "Hydrogen per tonne",
+      "value": [
+        60,
+        70
+      ],
+      "unit": "kg/t H2O2",
+      "conditions": "Anthraquinone autoxidation process, per tonne of H2O2 (100%)",
+      "source": "EU BREF Large Volume Organic Chemicals (2017), chapter 12, Table 12.4",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/JRC109279_LVOC_Bref.pdf",
+      "quote": "Table 12.4: Input of a hydrogen peroxide plant Raw material kg/t of H2O2 produced (100 %) Hydrogen 60-70 Oxygen 1 000-1 300 (1) Quinone 0.5-2.5 (2) Solvents 2-5 ... Demineralised water 1-2 m3/t ... (1) Corresponding to 3 300-4 600 Nm3 of air.",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Oxygen per tonne",
+      "value": [
+        1000,
+        1300
+      ],
+      "unit": "kg/t H2O2",
+      "conditions": "Anthraquinone autoxidation process, per tonne of H2O2 (100%)",
+      "source": "EU BREF Large Volume Organic Chemicals (2017), chapter 12, Table 12.4",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/JRC109279_LVOC_Bref.pdf",
+      "quote": "Table 12.4: Input of a hydrogen peroxide plant Raw material kg/t of H2O2 produced (100 %) Hydrogen 60-70 Oxygen 1 000-1 300 (1) Quinone 0.5-2.5 (2) Solvents 2-5 ... Demineralised water 1-2 m3/t ... (1) Corresponding to 3 300-4 600 Nm3 of air.",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Process air",
+      "value": [
+        3300,
+        4600
+      ],
+      "unit": "Nm3/t H2O2",
+      "conditions": "Anthraquinone autoxidation process, per tonne of H2O2 (100%)",
+      "source": "EU BREF Large Volume Organic Chemicals (2017), chapter 12, Table 12.4",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/JRC109279_LVOC_Bref.pdf",
+      "quote": "Table 12.4: Input of a hydrogen peroxide plant Raw material kg/t of H2O2 produced (100 %) Hydrogen 60-70 Oxygen 1 000-1 300 (1) Quinone 0.5-2.5 (2) Solvents 2-5 ... Demineralised water 1-2 m3/t ... (1) Corresponding to 3 300-4 600 Nm3 of air.",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Quinone make up",
+      "value": [
+        0.5,
+        2.5
+      ],
+      "unit": "kg/t H2O2",
+      "conditions": "Anthraquinone autoxidation process, per tonne of H2O2 (100%)",
+      "source": "EU BREF Large Volume Organic Chemicals (2017), chapter 12, Table 12.4",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/JRC109279_LVOC_Bref.pdf",
+      "quote": "Table 12.4: Input of a hydrogen peroxide plant Raw material kg/t of H2O2 produced (100 %) Hydrogen 60-70 Oxygen 1 000-1 300 (1) Quinone 0.5-2.5 (2) Solvents 2-5 ... Demineralised water 1-2 m3/t ... (1) Corresponding to 3 300-4 600 Nm3 of air.",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Demineralised water",
+      "value": [
+        1,
+        2
+      ],
+      "unit": "m3/t H2O2",
+      "conditions": "Anthraquinone autoxidation process, per tonne of H2O2 (100%)",
+      "source": "EU BREF Large Volume Organic Chemicals (2017), chapter 12, Table 12.4",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/JRC109279_LVOC_Bref.pdf",
+      "quote": "Table 12.4: Input of a hydrogen peroxide plant Raw material kg/t of H2O2 produced (100 %) Hydrogen 60-70 Oxygen 1 000-1 300 (1) Quinone 0.5-2.5 (2) Solvents 2-5 ... Demineralised water 1-2 m3/t ... (1) Corresponding to 3 300-4 600 Nm3 of air.",
+      "model_type": "mass_balance"
+    },
+    {
+      "metric": "Total net energy",
+      "value": [
+        2.9,
+        5.7
+      ],
+      "unit": "GJ/t H2O2",
+      "conditions": "Anthraquinone autoxidation process, per tonne of H2O2 (100%), three plants, 50% product",
+      "source": "EU BREF Large Volume Organic Chemicals (2017), chapter 12, Table 12.5",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/JRC109279_LVOC_Bref.pdf",
+      "quote": "Table 12.5: Energy data from the data collection (2012) Energy (GJ/t of H2O2) Total net consumption 2.9-5.7 Distillation net consumption 0.3-1.5 (1) Compression of air 1.4 (2) Heat recovery from process (mainly vapour recompression and heat exchangers) 1.7-4.2 (1) Referring to a hydrogen peroxide product concentration of 50 wt-%.",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Distillation net energy",
+      "value": [
+        0.3,
+        1.5
+      ],
+      "unit": "GJ/t H2O2",
+      "conditions": "Anthraquinone autoxidation process, per tonne of H2O2 (100%), 50% product",
+      "source": "EU BREF Large Volume Organic Chemicals (2017), chapter 12, Table 12.5",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/JRC109279_LVOC_Bref.pdf",
+      "quote": "Table 12.5: Energy data from the data collection (2012) Energy (GJ/t of H2O2) Total net consumption 2.9-5.7 Distillation net consumption 0.3-1.5 (1) Compression of air 1.4 (2) Heat recovery from process (mainly vapour recompression and heat exchangers) 1.7-4.2 (1) Referring to a hydrogen peroxide product concentration of 50 wt-%.",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Air compression energy",
+      "value": 1.4,
+      "unit": "GJ/t H2O2",
+      "conditions": "Anthraquinone autoxidation process, per tonne of H2O2 (100%), air oxidation",
+      "source": "EU BREF Large Volume Organic Chemicals (2017), chapter 12, Table 12.5",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/JRC109279_LVOC_Bref.pdf",
+      "quote": "Table 12.5: Energy data from the data collection (2012) Energy (GJ/t of H2O2) Total net consumption 2.9-5.7 Distillation net consumption 0.3-1.5 (1) Compression of air 1.4 (2) Heat recovery from process (mainly vapour recompression and heat exchangers) 1.7-4.2 (1) Referring to a hydrogen peroxide product concentration of 50 wt-%.",
+      "model_type": "energy"
+    },
+    {
+      "metric": "Crude peroxide concentration",
+      "value": [
+        20,
+        50
+      ],
+      "unit": "wt% H2O2",
+      "conditions": "Extractor outlet",
+      "source": "EU BREF Large Volume Organic Chemicals (2017), chapter 12, section 12.2",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/JRC109279_LVOC_Bref.pdf",
+      "quote": "The crude aqueous hydrogen peroxide from the extractor has a H2O2 concentration of 20-50 wt- %.",
+      "model_type": "process"
+    }
+  ],
   "_meta": {
     "compiled": "2026-11-14",
     "notes": "Every quote was seen in the source text. Gaps: methanol capex, NH3 equilibrium mole % table, sulphuric acid t steam/t acid.",
     "aspirin_added": "2026-11-14: patent and HSDB figures, quotes checked against the live page text.",
-    "organics_added": "2026-11-14: ethanol, biodiesel, ethylene oxide and styrene figures re-checked against the source text; en dashes in source ranges written as hyphens."
+    "organics_added": "2026-11-14: ethanol, biodiesel, ethylene oxide and styrene figures re-checked against the source text; en dashes in source ranges written as hyphens.",
+    "batch_b_added": "2026-11-14: phenol and acetone, acetic acid, formaldehyde, ethylene (ethane cracking), ethylene glycol. Quotes seen in the source text; en dashes in ranges written as hyphens.",
+    "batch_a_added": "2026-11-14: chlor-alkali (CAK BREF 2014), soda ash (LVIC-S BREF 2007, Hou 1942), hydrogen peroxide, ammonium nitrate, e-methanol. Quotes seen in the source text; en dashes in ranges written as hyphens."
   }
 }

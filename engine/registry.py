@@ -48,13 +48,11 @@ PROCESSES = [
 
 # Recognised but not yet modelled. Shown as coming soon so the request is captured.
 COMING_SOON = [
-    "acetic acid", "acetone", "acrylic acid", "adipic acid", "benzene", "bisphenol a", "butadiene", "caprolactam",
-    "chlorine", "caustic soda", "sodium hydroxide", "cumene", "dimethyl ether", "ethylene", "ethylene glycol",
-    "formaldehyde", "green ammonia", "green hydrogen", "hydrogen peroxide", "isopropanol", "maleic anhydride",
-    "melamine", "mtbe", "nylon", "paracetamol", "phenol", "phosphoric acid", "polyethylene", "polypropylene",
-    "propylene", "propylene oxide", "pta", "terephthalic acid", "soda ash", "sodium carbonate", "titanium dioxide",
-    "toluene", "vinyl chloride", "pvc", "xylene", "e-methanol", "sustainable aviation fuel", "saf", "lithium hydroxide",
-    "ammonium nitrate", "glycerol", "lactic acid", "succinic acid", "butanol", "hydrochloric acid",
+    "acrylic acid", "adipic acid", "benzene", "bisphenol a", "butadiene", "caprolactam", "dimethyl ether",
+    "green ammonia", "green hydrogen", "isopropanol", "maleic anhydride", "melamine", "mtbe", "nylon", "paracetamol",
+    "phosphoric acid", "polyethylene", "polypropylene", "propylene", "propylene oxide", "pta", "terephthalic acid",
+    "titanium dioxide", "toluene", "vinyl chloride", "pvc", "xylene", "sustainable aviation fuel", "saf",
+    "lithium hydroxide", "glycerol", "lactic acid", "succinic acid", "butanol", "hydrochloric acid",
 ]
 
 
