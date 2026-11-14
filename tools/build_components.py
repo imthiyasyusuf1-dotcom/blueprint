@@ -68,6 +68,23 @@ COMPONENTS = {
     "NH4NO3": ("ammonium nitrate", "N2H4O3", "Ammonium nitrate"),
     "EAQ": ("2-ethylanthraquinone", "C16H12O2", "2-Ethylanthraquinone"),
     "C": ("carbon", "C", "Carbon (coke, as graphite)"),
+    # batch B (phenol and acetone, acetic acid, formaldehyde, ethylene, ethylene glycol)
+    "C2H6": ("ethane", "C2H6", "Ethane"),
+    "C3H6": ("propylene", "C3H6", "Propylene"),
+    "C4H6": ("1,3-butadiene", "C4H6", "1,3-Butadiene"),
+    "Cumene": ("cumene", "C9H12", "Cumene (isopropylbenzene)"),
+    "DIPB": ("1,4-diisopropylbenzene", "C12H18", "Diisopropylbenzene"),
+    "CHP": ("cumene hydroperoxide", "C9H12O2", "Cumene hydroperoxide"),
+    "Phenol": ("phenol", "C6H6O", "Phenol"),
+    "Acetone": ("acetone", "C3H6O", "Acetone"),
+    "AMS": ("alpha-methylstyrene", "C9H10", "alpha-Methylstyrene"),
+    "HCHO": ("formaldehyde", "CH2O", "Formaldehyde"),
+    "MEG": ("ethylene glycol", "C2H6O2", "Monoethylene glycol"),
+    "DEG": ("diethylene glycol", "C4H10O3", "Diethylene glycol"),
+    "TEG": ("triethylene glycol", "C6H14O4", "Triethylene glycol"),
+    # hydrogen peroxide working solution: the aromatic quinone solvent (EU BREF LVOC 2017, 12.3.3 lists
+    # trimethylbenzene among the alkylanthraquinone solvents)
+    "TMB": ("1,2,4-trimethylbenzene", "C9H12", "1,2,4-Trimethylbenzene (aromatic solvent)"),
 }
 
 # Standard heats of combustion (lower heating value) are computed by chemicals.
@@ -100,6 +117,11 @@ MANUAL = {
                    "rho_298": 1300.0, "flash_point_K": None, "autoignition_K": None, "LFL": None, "UFL": None,
                    "TWA": None, "STEL": None, "cp_gas": None, "antoine": None},
 }
+
+# Liquid Cp method overrides (component: (method, T in K)). The VDI table thermo picks for phenol
+# gives about 850 J/mol K, four times the real value; phenol melts at 41 C, so the corresponding
+# states (Rowlinson-Poling) value is taken just above the melt and used for the molten liquid.
+CP_LIQ_METHOD = {"Phenol": ("ROWLINSON_POLING", 319.15)}
 
 
 def fit_cp(chem, T_lo=298.15, T_hi=1200.0, n=40):
@@ -228,7 +250,11 @@ def main():
         except Exception:
             pass
         try:
-            rec["Cp_liquid_298"] = num(c.HeatCapacityLiquid.T_dependent_property(298.15))
+            if cid in CP_LIQ_METHOD:
+                m, T = CP_LIQ_METHOD[cid]
+                rec["Cp_liquid_298"] = num(c.HeatCapacityLiquid.calculate(T, m))
+            else:
+                rec["Cp_liquid_298"] = num(c.HeatCapacityLiquid.T_dependent_property(298.15))
         except Exception:
             pass
         try:
