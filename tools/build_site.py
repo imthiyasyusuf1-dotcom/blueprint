@@ -163,16 +163,149 @@ TOKEN_WORDS = {
 UNIT_SUFFIX = {"C": "\u00b0C", "bar": "bar", "pct": "%", "tpd": "t/d", "ppm": "ppm", "h": "h", "kW": "kW", "K": "K"}
 
 
-def param_meta(key, default):
+# Per process labels, used first. Keys mean different things in different processes
+# (y_C2H4 is a feed fraction in EO but a furnace yield in the cracker). Unit None keeps the generic unit.
+PROC_PARAM_OVERRIDES = {
+    "chlor_alkali": {
+        "current_density_kA_m2": ("Current density", "kA/m\u00b2"),
+        "caustic_cell_wt_pct": ("Caustic from the cells", None),
+        "caustic_product_wt_pct": ("Caustic product strength", None),
+        "evap_effects": ("Evaporator effects", None),
+        "water_transport": ("Water through the membrane", "mol/mol Na"),
+        "purge_m3_per_t": ("Brine purge", "m\u00b3/t Cl2"),
+        "liquefaction_bar": ("Liquefaction pressure", None),
+    },
+    "hydrogen_peroxide": {
+        "ws_productivity_g_l": ("Working solution productivity", "g/L"),
+        "h2_vent_pct": ("Hydrogen vented", None),
+        "h2_to_water_pct": ("Hydrogen lost to water", None),
+        "crude_wt_pct": ("Crude extract strength", None),
+        "product_wt_pct": ("Product strength", None),
+        "column_P_bar": ("Concentration column pressure", None),
+        "mvr": ("Vapour recompression (MVR)", None),
+        "quinone_kg_t": ("Quinone make up", "kg/t"),
+    },
+    "e_methanol": {
+        "electrolyser_kwh_kg_h2": ("Electrolyser power", "kWh/kg H2"),
+    },
+    "ammonium_nitrate": {
+        "acid_in_T_C": ("Acid supply temperature", None),
+        "solution_wt_pct": ("AN solution strength", None),
+        "melt_wt_pct": ("AN melt strength", None),
+        "hno3_loss_pct": ("HNO3 loss", None),
+    },
+    "soda_ash": {
+        "salt_util_pct": ("Salt utilisation", None),
+        "excess_lime_pct": ("Excess lime", None),
+        "limestone_CaCO3_pct": ("CaCO3 in limestone", None),
+        "calcination_pct": ("Limestone calcined", None),
+        "kiln_gas_CO2_pct": ("CO2 in kiln gas", None),
+        "tower_exit_CO2_pct": ("CO2 leaving the towers", None),
+        "free_NH3_kg_t": ("Free NH3 in filter liquor", "kg/t"),
+        "liquor_CO2_kg_t": ("CO2 in filter liquor", "kg/t"),
+        "tower_P_bar": ("Carbonation tower pressure", None),
+    },
+    "phenol_acetone": {
+        "benzene_propylene_ratio": ("Benzene to propylene ratio", "mol/mol"),
+        "alk_cumene_sel": ("Alkylator selectivity to cumene", None),
+        "dipb_purge": ("DIPB purged as heavies", None),
+        "trans_benzene_ratio": ("Transalkylator benzene to DIPB", "mol/mol"),
+        "alk_T_C": ("Alkylator temperature", None),
+        "alk_P_bar": ("Alkylator pressure", None),
+        "ox_conversion": ("Oxidiser conversion per pass", None),
+        "ox_selectivity": ("Oxidiser selectivity to CHP", None),
+        "ox_T_C": ("Oxidiser temperature", None),
+        "ox_P_bar": ("Oxidiser pressure", None),
+        "ox_residence_h": ("Oxidiser residence time", None),
+        "offgas_o2": ("O2 in oxidiser off gas", None),
+        "chp_conc_wt": ("CHP in the concentrate", None),
+        "cleave_T_C": ("Cleavage temperature", None),
+        "reflux_benzene": ("Benzene column reflux ratio", None),
+        "reflux_cumene": ("Cumene column reflux ratio", None),
+        "reflux_acetone": ("Acetone column reflux ratio", None),
+        "reflux_ams": ("AMS column reflux ratio", None),
+        "reflux_phenol": ("Phenol column reflux ratio", None),
+    },
+    "acetic_acid": {
+        "T_C": ("Reactor temperature", None),
+        "P_bar": ("Reactor pressure", None),
+        "co_purity": ("CO purity", None),
+        "co_feed_h2": ("H2 in the CO feed", None),
+        "co_feed_n2": ("N2 in the CO feed", None),
+        "wgs_per_acid": ("CO2 from water gas shift", "mol/mol acid"),
+        "meoh_to_ch4": ("Methanol lost to by-products", None),
+        "p_co_bar": ("CO partial pressure", None),
+        "p_other_bar": ("Other gases partial pressure", None),
+        "sty_kmol_m3_h": ("Space time yield", "kmol/m\u00b3 h"),
+        "cat_recycle_ratio": ("Catalyst recycle", "kg/kg acid"),
+        "water_carry": ("Water to the drying column", "mol/mol acid"),
+        "heavies_purge": ("Acid lost with heavies", None),
+        "rx_steam_frac": ("Reactor heat to steam", None),
+        "reflux_drying": ("Drying column reflux ratio", None),
+        "reflux_heavy": ("Heavy ends column reflux ratio", None),
+        "co_supply_bar": ("CO supply pressure", None),
+    },
+    "formaldehyde": {
+        "T_C": ("Silver bed temperature", None),
+        "P_bar": ("Reactor pressure", None),
+        "water_methanol_kg": ("Water to methanol in feed", "kg/kg"),
+        "conversion": ("Methanol conversion", None),
+        "selectivity": ("Selectivity to formaldehyde", None),
+        "loss_to_co2": ("By-product share burnt to CO2", None),
+        "formalin_wt": ("HCHO in formalin", None),
+        "wh_out_C": ("Waste heat boiler outlet", "\u00b0C"),
+    },
+    "ethylene": {
+        "y_C2H4": ("Ethylene yield per pass", "wt%"),
+        "y_H2": ("Hydrogen yield per pass", "wt%"),
+        "y_CH4": ("Methane yield per pass", "wt%"),
+        "y_C3H6": ("Propylene yield per pass", "wt%"),
+        "y_C4H6": ("Butadiene yield per pass", "wt%"),
+        "y_C6H6": ("Benzene yield per pass", "wt%"),
+        "coil_out_C": ("Coil outlet temperature", None),
+        "coil_out_bar": ("Coil outlet pressure", None),
+        "steam_ratio": ("Dilution steam to ethane", "kg/kg"),
+        "feed_in_C": ("Radiant coil inlet temperature", None),
+        "tle_out_C": ("Quench exchanger outlet", "\u00b0C"),
+        "cgc_out_bar": ("Cracked gas compressor outlet", "bar"),
+        "c2_reflux": ("C2 splitter reflux ratio", None),
+        "cop_propylene": ("Propylene refrigeration COP", None),
+        "cop_ethylene": ("Ethylene refrigeration COP", None),
+    },
+    "ethylene_glycol": {
+        "water_eo_ratio": ("Water to EO ratio", "mol/mol"),
+        "k_ratio": ("Glycol to water rate ratio", None),
+        "T_in_C": ("Reactor inlet temperature", None),
+        "P_bar": ("Reactor pressure", None),
+        "residence_min": ("Residence time", "min"),
+        "effects": ("Evaporator effects", None),
+        "economy_per_effect": ("Steam economy per effect", "kg/kg"),
+        "conc_glycol_wt": ("Glycols in the concentrate", None),
+        "reflux_dry": ("Drying column reflux ratio", None),
+        "reflux_meg": ("MEG column reflux ratio", None),
+        "reflux_deg": ("DEG column reflux ratio", None),
+    },
+}
+
+
+def param_meta(key, default, pid=None):
+    po = PROC_PARAM_OVERRIDES.get(pid, {}).get(key)
     parts = key.split("_")
     unit = ""
-    if key in UNIT_OVERRIDES:
+    if po:
+        parts = []
+        label = po[0]
+        if len(key.split("_")) > 1 and key.split("_")[-1] in UNIT_SUFFIX:
+            unit = UNIT_SUFFIX[key.split("_")[-1]]
+        if po[1] is not None:
+            unit = po[1]
+    elif key in UNIT_OVERRIDES:
         label, unit = UNIT_OVERRIDES[key]
         parts = []
     elif len(parts) > 1 and parts[-1] in UNIT_SUFFIX:
         unit = UNIT_SUFFIX[parts[-1]]
         parts = parts[:-1]
-    if key in UNIT_OVERRIDES:
+    if po or key in UNIT_OVERRIDES:
         pass
     elif key in LABEL_OVERRIDES:
         label = LABEL_OVERRIDES[key]
@@ -191,7 +324,7 @@ def param_meta(key, default):
             words.append("temperature")
         label = " ".join(words).strip() or key
         label = label[:1].upper() + label[1:]
-    if key.endswith("wt_pct"):
+    if key.endswith("wt_pct") and not (po and po[1]):
         unit = "wt%"
     kind = "number"
     step = "any"
@@ -211,7 +344,7 @@ def param_meta(key, default):
         lo, hi = 0.0, max(10.0, d * 4)
     elif unit == "h":
         lo, hi = d * 0.25, d * 4
-    elif 0 < d < 1 and not unit and "ratio" not in key:
+    elif 0 < d < 1 and not unit and not any(w in key for w in ("ratio", "reflux", "cop_")):
         lo, hi = max(0.001, d * 0.5), min(1.0, d * 1.5)
         unit = "fraction"
     elif d > 0:
@@ -511,7 +644,7 @@ def build_landing(index, built, designs):
 
 def design_config(p, regions, built_pdfs):
     params = param_defaults(p)
-    meta = [param_meta(k, v) for k, v in params.items() if k != "capacity_tpd"]
+    meta = [param_meta(k, v, p["id"]) for k, v in params.items() if k != "capacity_tpd"]
     for m in meta:
         m["label_html"] = chem(m["label"])
     cap = p.get("default_tpd") or params.get("capacity_tpd")
