@@ -30,6 +30,20 @@ PROCESSES = [
                                                     "nitram", "prilled ammonium nitrate"]),
     ("soda_ash", "Soda ash", 1000, ["soda ash", "sodium carbonate", "na2co3", "solvay", "solvay process",
                                     "ammonia soda process", "washing soda"]),
+    # batch B
+    ("phenol_acetone", "Phenol and acetone", 600, ["phenol", "acetone", "phenol acetone", "phenol and acetone",
+                                                "c6h5oh", "c6h6o", "carbolic acid", "hydroxybenzene", "propanone",
+                                                "dimethyl ketone", "c3h6o", "(ch3)2co", "cumene", "cumene process",
+                                                "hock process", "cumene hydroperoxide"]),
+    ("acetic_acid", "Acetic acid", 1500, ["acetic acid", "ethanoic acid", "acoh", "ch3cooh", "c2h4o2",
+                                         "glacial acetic acid", "methanol carbonylation", "cativa", "monsanto process"]),
+    ("formaldehyde", "Formaldehyde", 300, ["formaldehyde", "hcho", "ch2o", "methanal", "formalin",
+                                          "formol", "formox", "methylene oxide"]),
+    ("ethylene", "Ethylene", 3000, ["ethylene", "ethene", "c2h4", "ethane cracker", "steam cracker",
+                                   "ethane cracking", "steam cracking", "olefins"]),
+    ("ethylene_glycol", "Ethylene glycol", 1500, ["ethylene glycol", "meg", "monoethylene glycol", "mono ethylene glycol",
+                                                 "glycol", "ethane 1,2 diol", "ethanediol", "c2h6o2", "antifreeze",
+                                                 "diethylene glycol", "deg", "triethylene glycol", "teg"]),
 ]
 
 # Recognised but not yet modelled. Shown as coming soon so the request is captured.
