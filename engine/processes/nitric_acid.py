@@ -26,7 +26,7 @@ DEFAULTS = {
     "tertiary_abatement": True,
 }
 AIR = {"N2": 0.7808, "O2": 0.2095, "Ar": 0.0093}
-N2O_GEN_KG_T = 7.0  # IPCC 2006 Table 3.3, medium pressure combustion plants, unabated
+N2O_GEN_KG_T = 7.0  # IPCC 2006 Table 3.3, medium-pressure combustion plants, unabated
 N2O_ABATED_KG_T = 2.5  # IPCC 2006 Table 3.3, process integrated or tail gas N2O destruction
 NM3 = 22.414
 
@@ -193,7 +193,7 @@ def design(capacity_tpd=None, region="US", **over):
                p["capacity_tpd"], region)
     d.route = ("Ammonia is vaporised, mixed with compressed air and burnt over platinum rhodium gauzes to nitric "
                "oxide. The hot gas raises steam and reheats the tail gas, is cooled, compressed again and absorbed "
-               "in water in a high pressure tray column to 60% acid. A catalyst bed destroys most of the N2O in the "
+               "in water in a high-pressure tray column to 60% acid. A catalyst bed destroys most of the N2O in the "
                "tail gas before an expander recovers its energy.")
     d.summary = (f"{p['capacity_tpd']:,.0f} t/d nitric acid (100% basis, sold as 60% acid) from ammonia, the "
                  "fertiliser grade dual pressure route, with surplus steam exported.")
@@ -313,12 +313,12 @@ def design(capacity_tpd=None, region="US", **over):
 
     d.assumptions = [
         f"NO yield {p['no_yield_pct']:.0f}% from Fertilizers Europe Booklet 2 for 1.7 to 6.5 bar. N2O generation is the "
-        "IPCC 2006 default for medium pressure plants (7 kg/t); the rest of the ammonia goes to N2.",
+        "IPCC 2006 default for medium-pressure plants (7 kg/t); the rest of the ammonia goes to N2.",
         "With tertiary abatement the N2O leaving is the IPCC default for plants with tail gas N2O destruction (2.5 kg/t).",
         f"Gauze temperature solved as the adiabatic temperature of {p['nh3_in_air_pct']:.1f}% NH3 in air (typical 9.5 to "
         "11.5%), air at compressor outlet, NH3 vapour at 100 C.",
         f"Tail gas O2 {p['tail_O2_pct']:.0f}% (booklet 2 to 4%) fixes the secondary air; tail gas NOx {p['tail_NOx_ppm']:.0f} "
-        "ppm (booklet 100 to 200 ppm for high pressure absorption), no SCR.",
+        "ppm (booklet 100 to 200 ppm for high-pressure absorption), no SCR.",
         "Air and NOx compressors polytropic 0.80; expander 0.82 from 350 C; condensing turbine 40 bar 450 C to 0.1 bar "
         "at 78% isentropic (IAPWS-97). NOx compressor heat goes to the tail gas.",
         f"NO oxidation in the hot cooling train from IUPAC kinetics (datasheet NOx23) over an assumed {TAU_HOT_S:.0f} s "

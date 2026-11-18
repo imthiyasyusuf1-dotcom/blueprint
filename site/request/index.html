@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>document.documentElement.classList.add('js')</script>
 <title>Request a chemical | Blueprint</title>
 <meta name="description" content="Ask for a chemical that Blueprint has not modelled yet. Requests decide what gets built next.">
 <link rel="canonical" href="https://imthiyasyusuf1-dotcom.github.io/blueprint/request/">
@@ -15,7 +16,7 @@
 <meta property="og:image" content="https://imthiyasyusuf1-dotcom.github.io/blueprint/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Blueprint: type a chemical, get a first pass plant design">
+<meta property="og:image:alt" content="Blueprint: type a chemical, get a first-pass plant design">
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Request a chemical | Blueprint">
@@ -33,7 +34,8 @@
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="../" aria-label="Blueprint home"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#2347F5"/><rect x="6.5" y="8.5" width="8" height="8" rx="1.5" fill="none" stroke="#fff" stroke-width="2"/><path d="M14.5 12.5h4.5v7.5" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><rect x="15" y="19" width="10.5" height="5.5" rx="1.5" fill="#fff"/></svg><span>Blueprint</span></a>
-    <nav class="nav" aria-label="Main"><a href="../examples/">Examples</a><a href="../method/">Method</a><a href="../about/">About</a></nav>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span></span><span></span></button>
+    <nav class="nav" id="site-nav" aria-label="Main"><a href="../examples/">Examples</a><a href="../method/">Method</a><a href="../about/">About</a></nav>
   </div>
 </header>
 <main id="main">
@@ -84,13 +86,13 @@
   <div class="search-field">
     <div class="search-box">
       <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.75"/><path d="m13.5 13.5 3.5 3.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
-      <input id="q2" name="q" type="text" placeholder="Type a chemical" spellcheck="false" autocapitalize="off"
+      <input id="q2" name="q" type="text" placeholder="e.g. ammonia, methanol" spellcheck="false" autocapitalize="off"
         role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="q2-list">
       <button class="btn btn-primary" type="submit">Design</button>
     </div>
     <ul class="typeahead" id="q2-list" role="listbox" aria-label="Matches" hidden></ul>
   </div>
-  <div class="search-meta"><span class="label">Live now</span><a class="chip" href="../design/ammonia/">Ammonia</a><a class="chip" href="../design/methanol/">Methanol</a><a class="chip" href="../design/hydrogen/">Hydrogen</a><a class="chip" href="../design/urea/">Urea</a><a class="chip" href="../design/nitric_acid/">Nitric acid</a><a class="chip" href="../design/sulphuric_acid/">Sulphuric acid</a><a class="chip" href="../design/ethanol/">Ethanol</a><a class="chip" href="../design/biodiesel/">Biodiesel</a><a class="chip" href="../design/ethylene_oxide/">Ethylene oxide</a><a class="chip" href="../design/styrene/">Styrene</a><a class="chip" href="../design/aspirin/">Aspirin</a><a class="chip" href="../design/chlor_alkali/">Chlorine and caustic soda</a><a class="chip" href="../design/hydrogen_peroxide/">Hydrogen peroxide</a><a class="chip" href="../design/e_methanol/">e-Methanol</a><a class="chip" href="../design/ammonium_nitrate/">Ammonium nitrate</a><a class="chip" href="../design/soda_ash/">Soda ash</a><a class="chip" href="../design/phenol_acetone/">Phenol and acetone</a><a class="chip" href="../design/acetic_acid/">Acetic acid</a><a class="chip" href="../design/formaldehyde/">Formaldehyde</a><a class="chip" href="../design/ethylene/">Ethylene</a><a class="chip" href="../design/ethylene_glycol/">Ethylene glycol</a></div>
+  <div class="search-meta is-collapsed"><span class="label">Popular designs</span><a class="chip" href="../design/ammonia/">Ammonia</a><a class="chip" href="../design/hydrogen/">Hydrogen</a><a class="chip" href="../design/methanol/">Methanol</a><a class="chip" href="../design/e_methanol/">e-Methanol</a><a class="chip" href="../design/ethylene/">Ethylene</a><a class="chip" href="../design/sulphuric_acid/">Sulphuric acid</a><a class="chip" href="../design/urea/">Urea</a><a class="chip" href="../design/ethanol/">Ethanol</a><a class="chip chip-more" href="../design/nitric_acid/">Nitric acid</a><a class="chip chip-more" href="../design/biodiesel/">Biodiesel</a><a class="chip chip-more" href="../design/ethylene_oxide/">Ethylene oxide</a><a class="chip chip-more" href="../design/styrene/">Styrene</a><a class="chip chip-more" href="../design/aspirin/">Aspirin</a><a class="chip chip-more" href="../design/chlor_alkali/">Chlorine and caustic soda</a><a class="chip chip-more" href="../design/hydrogen_peroxide/">Hydrogen peroxide</a><a class="chip chip-more" href="../design/ammonium_nitrate/">Ammonium nitrate</a><a class="chip chip-more" href="../design/soda_ash/">Soda ash</a><a class="chip chip-more" href="../design/phenol_acetone/">Phenol and acetone</a><a class="chip chip-more" href="../design/acetic_acid/">Acetic acid</a><a class="chip chip-more" href="../design/formaldehyde/">Formaldehyde</a><a class="chip chip-more" href="../design/ethylene_glycol/">Ethylene glycol</a><a class="chip chip-all" href="../examples/" data-bp-allchips aria-expanded="false">See all 21</a></div>
 </form>
 
   </div>

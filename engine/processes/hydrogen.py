@@ -87,7 +87,7 @@ def design(capacity_tpd=None, region="US", **over):
 
     d = Design("hydrogen", "Hydrogen plant (steam methane reforming, PSA)", "Hydrogen", p["capacity_tpd"], region)
     d.route = ("Natural gas is desulphurised, mixed with steam and reformed over nickel catalyst in a fired tubular "
-               "reformer. A high temperature shift converts most of the CO to more hydrogen, the gas is cooled and "
+               "reformer. A high-temperature shift converts most of the CO to more hydrogen, the gas is cooled and "
                "dried, and a pressure swing adsorption unit delivers 99.9%+ hydrogen. PSA tail gas fuels the reformer.")
     d.summary = (f"{p['capacity_tpd']:,.0f} t/d of 99.9%+ hydrogen from natural gas, the grey hydrogen route used "
                  "by refineries and merchant gas suppliers. No carbon capture.")
@@ -302,7 +302,7 @@ def design(capacity_tpd=None, region="US", **over):
          "consequence": "Flame out then fuel rich relight, firebox explosion",
          "safeguard": "Flame scanners, fuel gas trip, purge before relight"},
         {"node": "HT shift converter", "deviation": "High temperature", "cause": "Low steam, high CO in feed",
-         "consequence": "Catalyst sintering, vessel overheating", "safeguard": "Bed thermocouples and high temperature trip"},
+         "consequence": "Catalyst sintering, vessel overheating", "safeguard": "Bed thermocouples and high-temperature trip"},
         {"node": "PSA unit", "deviation": "Valve fails open", "cause": "Valve or controller failure",
          "consequence": "Impure hydrogen to users, overpressure of tail gas system",
          "safeguard": "Online H2 purity analyser, relief on tail gas drum, valve position monitoring"},

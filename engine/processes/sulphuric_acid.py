@@ -124,7 +124,7 @@ def design(capacity_tpd=None, region="US", **over):
                p["capacity_tpd"], region)
     d.route = ("Molten sulphur is burnt in dried air to SO2. A four bed vanadium catalyst converter oxidises it to "
                "SO3, which is absorbed in strong acid after the third bed and again after the fourth (double contact "
-               "double absorption). The heat of burning and conversion raises high pressure steam for export.")
+               "double absorption). The heat of burning and conversion raises high-pressure steam for export.")
     d.summary = (f"{p['capacity_tpd']:,.0f} t/d sulphuric acid (100% basis, sold as {p['acid_wt_pct']:.1f}%) from "
                  "sulphur, a net steam exporter.")
     d.reactions = [

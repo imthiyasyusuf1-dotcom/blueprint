@@ -102,7 +102,7 @@
     var flows = [];
     arr(d.raw_materials).forEach(function (x) { flows.push(['Feed', x]); });
     arr(d.products).forEach(function (x) { flows.push(['Product', x]); });
-    arr(d.byproducts).forEach(function (x) { flows.push(['By product', x]); });
+    arr(d.byproducts).forEach(function (x) { flows.push(['By-product', x]); });
     if (flows.length) {
       h += subHead(arr(d.raw_materials).length ? 'Feeds and products' : 'Products', 'Prices for ' + esc(d.region_label || state.region));
       h += tableWrap('<table class="t stack"><thead><tr><th>Item</th><th>Role</th><th class="r">kg/h</th><th class="r">Price, USD/t</th><th class="r">Per year</th><th>Price source</th></tr></thead><tbody>' +
@@ -281,7 +281,7 @@
     h += '</div>';
     h += subHead('Returns');
     h += '<div class="stats stats-4">' +
-      stat('Revenue', usd(e.revenue), '/yr', '', finite(e.byproduct_credit) && e.byproduct_credit ? 'Includes ' + usd(e.byproduct_credit) + ' by product credit' : '') +
+      stat('Revenue', usd(e.revenue), '/yr', '', finite(e.byproduct_credit) && e.byproduct_credit ? 'Includes ' + usd(e.byproduct_credit) + ' by-product credit' : '') +
       stat('Profit before tax', usd(e.annual_profit_before_tax), '/yr') +
       stat('NPV', usd(e.npv), '', 'hl', finite(e.rate) ? 'At ' + BP.pct(e.rate * 100, 0) + ' over ' + e.life + ' years, ' + BP.pct(e.tax * 100, 0) + ' tax' : '') +
       stat('IRR', finite(e.irr) ? BP.pct(e.irr * 100, 1) : 'None') +
@@ -866,7 +866,8 @@
     var sc = $('#pfd-scroll'); if (!sc) return;
     var fit = (sc.clientWidth - 2) / pfd.W;
     // readable text first: on a phone keep labels near 8 px and pan instead of shrinking further
-    var z = fit >= 0.72 ? Math.min(1, fit) : Math.max(fit, 0.72);
+    // on a phone open nearer the whole sheet (pan and zoom buttons still there), but never below about 5 px text
+    var z = fit >= 0.72 ? Math.min(1, fit) : Math.max(fit, window.innerWidth < 600 ? 0.6 : 0.72);
     pfd.zoom = z;
     setZoom(z);
     sc.scrollLeft = 0;
@@ -954,7 +955,115 @@
 
   /* ================================================================ render all */
 
-  var RENDER = { overview: secOverview, flow: secFlow, balance: secBalance, kit: secKit, costs: secCosts, hazards: secHazards, carbon: secCarbon, validation: secValidation, assumptions: secAssumptions };
+
+  /* ================================================================ explore: capacity, sensitivity, compare */
+  // Every number here comes from site/data/<id>.sens.json: real engine runs made at build time (tools/build_sens.py).
+  var PAIRS = { methanol: 'e_methanol', e_methanol: 'methanol' };
+  var sens = { data: {}, idx: 3 };
+  function loadSens(id) {
+    if (sens.data[id]) return Promise.resolve(sens.data[id]);
+    return fetch(ROOT + 'data/' + id + '.sens.json').then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      .then(function (j) { sens.data[id] = j; return j; });
+  }
+  function secExplore() {
+    var host = '<div id="explore-host"><p class="muted">Loading the scenarios.</p></div>';
+    loadSens(cfg.id).then(function (s) {
+      var pair = PAIRS[cfg.id];
+      return (pair ? loadSens(pair).catch(function () { return null; }) : Promise.resolve(null)).then(function (ps) { drawExplore(s, ps); });
+    }).catch(function () { var el = $('#explore-host'); if (el) el.innerHTML = '<p class="muted">Scenarios could not be loaded. Check your connection and refresh.</p>'; });
+    return host;
+  }
+  function drawExplore(s, ps) {
+    var el = $('#explore-host'); if (!el) return;
+    var R = s.regions[state.region] || s.regions[cfg.default_region];
+    var h = '';
+    if (state.custom) h += '<p class="small muted" style="margin-top:0">Scenarios use the default inputs, not your custom run.</p>';
+    // capacity slider
+    var cv = R.curve, i0 = 0;
+    cv.forEach(function (p, i) { if (p.x === 1) i0 = i; });
+    if (sens.idx >= cv.length) sens.idx = i0;
+    h += subHead('Plant size', 'Each stop is a full engine run');
+    h += '<div class="card explore-card"><label class="slider-row" for="cap-slider"><span>Capacity</span><span class="num" id="cap-out"></span></label>' +
+      '<input type="range" id="cap-slider" min="0" max="' + (cv.length - 1) + '" step="1" value="' + sens.idx + '" aria-describedby="cap-out">' +
+      '<div class="slider-ticks">' + cv.map(function (p) { return '<span' + ([0.25, 1, 2, 4].indexOf(p.x) < 0 ? ' class="minor"' : '') + '>' + (p.x === 1 ? 'Base' : shortNum(p.x) + 'x') + '</span>'; }).join('') + '</div>' +
+      '<div class="stats stats-4" id="cap-stats"></div><p class="small muted" id="cap-note" style="margin:var(--s3) 0 0"></p></div>';
+    // tornado
+    var T = R.tornado.filter(function (t) { return finite(t.lo.lev) && finite(t.hi.lev); });
+    if (T.length) {
+      h += subHead('What moves the cost', 'Levelised cost, each input ' + Math.round(s.swing * 100) + '% down and up');
+      h += '<div class="card chart-card">' + tornado(T, R.base.lev) + '</div>';
+      var capT = T.filter(function (t) { return t.key === 'capacity'; })[0];
+      if (capT && capT.lo.lev > R.base.lev && capT.hi.lev > R.base.lev)
+        h += '<p class="small muted" style="margin:var(--s3) 0 0">The default size is close to the cheapest point: smaller loses economy of scale, bigger adds parallel trains, so cost per tonne rises either way.</p>';
+    }
+    // compare regions
+    var regs = Object.keys(s.regions);
+    h += subHead('Compare regions', 'Same plant, local prices');
+    h += compareTable(regs.map(function (k) { return { name: cfg.regions[k] || k, cur: k === state.region, b: s.regions[k].base }; }));
+    if (ps && ps.regions[state.region]) {
+      var other = ps.regions[state.region].base;
+      var lab = { methanol: 'Methanol from natural gas', e_methanol: 'e-Methanol from CO2 and green hydrogen' };
+      h += subHead('Compare routes', esc(cfg.regions[state.region] || state.region) + ' prices');
+      h += compareTable([{ name: lab[cfg.id], cur: true, b: R.base }, { name: lab[PAIRS[cfg.id]], href: ROOT + 'design/' + PAIRS[cfg.id] + '/' + (state.region !== cfg.default_region ? '?region=' + state.region : ''), b: other }]);
+    }
+    el.innerHTML = h;
+    var sl = $('#cap-slider');
+    function upd() {
+      sens.idx = +sl.value;
+      var p = cv[sens.idx], b = R.base;
+      $('#cap-out').textContent = num(p.tpd) + ' t/d';
+      $('#cap-stats').innerHTML = stat('Fixed capital', usd(p.fci)) + stat('Levelised cost', usd(p.lev), '/t', p.x === 1 ? '' : 'hl', delta(p.lev, b.lev)) +
+        stat('NPV', usd(p.npv)) + stat('IRR', finite(p.irr) ? BP.pct(p.irr * 100, 1) : 'None');
+      var six = b.fci * Math.pow(p.x, 0.6);
+      $('#cap-note').innerHTML = p.x === 1 ? 'Base case. Slide to see the same plant re-solved at another size.' :
+        'Six-tenths rule would give ' + usd(six) + ' fixed capital; the engine re-sizes every unit and gets ' + usd(p.fci) +
+        ' (' + (p.fci >= six ? '+' : '\u2212') + BP.pct(Math.abs(p.fci / six - 1) * 100, 0) + ')' + (p.fci > six * 1.1 ? ', because units past their cost correlation range split into parallel trains' : '') + '. ' + p.checks[0] + ' of ' + p.checks[1] + ' checks pass at this size.';
+    }
+    sl.addEventListener('input', upd); upd();
+  }
+  function delta(v, b) {
+    if (!finite(v) || !finite(b) || Math.abs(v - b) < 1e-9) return '';
+    var d = (v / b - 1) * 100;
+    return (d > 0 ? '+' : '\u2212') + BP.pct(Math.abs(d), Math.abs(d) >= 10 ? 0 : 1) + ' vs base';
+  }
+  function compareTable(rows) {
+    var cols = [['Levelised cost', function (b) { return usd(b.lev) + '/t'; }], ['Cost of manufacture', function (b) { return usd(b.cpt) + '/t'; }],
+      ['Fixed capital', function (b) { return usd(b.fci); }], ['NPV', function (b) { return usd(b.npv); }],
+      ['IRR', function (b) { return finite(b.irr) ? BP.pct(b.irr * 100, 1) : 'None'; }], ['CO<sub>2</sub>', function (b) { return finite(b.co2) ? num(b.co2) + ' t/t' : 'n/a'; }]];
+    var h = '<div class="compare" style="--n:' + rows.length + '">';
+    rows.forEach(function (r) {
+      h += '<div class="card compare-col' + (r.cur ? ' cur' : '') + '"><h4>' + (r.href ? '<a href="' + r.href + '">' + esc(r.name) + '</a>' : esc(r.name)) + '</h4><dl class="kv">' +
+        cols.map(function (c) { return '<div><dt>' + c[0] + '</dt><dd class="num">' + c[1](r.b) + '</dd></div>'; }).join('') + '</dl></div>';
+    });
+    return h + '</div>';
+  }
+  function tornado(T, base) {
+    var host = document.querySelector('[data-sec="explore"]');
+    var W = Math.max(300, Math.min(900, (host && host.clientWidth ? host.clientWidth : 640) - 34));
+    var narrow = W < 520, L = narrow ? 0 : 130, rowH = narrow ? 52 : 40, T0 = 8, H = T0 + T.length * rowH + 26;
+    var lo = base, hi = base;
+    T.forEach(function (t) { lo = Math.min(lo, t.lo.lev, t.hi.lev); hi = Math.max(hi, t.lo.lev, t.hi.lev); });
+    var pad = (hi - lo) * 0.28 || base * 0.05; lo -= pad; hi += pad;
+    var x = function (v) { return L + (W - L - 8) * (v - lo) / (hi - lo); };
+    var s = '<svg class="chart tornado" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Sensitivity of levelised cost">';
+    T.forEach(function (t, i) {
+      var y = T0 + i * rowH + (narrow ? 18 : 6), bh = narrow ? 22 : 24;
+      var a = x(Math.min(t.lo.lev, base)), b = x(Math.max(t.lo.lev, base)), c = x(Math.min(t.hi.lev, base)), d = x(Math.max(t.hi.lev, base));
+      s += '<text class="tl" x="' + (narrow ? 0 : L - 10) + '" y="' + (narrow ? y - 5 : y + 16) + '" text-anchor="' + (narrow ? 'start' : 'end') + '">' + esc(t.label) + '</text>';
+      s += '<rect class="bar-lo" x="' + a.toFixed(1) + '" y="' + y + '" width="' + Math.max(1, b - a).toFixed(1) + '" height="' + bh + '" rx="3"><title>' + esc(t.label) + ' \u2212' + Math.round(sensSwing() * 100) + '%: ' + usd(t.lo.lev) + '/t</title></rect>';
+      s += '<rect class="bar-hi" x="' + c.toFixed(1) + '" y="' + y + '" width="' + Math.max(1, d - c).toFixed(1) + '" height="' + bh + '" rx="3"><title>' + esc(t.label) + ' +' + Math.round(sensSwing() * 100) + '%: ' + usd(t.hi.lev) + '/t</title></rect>';
+      var lv = [[t.lo.lev, 'lo'], [t.hi.lev, 'hi']].sort(function (p, q) { return p[0] - q[0]; });
+      s += '<text class="tv" x="' + (x(lv[0][0]) - 5).toFixed(1) + '" y="' + (y + bh / 2 + 4) + '" text-anchor="end">' + usd(lv[0][0]) + '</text>';
+      s += '<text class="tv" x="' + (x(lv[1][0]) + 5).toFixed(1) + '" y="' + (y + bh / 2 + 4) + '">' + usd(lv[1][0]) + '</text>';
+    });
+    s += '<line class="zero" x1="' + x(base).toFixed(1) + '" x2="' + x(base).toFixed(1) + '" y1="2" y2="' + (H - 22) + '"/>';
+    s += '<text x="' + x(base).toFixed(1) + '" y="' + (H - 6) + '" text-anchor="middle">Base ' + usd(base) + '/t</text></svg>';
+    s += '<div class="legend small"><span><i class="sw lo"></i>Input 30% lower</span><span><i class="sw hi"></i>Input 30% higher</span></div>';
+    return s;
+  }
+  function sensSwing() { var s = sens.data[cfg.id]; return s ? s.swing : 0.3; }
+
+  var RENDER = { overview: secOverview, explore: secExplore, flow: secFlow, balance: secBalance, kit: secKit, costs: secCosts, hazards: secHazards, carbon: secCarbon, validation: secValidation, assumptions: secAssumptions };
 
   function render(d) {
     state.data = d;
@@ -1007,6 +1116,21 @@
     if (!kind) { el.className = 'status-bar'; el.innerHTML = ''; return; }
     el.className = 'status-bar show' + (kind === 'custom' ? ' custom' : kind === 'error' ? ' error' : '');
     el.innerHTML = (kind === 'busy' ? '<span class="spinner" aria-hidden="true"></span>' : '') + '<span class="grow">' + html + '</span>' + (action || '');
+  }
+
+
+  function initShare() {
+    var b = $('#btn-share'); if (!b) return;
+    b.addEventListener('click', function () {
+      syncUrl();
+      var url = location.origin + location.pathname + location.search + location.hash;
+      var lab = b.querySelector('span');
+      function done(t) { lab.textContent = t; setTimeout(function () { lab.textContent = 'Share'; }, 2000); }
+      if (navigator.share && /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) {
+        navigator.share({ title: document.title, url: url }).catch(function () {});
+      } else if (navigator.clipboard) navigator.clipboard.writeText(url).then(function () { done('Link copied'); }, function () { prompt('Copy this link', url); });
+      else prompt('Copy this link', url);
+    });
   }
 
   function syncUrl() {
@@ -1252,6 +1376,7 @@
   function boot() {
     buildInputs();
     initSecNav();
+    initShare();
     var q = new URLSearchParams(location.search);
     var reg = q.get('region');
     if (reg && cfg.regions[reg]) state.region = reg;

@@ -192,7 +192,7 @@ def design(capacity_tpd=None, region="US", **over):
     # most of the exotherm is used in place of jacket steam once the batch is above about 60 C;
     # heating and cooling happen at different times in the cycle, so they are sized separately
     Q_reactor_net = Q_heat - Q_rx
-    lp = 2100.0  # kJ/kg latent heat of low pressure steam, about 3.5 bar (IAPWS table above)
+    lp = 2100.0  # kJ/kg latent heat of low-pressure steam, about 3.5 bar (IAPWS table above)
     if Q_reactor_net > 0:
         d.steam(Q_reactor_net / lp * 3600, "Reactor jacket heating")
     else:
@@ -309,7 +309,7 @@ def design(capacity_tpd=None, region="US", **over):
          "safeguard": "Controlled anhydride dosing interlocked with temperature, jacket cooling, relief to a scrubber"},
         {"node": "Acetylation reactor", "deviation": "Water ingress", "cause": "Wet salicylic acid or leaking jacket",
          "consequence": "Exothermic hydrolysis of anhydride, pressure rise, hydrolysis of aspirin back to salicylic acid",
-         "safeguard": "Moisture specification on raw materials, jacket leak testing, high temperature trip"},
+         "safeguard": "Moisture specification on raw materials, jacket leak testing, high-temperature trip"},
         {"node": "Solids charging and dryer", "deviation": "Dust cloud", "cause": "Open charging of powder, dryer discharge",
          "consequence": "Combustible dust explosion (aspirin and salicylic acid dusts)",
          "safeguard": "Closed charging with nitrogen inerting, earthing and bonding, explosion venting, dust extraction"},

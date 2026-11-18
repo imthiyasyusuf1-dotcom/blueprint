@@ -63,7 +63,7 @@ def design(capacity_tpd=None, region="US", **over):
     dissolved = {c: n for c, n in crude.items() if c not in ("MeOH", "H2O")}
     crude_liq = {"MeOH": crude["MeOH"], "H2O": crude.get("H2O", 0)}
 
-    d = Design("e_methanol", "e-Methanol plant (CO2 + green hydrogen, low pressure synthesis)", "Methanol",
+    d = Design("e_methanol", "e-Methanol plant (CO2 + green hydrogen, low-pressure synthesis)", "Methanol",
                p["capacity_tpd"], region)
     d.route = ("Electrolytic hydrogen and captured CO2 are compressed to loop pressure and converted on a copper "
                "zinc oxide catalyst in a boiling water reactor (CO2 + 3 H2 -> CH3OH + H2O). Unconverted gas is "
@@ -144,7 +144,7 @@ def design(capacity_tpd=None, region="US", **over):
         d.fuel(net * hs_mp / p["boiler_eff"] / 1e6, "Auxiliary boiler (natural gas)")
         d.steam(-net, "Auxiliary boiler")
 
-    # machines (electric drives: there is no high pressure steam on an e-methanol site)
+    # machines (electric drives: there is no high-pressure steam on an e-methanol site)
     d.compressor("C-101", "CO2 compressor", core.Stream("x", "", {"CO2": mk["CO2"]}, 303.15, p["co2_supply_P_bar"]),
                  PL, k=1.29)
     d.compressor("C-102", "Hydrogen compressor", core.Stream("x", "", {"H2": mk["H2"]}, 313.15, p["h2_supply_P_bar"]),
@@ -212,7 +212,7 @@ def design(capacity_tpd=None, region="US", **over):
         "Crude condensation follows Raoult's law with Antoine vapour pressures; dissolved gases are let down and "
         "burnt with the purge in a package boiler.",
         "0.5% of the methanol is lost to the column bottoms and vents.",
-        "All compressors are motor driven (no high pressure steam system on site).",
+        "All compressors are motor driven (no high-pressure steam system on site).",
         "Distillation reboiler duty is (R + 1) x distillate latent heat plus heating the water bottoms; 30 "
         "theoretical stages in one column.",
     ]
@@ -221,8 +221,8 @@ def design(capacity_tpd=None, region="US", **over):
          "consequence": "Hydrogen jet fire or explosion; invisible flame",
          "safeguard": "Gas detection with automatic isolation, ventilated enclosure, hazardous area rating"},
         {"node": "Methanol converter", "deviation": "High temperature", "cause": "Loss of boiler water circulation",
-         "consequence": "Catalyst sintering, by product formation, overpressure",
-         "safeguard": "Steam drum level control, high temperature trip"},
+         "consequence": "Catalyst sintering, by-product formation, overpressure",
+         "safeguard": "Steam drum level control, high-temperature trip"},
         {"node": "CO2 supply", "deviation": "Off spec CO2 (O2, sulphur)", "cause": "Capture plant upset",
          "consequence": "Catalyst poisoning; oxygen in a hydrogen rich loop",
          "safeguard": "Online O2 and H2S analysers with feed trip, guard bed"},

@@ -9,7 +9,7 @@ saccharification and fermentation, about 32 C, 50 to 60 h). The beer is stripped
 column, rectified to about 92.5 wt% and dried to fuel grade on molecular sieves. Whole
 stillage is centrifuged; thin stillage is partly recycled as backset and the rest evaporated
 to syrup, which is mixed with the wet cake and dried to DDGS in gas fired dryers. Steam comes
-from an on site gas fired package boiler.
+from an on-site gas fired package boiler.
 
 Corn basis: one bushel is 56 lb at 15.5% moisture; dry matter is 72.0% starch and 2.6% simple
 sugars (Purdue ID-328). Benchmarks: Mueller and Kwik, 2012 Corn Ethanol survey.
@@ -225,7 +225,7 @@ def design(capacity_tpd=None, region="US", **over):
     d.unit("D-101", "DDGS dryers", "dryer", [s_cake, s_syrup], [s_ddgs, s_dvap], (5, 1))
 
     # ---------------------------------------------------------------- energy
-    lp = 2100.0  # kJ/kg, low pressure steam latent heat
+    lp = 2100.0  # kJ/kg, low-pressure steam latent heat
     steam_items = []
     # cooking: slurry at 60 C (hot backset and condensate) raised to 85 C by direct steam in the jet cooker
     Q_cook = mash_kg_h * 3.8 * (T_liq - T_slurry) / 3600
@@ -262,7 +262,7 @@ def design(capacity_tpd=None, region="US", **over):
     d.cooling(Q_ov_cw, "Product and last effect condensers")
     Q_steam = sum(q for _, q in steam_items)
     steam_kg_h = Q_steam / lp * 3600
-    # on site boiler: steam is raised from natural gas, not bought
+    # on-site boiler: steam is raised from natural gas, not bought
     boiler_GJ_h = Q_steam * 3600 / 1e6 / p["boiler_eff"]
     d.fuel(boiler_GJ_h, "Package boiler (process steam)")
     # dryers: natural gas fired, about 1.4 times the latent heat per kg water removed (includes air losses)
@@ -384,7 +384,7 @@ def design(capacity_tpd=None, region="US", **over):
         "Corn oil extraction, which most plants now run, is not modelled; the oil stays in the DDGS.",
         "Fermentation CO2 is biogenic and is vented after a water scrubber; it is shown as a by-product and is not counted "
         "as fossil CO2. Many plants sell it to CO2 merchants.",
-        f"Steam from an on site gas boiler ({p['boiler_eff'] * 100:.0f}% efficient on LHV); DDGS dryers are gas fired at "
+        f"Steam from an on-site gas boiler ({p['boiler_eff'] * 100:.0f}% efficient on LHV); DDGS dryers are gas fired at "
         f"{p['dryer_kJ_per_kg_water']:,.0f} kJ per kg water removed.",
         f"Beer column overhead {x_ov * 100:.0f} wt% ethanol; the rectifier runs on beer column vapour and its condensers feed "
         f"the {p['evaporator_effects']} effect thin stillage evaporators.",

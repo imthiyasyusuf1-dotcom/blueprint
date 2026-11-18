@@ -3,30 +3,31 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Blueprint: first pass chemical plant design from one word</title>
-<meta name="description" content="Type a chemical and get a first pass plant design: flow diagram, mass and energy balance, kit list, capex and opex, hazards and carbon, checked against published plant figures. Free.">
+<script>document.documentElement.classList.add('js')</script>
+<title>Blueprint: first-pass chemical plant design from one word</title>
+<meta name="description" content="Type a chemical and get a first-pass plant design: flow diagram, mass and energy balance, kit list, capex and opex, hazards and carbon, checked against published plant figures. Free.">
 <link rel="canonical" href="https://imthiyasyusuf1-dotcom.github.io/blueprint/">
 <meta name="theme-color" content="#FCFCFD">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Blueprint">
-<meta property="og:title" content="Blueprint: first pass chemical plant design from one word">
-<meta property="og:description" content="Type a chemical and get a first pass plant design: flow diagram, mass and energy balance, kit list, capex and opex, hazards and carbon, checked against published plant figures. Free.">
+<meta property="og:title" content="Blueprint: first-pass chemical plant design from one word">
+<meta property="og:description" content="Type a chemical and get a first-pass plant design: flow diagram, mass and energy balance, kit list, capex and opex, hazards and carbon, checked against published plant figures. Free.">
 <meta property="og:url" content="https://imthiyasyusuf1-dotcom.github.io/blueprint/">
 <meta property="og:image" content="https://imthiyasyusuf1-dotcom.github.io/blueprint/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Blueprint: type a chemical, get a first pass plant design">
+<meta property="og:image:alt" content="Blueprint: type a chemical, get a first-pass plant design">
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Blueprint: first pass chemical plant design from one word">
-<meta name="twitter:description" content="Type a chemical and get a first pass plant design: flow diagram, mass and energy balance, kit list, capex and opex, hazards and carbon, checked against published plant figures. Free.">
+<meta name="twitter:title" content="Blueprint: first-pass chemical plant design from one word">
+<meta name="twitter:description" content="Type a chemical and get a first-pass plant design: flow diagram, mass and energy balance, kit list, capex and opex, hazards and carbon, checked against published plant figures. Free.">
 <meta name="twitter:image" content="https://imthiyasyusuf1-dotcom.github.io/blueprint/assets/og.png">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preload" href="fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/site.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Blueprint", "url": "https://imthiyasyusuf1-dotcom.github.io/blueprint/", "applicationCategory": "EngineeringApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "creator": {"@type": "Person", "name": "Yusuf Imthiyas"}, "description": "Type a chemical and get a first pass plant design: flow diagram, mass and energy balance, kit list, capex and opex, hazards and carbon, checked against published plant figures. Free."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Blueprint", "url": "https://imthiyasyusuf1-dotcom.github.io/blueprint/", "applicationCategory": "EngineeringApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "creator": {"@type": "Person", "name": "Yusuf Imthiyas"}, "description": "Type a chemical and get a first-pass plant design: flow diagram, mass and energy balance, kit list, capex and opex, hazards and carbon, checked against published plant figures. Free."}</script>
 <script type="application/json" id="bp-catalog">{"processes":[{"id":"ammonia","label":"Ammonia","aliases":["ammonia","nh3","haber","haber bosch","anhydrous ammonia"],"default_tpd":2000,"live":true},{"id":"methanol","label":"Methanol","aliases":["methanol","meoh","ch3oh","methyl alcohol","wood alcohol"],"default_tpd":2500,"live":true},{"id":"hydrogen","label":"Hydrogen","aliases":["hydrogen","h2","grey hydrogen","smr","steam methane reforming","blue hydrogen"],"default_tpd":100,"live":true},{"id":"urea","label":"Urea","aliases":["urea","carbamide","co(nh2)2","fertiliser","fertilizer"],"default_tpd":2000,"live":true},{"id":"nitric_acid","label":"Nitric acid","aliases":["nitric acid","hno3","ostwald","aqua fortis"],"default_tpd":1000,"live":true},{"id":"sulphuric_acid","label":"Sulphuric acid","aliases":["sulphuric acid","sulfuric acid","h2so4","contact process","oil of vitriol"],"default_tpd":2000,"live":true},{"id":"ethanol","label":"Ethanol","aliases":["ethanol","bioethanol","etoh","c2h5oh","ethyl alcohol","fuel ethanol","corn ethanol"],"default_tpd":1000,"live":true},{"id":"biodiesel","label":"Biodiesel","aliases":["biodiesel","fame","fatty acid methyl ester","rme","transesterification"],"default_tpd":300,"live":true},{"id":"ethylene_oxide","label":"Ethylene oxide","aliases":["ethylene oxide","eo","c2h4o","oxirane","epoxyethane"],"default_tpd":1000,"live":true},{"id":"styrene","label":"Styrene","aliases":["styrene","styrene monomer","sm","vinylbenzene","phenylethene","c8h8"],"default_tpd":1500,"live":true},{"id":"aspirin","label":"Aspirin","aliases":["aspirin","acetylsalicylic acid","asa","c9h8o4"],"default_tpd":10,"live":true},{"id":"chlor_alkali","label":"Chlorine and caustic soda","aliases":["chlor alkali","chloralkali","chlorine","cl2","caustic soda","sodium hydroxide","naoh","caustic","lye","membrane cell","brine electrolysis","chlorine caustic"],"default_tpd":500,"live":true},{"id":"hydrogen_peroxide","label":"Hydrogen peroxide","aliases":["hydrogen peroxide","h2o2","peroxide","perhydrol","anthraquinone process","ao process"],"default_tpd":200,"live":true},{"id":"e_methanol","label":"e-Methanol","aliases":["e methanol","emethanol","green methanol","renewable methanol","power to methanol","co2 to methanol","electro methanol","synthetic methanol"],"default_tpd":300,"live":true},{"id":"ammonium_nitrate","label":"Ammonium nitrate","aliases":["ammonium nitrate","nh4no3","an fertiliser","an fertilizer","nitram","prilled ammonium nitrate"],"default_tpd":1200,"live":true},{"id":"soda_ash","label":"Soda ash","aliases":["soda ash","sodium carbonate","na2co3","solvay","solvay process","ammonia soda process","washing soda"],"default_tpd":1000,"live":true},{"id":"phenol_acetone","label":"Phenol and acetone","aliases":["phenol","acetone","phenol acetone","phenol and acetone","c6h5oh","c6h6o","carbolic acid","hydroxybenzene","propanone","dimethyl ketone","c3h6o","(ch3)2co","cumene","cumene process","hock process","cumene hydroperoxide"],"default_tpd":600,"live":true},{"id":"acetic_acid","label":"Acetic acid","aliases":["acetic acid","ethanoic acid","acoh","ch3cooh","c2h4o2","glacial acetic acid","methanol carbonylation","cativa","monsanto process"],"default_tpd":1500,"live":true},{"id":"formaldehyde","label":"Formaldehyde","aliases":["formaldehyde","hcho","ch2o","methanal","formalin","formol","formox","methylene oxide"],"default_tpd":300,"live":true},{"id":"ethylene","label":"Ethylene","aliases":["ethylene","ethene","c2h4","ethane cracker","steam cracker","ethane cracking","steam cracking","olefins"],"default_tpd":3000,"live":true},{"id":"ethylene_glycol","label":"Ethylene glycol","aliases":["ethylene glycol","meg","monoethylene glycol","mono ethylene glycol","glycol","ethane 1,2 diol","ethanediol","c2h6o2","antifreeze","diethylene glycol","deg","triethylene glycol","teg"],"default_tpd":1500,"live":true}],"coming_soon":["acrylic acid","adipic acid","benzene","bisphenol a","butadiene","caprolactam","dimethyl ether","green ammonia","green hydrogen","isopropanol","maleic anhydride","melamine","mtbe","nylon","paracetamol","phosphoric acid","polyethylene","polypropylene","propylene","propylene oxide","pta","terephthalic acid","titanium dioxide","toluene","vinyl chloride","pvc","xylene","sustainable aviation fuel","saf","lithium hydroxide","glycerol","lactic acid","succinic acid","butanol","hydrochloric acid"]}</script>
 </head>
 <body>
@@ -34,27 +35,28 @@
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="./" aria-label="Blueprint home"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#2347F5"/><rect x="6.5" y="8.5" width="8" height="8" rx="1.5" fill="none" stroke="#fff" stroke-width="2"/><path d="M14.5 12.5h4.5v7.5" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><rect x="15" y="19" width="10.5" height="5.5" rx="1.5" fill="#fff"/></svg><span>Blueprint</span></a>
-    <nav class="nav" aria-label="Main"><a href="examples/">Examples</a><a href="method/">Method</a><a href="about/">About</a></nav>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span></span><span></span></button>
+    <nav class="nav" id="site-nav" aria-label="Main"><a href="examples/">Examples</a><a href="method/">Method</a><a href="about/">About</a></nav>
   </div>
 </header>
 <main id="main">
 <section class="hero">
   <div class="wrap">
-    <p class="eyebrow">Free first pass chemical plant design</p>
+    <p class="eyebrow">Free first-pass chemical plant design</p>
     <h1><span class="line">Type a chemical.</span> <span class="line">Get a plant design.</span></h1>
-    <p class="lede">A first pass design you can check, from flow diagram to costs and carbon, measured against published plant figures.</p>
+    <p class="lede">A first-pass design you can check, from flow diagram to costs and carbon, measured against published plant figures.</p>
     <form class="search" role="search" data-bp-search action="request/" autocomplete="off">
   <label class="sr-only" for="q">Type a chemical</label>
   <div class="search-field">
     <div class="search-box">
       <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.75"/><path d="m13.5 13.5 3.5 3.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
-      <input id="q" name="q" type="text" placeholder="Type a chemical" spellcheck="false" autocapitalize="off"
+      <input id="q" name="q" type="text" placeholder="e.g. ammonia, methanol" spellcheck="false" autocapitalize="off"
         role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="q-list">
       <button class="btn btn-primary" type="submit">Design</button>
     </div>
     <ul class="typeahead" id="q-list" role="listbox" aria-label="Matches" hidden></ul>
   </div>
-  <div class="search-meta"><span class="label">Live now</span><a class="chip" href="design/ammonia/">Ammonia</a><a class="chip" href="design/methanol/">Methanol</a><a class="chip" href="design/hydrogen/">Hydrogen</a><a class="chip" href="design/urea/">Urea</a><a class="chip" href="design/nitric_acid/">Nitric acid</a><a class="chip" href="design/sulphuric_acid/">Sulphuric acid</a><a class="chip" href="design/ethanol/">Ethanol</a><a class="chip" href="design/biodiesel/">Biodiesel</a><a class="chip" href="design/ethylene_oxide/">Ethylene oxide</a><a class="chip" href="design/styrene/">Styrene</a><a class="chip" href="design/aspirin/">Aspirin</a><a class="chip" href="design/chlor_alkali/">Chlorine and caustic soda</a><a class="chip" href="design/hydrogen_peroxide/">Hydrogen peroxide</a><a class="chip" href="design/e_methanol/">e-Methanol</a><a class="chip" href="design/ammonium_nitrate/">Ammonium nitrate</a><a class="chip" href="design/soda_ash/">Soda ash</a><a class="chip" href="design/phenol_acetone/">Phenol and acetone</a><a class="chip" href="design/acetic_acid/">Acetic acid</a><a class="chip" href="design/formaldehyde/">Formaldehyde</a><a class="chip" href="design/ethylene/">Ethylene</a><a class="chip" href="design/ethylene_glycol/">Ethylene glycol</a></div>
+  <div class="search-meta is-collapsed"><span class="label">Popular designs</span><a class="chip" href="design/ammonia/">Ammonia</a><a class="chip" href="design/hydrogen/">Hydrogen</a><a class="chip" href="design/methanol/">Methanol</a><a class="chip" href="design/e_methanol/">e-Methanol</a><a class="chip" href="design/ethylene/">Ethylene</a><a class="chip" href="design/sulphuric_acid/">Sulphuric acid</a><a class="chip" href="design/urea/">Urea</a><a class="chip" href="design/ethanol/">Ethanol</a><a class="chip chip-more" href="design/nitric_acid/">Nitric acid</a><a class="chip chip-more" href="design/biodiesel/">Biodiesel</a><a class="chip chip-more" href="design/ethylene_oxide/">Ethylene oxide</a><a class="chip chip-more" href="design/styrene/">Styrene</a><a class="chip chip-more" href="design/aspirin/">Aspirin</a><a class="chip chip-more" href="design/chlor_alkali/">Chlorine and caustic soda</a><a class="chip chip-more" href="design/hydrogen_peroxide/">Hydrogen peroxide</a><a class="chip chip-more" href="design/ammonium_nitrate/">Ammonium nitrate</a><a class="chip chip-more" href="design/soda_ash/">Soda ash</a><a class="chip chip-more" href="design/phenol_acetone/">Phenol and acetone</a><a class="chip chip-more" href="design/acetic_acid/">Acetic acid</a><a class="chip chip-more" href="design/formaldehyde/">Formaldehyde</a><a class="chip chip-more" href="design/ethylene_glycol/">Ethylene glycol</a><a class="chip chip-all" href="examples/" data-bp-allchips aria-expanded="false">See all 21</a></div>
 </form>
 
   </div>
@@ -72,13 +74,13 @@
   <div class="wrap">
     <div class="section-head">
       <h2>Example designs</h2>
-      <p>Default cases at typical world scale capacity, US prices. Open one to explore every section, switch region or change the inputs.</p>
+      <p>Default cases at typical world-scale capacity, US prices. Open one to explore every section, switch region or change the inputs.</p>
     </div>
     <div class="grid grid-3"><article class="card ex-card">
   <div class="ex-top">
     <div>
       <h3>Ammonia</h3>
-      <p class="ex-route">Natural gas, Haber Bosch</p>
+      <p class="ex-route">Natural gas, Haber-Bosch</p>
     </div>
     <span class="pill pill-pass" title="Validation checks within tolerance"><span class="dot"></span>7 of 7 checks</span>
   </div>
@@ -96,7 +98,7 @@
   <div class="ex-top">
     <div>
       <h3>Methanol</h3>
-      <p class="ex-route">Natural gas, low pressure synthesis</p>
+      <p class="ex-route">Natural gas, low-pressure synthesis</p>
     </div>
     <span class="pill pill-pass" title="Validation checks within tolerance"><span class="dot"></span>3 of 3 checks</span>
   </div>
@@ -156,7 +158,7 @@
   </form>
 </div>
 
-    <p class="disclaimer" style="margin-top:var(--s5)">Blueprint gives a factored, screening level estimate, typically within minus 30 to plus 50 percent. It is a starting point for study and scoping, not a basis for construction or investment.</p>
+    <p class="disclaimer" style="margin-top:var(--s5)">Blueprint gives a factored, screening-level estimate, typically within minus 30 to plus 50 percent. It is a starting point for study and scoping, not a basis for construction or investment.</p>
   </div>
 </section>
 </main>

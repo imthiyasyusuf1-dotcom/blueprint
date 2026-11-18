@@ -6,8 +6,8 @@
 
 Methanol and carbon monoxide react in a stirred reactor near 190 C and 28 bar. The liquid is flashed: the
 catalyst solution returns to the reactor and the vapour goes to the light ends column, then the drying
-column and the heavy ends column. Inerts and by-product gases leave as the high pressure vent, which
-carries CO with it. Part of the reaction heat raises low pressure steam.
+column and the heavy ends column. Inerts and by-product gases leave as the high-pressure vent, which
+carries CO with it. Part of the reaction heat raises low-pressure steam.
 
 Benchmarks: Jones (BP Chemicals), The Cativa process for the manufacture of acetic acid, Platinum Metals
 Review 44 (2000); Credence Research CO plant report (2026); Chemwin news on the Shenghong 1 Mt/y project (2024).
@@ -116,7 +116,7 @@ def design(capacity_tpd=None, region="US", **over):
     s_wr = d.stream("Water and lights recycle", {"H2O": Wr}, 323.15, PR_, phase="l")
     f_rx = {"AcOH": A + Rc, "H2O": Wr + min(net_water, 0.0) * -1}
     s_rx = d.stream("Reactor liquid to flash", f_rx, TR, PR_, phase="l")
-    s_vent = d.stream("High pressure vent (after scrubbing)", f_vent, 313.15, PR_ - 1, phase="g")
+    s_vent = d.stream("High-pressure vent (after scrubbing)", f_vent, 313.15, PR_ - 1, phase="g")
     f_fv = {"AcOH": A, "H2O": f_rx["H2O"]}
     s_fv = d.stream("Flash vapour", f_fv, 413.15, 2.0, phase="g")
     s_wet = d.stream("Wet acid", f_fv, 393.15, 1.8, phase="l")
@@ -226,7 +226,7 @@ def design(capacity_tpd=None, region="US", **over):
     usd_m = 3852 / 7.1957
     d.check("Fixed capital, scaled from published project", None, usd_m * 1e6 * (tpy / 1e6) ** 0.7, "USD (2024)",
             "Chemwin news (April 2024): Shenghong Refining and Chemical, Lianyungang, 1,000,000 t/y acetic acid, "
-            "total investment CNY 3,852 million including PSA hydrogen, low temperature methanol wash and cryogenic "
+            "total investment CNY 3,852 million including PSA hydrogen, low-temperature methanol wash and cryogenic "
             "CO units. Converted at 7.1957 CNY/USD (US Federal Reserve G.5A, 2024 average), exponent 0.7",
             "https://en.888chem.com/news/2/20955.html", tol=50, kind="capex",
             note="The published total includes making the CO from syngas, which this model buys over the fence, and "

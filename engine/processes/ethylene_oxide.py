@@ -8,7 +8,7 @@ through a multitubular reactor at about 250 C and 20 bar, with boiling water on 
 raising steam. Ethylene oxide is scrubbed out of the reactor gas with water, stripped and refined.
 The cycle gas goes through a hot potassium carbonate unit to remove the CO2 made by combustion and is
 recompressed; a small purge keeps argon from the oxygen in check and is burnt as fuel. Oxygen comes
-from an on site air separation unit.
+from an on-site air separation unit.
 
 Benchmarks: IPCC 2006 Guidelines Vol 3 Ch 3, Table 3.20 (feedstock use and CO2 against catalyst
 selectivity) and the US DOE Energy and Environmental Profile of the US Chemical Industry (2000),
@@ -101,7 +101,7 @@ def design(capacity_tpd=None, region="US", **over):
     d.route = ("Ethylene is oxidised with pure oxygen over a silver catalyst in a cooled tubular reactor. Ethylene oxide "
                "is washed out of the gas with water, stripped and distilled; the gas is cleaned of CO2 and recycled.")
     d.summary = (f"{p['capacity_tpd']:,.0f} t/d of ethylene oxide from {fresh_c2h4 * MW('C2H4') * 24 / 1000:,.0f} t/d of "
-                 f"ethylene at {S * 100:.0f}% catalyst selectivity, with oxygen from an on site air separation unit.")
+                 f"ethylene at {S * 100:.0f}% catalyst selectivity, with oxygen from an on-site air separation unit.")
     dH1 = (core.h_molar("EO", T0, "g") - core.h_molar("C2H4", T0, "g")) / 1000
     dH2 = (2 * core.h_molar("CO2", T0, "g") + 2 * core.h_molar("H2O", T0, "g") - core.h_molar("C2H4", T0, "g")) / 1000
     d.reactions = [
@@ -240,7 +240,7 @@ def design(capacity_tpd=None, region="US", **over):
         f"Catalyst selectivity {S * 100:.0f}% (IPCC Table 3.20 gives 75 to 85% for the oxygen process). Small losses to "
         "acetaldehyde and to glycol in the stripper are not modelled.",
         "Cycle gas composition, per pass conversion and space velocity are typical published ranges, not one plant's data.",
-        f"Oxygen from an on site cryogenic ASU at {p['o2_purity'] * 100:.1f}% purity; the argon it carries sets the purge.",
+        f"Oxygen from an on-site cryogenic ASU at {p['o2_purity'] * 100:.1f}% purity; the argon it carries sets the purge.",
         f"CO2 removed in a hot potassium carbonate unit using {p['co2_regen_GJ_t']:.1f} GJ of steam per t CO2.",
         "Reactor heat raises saturated 40 bar steam on the shell side, credited at the regional steam price.",
         "The purge is burnt in the site fuel system; methane ballast make up is bought as natural gas.",

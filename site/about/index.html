@@ -3,23 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>document.documentElement.classList.add('js')</script>
 <title>About | Blueprint</title>
-<meta name="description" content="Blueprint is a free tool that turns a chemical name into a first pass plant design. Founded and built by Yusuf Imthiyas.">
+<meta name="description" content="Blueprint is a free tool that turns a chemical name into a first-pass plant design. Founded and built by Yusuf Imthiyas.">
 <link rel="canonical" href="https://imthiyasyusuf1-dotcom.github.io/blueprint/about/">
 <meta name="theme-color" content="#FCFCFD">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Blueprint">
 <meta property="og:title" content="About | Blueprint">
-<meta property="og:description" content="Blueprint is a free tool that turns a chemical name into a first pass plant design. Founded and built by Yusuf Imthiyas.">
+<meta property="og:description" content="Blueprint is a free tool that turns a chemical name into a first-pass plant design. Founded and built by Yusuf Imthiyas.">
 <meta property="og:url" content="https://imthiyasyusuf1-dotcom.github.io/blueprint/about/">
 <meta property="og:image" content="https://imthiyasyusuf1-dotcom.github.io/blueprint/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Blueprint: type a chemical, get a first pass plant design">
+<meta property="og:image:alt" content="Blueprint: type a chemical, get a first-pass plant design">
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="About | Blueprint">
-<meta name="twitter:description" content="Blueprint is a free tool that turns a chemical name into a first pass plant design. Founded and built by Yusuf Imthiyas.">
+<meta name="twitter:description" content="Blueprint is a free tool that turns a chemical name into a first-pass plant design. Founded and built by Yusuf Imthiyas.">
 <meta name="twitter:image" content="https://imthiyasyusuf1-dotcom.github.io/blueprint/assets/og.png">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../assets/favicon-32.png" sizes="32x32" type="image/png">
@@ -32,7 +33,8 @@
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="../" aria-label="Blueprint home"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#2347F5"/><rect x="6.5" y="8.5" width="8" height="8" rx="1.5" fill="none" stroke="#fff" stroke-width="2"/><path d="M14.5 12.5h4.5v7.5" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><rect x="15" y="19" width="10.5" height="5.5" rx="1.5" fill="#fff"/></svg><span>Blueprint</span></a>
-    <nav class="nav" aria-label="Main"><a href="../examples/">Examples</a><a href="../method/">Method</a><a href="../about/" aria-current="page">About</a></nav>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span></span><span></span></button>
+    <nav class="nav" id="site-nav" aria-label="Main"><a href="../examples/">Examples</a><a href="../method/">Method</a><a href="../about/" aria-current="page">About</a></nav>
   </div>
 </header>
 <main id="main">
@@ -46,7 +48,7 @@
 <div class="wrap narrow">
   <div class="prose">
     <h2>What it is</h2>
-    <p>Blueprint is a free web tool. You type a chemical and it returns a first pass design for a plant that makes it: a flow diagram, a solved mass and energy balance, a sized and costed kit list, capital and operating cost, hazards, carbon footprint and a PDF report.</p>
+    <p>Blueprint is a free web tool. You type a chemical and it returns a first-pass design for a plant that makes it: a flow diagram, a solved mass and energy balance, a sized and costed kit list, capital and operating cost, hazards, carbon footprint and a PDF report.</p>
     <p>Every number comes from a process model that solves the chemistry and the energy balance, a recognised costing method and sourced prices. Each design is then checked against published figures for real plants, and the result of that check is shown next to the design rather than hidden.</p>
     <h2>Who it is for</h2>
     <ul>

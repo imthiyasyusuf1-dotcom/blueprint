@@ -254,7 +254,7 @@ def design(capacity_tpd=None, region="US", **over):
          "consequence": "Hydrogen fire or explosion", "safeguard": "Gas detection, isolation valves, area rating"},
         {"node": "Concentration column", "deviation": "High peroxide concentration", "cause": "Loss of reflux or feed",
          "consequence": "Detonable peroxide vapour in the column",
-         "safeguard": "Vapour concentration kept below explosive limit by design, high temperature trips"},
+         "safeguard": "Vapour concentration kept below explosive limit by design, high-temperature trips"},
     ]
     d.greener = {
         "title": "Green hydrogen and pure oxygen",

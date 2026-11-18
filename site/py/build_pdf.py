@@ -2232,7 +2232,7 @@ def hazards_page(pdf, d):
     hop = d.get("hazop") or []
     if not (hz or ph or hop):
         return
-    y = pdf.section("Hazards", "Substance data with GHS hazard statements, process hazards and a first pass HAZOP. "
+    y = pdf.section("Hazards", "Substance data with GHS hazard statements, process hazards and a first-pass HAZOP. "
                                "A screening view only; a full HAZOP and layer of protection analysis are needed.")
     x0, cw = MARGIN, pdf.cw
     if hz:
@@ -2393,7 +2393,7 @@ def _render(d, font_dir, total, toc):
     pdf.set_author("Blueprint")
     pdf.set_creator("Blueprint")
     pdf.set_producer("Blueprint")
-    pdf.set_subject(clean(d.get("title") or "First pass plant design"))
+    pdf.set_subject(clean(d.get("title") or "First-pass plant design"))
     pdf.set_creation_date(datetime.datetime(2026, 1, 1, tzinfo=datetime.timezone.utc))
     pdf.set_lang("en-GB")
     cover(pdf, d)

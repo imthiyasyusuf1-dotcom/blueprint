@@ -24,7 +24,7 @@
     "separator_C": -5.0,
     "furnace_eff": 0.91
    },
-   "summary": "2,000 t/d of liquid ammonia from natural gas. Typical of a single train world scale plant."
+   "summary": "2,000 t/d of liquid ammonia from natural gas. Typical of a single-train world-scale plant."
   },
   {
    "id": "methanol",
@@ -243,7 +243,7 @@
     "ghsv_h": 4000.0,
     "storage_days": 2
    },
-   "summary": "1,000 t/d of ethylene oxide from 818 t/d of ethylene at 80% catalyst selectivity, with oxygen from an on site air separation unit."
+   "summary": "1,000 t/d of ethylene oxide from 818 t/d of ethylene at 80% catalyst selectivity, with oxygen from an on-site air separation unit."
   },
   {
    "id": "styrene",

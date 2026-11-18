@@ -1,4 +1,4 @@
-"""Ammonia from natural gas: steam reforming + Haber Bosch synthesis loop.
+"""Ammonia from natural gas: steam reforming + Haber-Bosch synthesis loop.
 
 Every composition below is solved, not assumed: reformer, secondary reformer,
 shift and synthesis outlets are ideal gas chemical equilibria computed from
@@ -167,12 +167,12 @@ def design(capacity_tpd=None, region="US", **over):
     fe = front_end(F, p)
     lp = loop(fe["makeup"], p)
 
-    d = Design("ammonia", "Ammonia plant (natural gas, Haber Bosch)", "Ammonia", p["capacity_tpd"], region)
+    d = Design("ammonia", "Ammonia plant (natural gas, Haber-Bosch)", "Ammonia", p["capacity_tpd"], region)
     d.route = ("Steam methane reforming with a primary and an air blown secondary reformer, high and low "
-               "temperature shift, CO2 removal with activated MDEA, methanation, then the Haber Bosch synthesis "
+               "temperature shift, CO2 removal with activated MDEA, methanation, then the Haber-Bosch synthesis "
                "loop on an iron catalyst with refrigerated ammonia recovery.")
-    d.summary = (f"{p['capacity_tpd']:,.0f} t/d of liquid ammonia from natural gas. Typical of a single train "
-                 "world scale plant.")
+    d.summary = (f"{p['capacity_tpd']:,.0f} t/d of liquid ammonia from natural gas. Typical of a single-train "
+                 "world-scale plant.")
     d.reactions = [
         {"eq": "CH4 + H2O <=> CO + 3 H2", "where": "Primary and secondary reformer (Ni)", "dH_kJ": th.dh_rxn_gas(SMR) / 1000},
         {"eq": "CO + H2O <=> CO2 + H2", "where": "Shift converters (Fe-Cr, Cu-Zn)", "dH_kJ": th.dh_rxn_gas(WGS) / 1000},
@@ -412,10 +412,10 @@ def design(capacity_tpd=None, region="US", **over):
          "safeguard": "Low steam to carbon trip, tube skin thermocouples, burner management system"},
         {"node": "Secondary reformer", "deviation": "High air flow", "cause": "Air controller failure",
          "consequence": "Excess N2 and oxygen breakthrough, overtemperature, explosive mixture downstream",
-         "safeguard": "Ratio control, high temperature trip, O2 analyser on outlet"},
+         "safeguard": "Ratio control, high-temperature trip, O2 analyser on outlet"},
         {"node": "Methanator", "deviation": "High CO/CO2 slip", "cause": "CO2 absorber upset, LT shift deactivated",
          "consequence": "Runaway methanation exotherm (about 70 K per 1% CO2)",
-         "safeguard": "High temperature trip isolating feed, CO2 analyser at absorber outlet"},
+         "safeguard": "High-temperature trip isolating feed, CO2 analyser at absorber outlet"},
         {"node": "Synthesis loop", "deviation": "High pressure", "cause": "Purge valve closed, inerts build up",
          "consequence": "Loss of containment of hydrogen and ammonia at 150 bar",
          "safeguard": "Pressure relief to flare, inert analyser and purge control"},

@@ -9,7 +9,7 @@ Per pass in the furnace coils (ethane with dilution steam, about 840 C, under 0.
 
 The reaction extents are not set by hand: they are solved from the single pass furnace yields in the EU
 LVOC BREF (ethane feed), and the unconverted ethane that falls out of that solution is recycled to
-extinction. Transfer line exchangers raise high pressure steam, a water quench condenses the dilution
+extinction. Transfer line exchangers raise high-pressure steam, a water quench condenses the dilution
 steam and the gasoline, then a five stage steam driven compressor takes the gas to about 36 bar. After
 caustic wash and drying the cold box and demethaniser strip hydrogen and methane, which are burnt in the
 furnaces. A deethaniser, C2 splitter and depropaniser give polymer grade ethylene, recycle ethane,
@@ -277,7 +277,7 @@ def design(capacity_tpd=None, region="US", **over):
         "Ethane recycle is cracked again at the same yields (recycled to extinction).",
         f"Furnace efficiency {p['furnace_eff'] * 100:.0f}% covers the radiant coils, feed preheat and steam superheat "
         "in the convection section.",
-        "Dilution steam is raised from quench water heat; any shortfall is met with low pressure steam.",
+        "Dilution steam is raised from quench water heat; any shortfall is met with low-pressure steam.",
         "Compressors are driven by 120 bar steam turbines at 30% of the steam enthalpy drop.",
         "Refrigeration loads are estimated from the C2 splitter condenser and the cold box chilling, with assumed "
         "COPs; the cold box is costed as stainless steel exchangers.",
@@ -290,7 +290,7 @@ def design(capacity_tpd=None, region="US", **over):
          "consequence": "Machine damage, polymer build up, release of flammable gas",
          "safeguard": "Anti surge control, wash oil, interstage temperature trips"},
         {"node": "Cold box", "deviation": "Low temperature on carbon steel", "cause": "Refrigerant upset",
-         "consequence": "Brittle fracture and a large flammable release", "safeguard": "Low temperature trips, "
+         "consequence": "Brittle fracture and a large flammable release", "safeguard": "Low-temperature trips, "
          "material selection, gas detection and deluge"},
         {"node": "Ethylene storage", "deviation": "Loss of refrigeration", "cause": "Compressor trip",
          "consequence": "Pressure rise and vent to flare", "safeguard": "Spare compressor, relief to flare"},

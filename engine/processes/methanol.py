@@ -99,8 +99,8 @@ def design(capacity_tpd=None, region="US", **over):
     bottoms = {"H2O": crude.get("H2O", 0) - product["H2O"], "MeOH": crude["MeOH"] - meoh_prod}
     dissolved = {c: n for c, n in crude.items() if c not in ("MeOH", "H2O")}
 
-    d = Design("methanol", "Methanol plant (natural gas, low pressure synthesis)", "Methanol", p["capacity_tpd"], region)
-    d.route = ("Steam methane reforming, heat recovery and compression, then a low pressure methanol loop on a "
+    d = Design("methanol", "Methanol plant (natural gas, low-pressure synthesis)", "Methanol", p["capacity_tpd"], region)
+    d.route = ("Steam methane reforming, heat recovery and compression, then a low-pressure methanol loop on a "
                "copper zinc catalyst in a boiling water reactor, crude methanol separation and distillation.")
     d.summary = f"{p['capacity_tpd']:,.0f} t/d of AA grade methanol from natural gas."
     d.reactions = [
@@ -252,7 +252,7 @@ def design(capacity_tpd=None, region="US", **over):
         {"node": "Steam reformer", "deviation": "Low steam flow", "cause": "Steam valve or BFW pump failure",
          "consequence": "Carbon formation, tube overheating and rupture", "safeguard": "Low steam to carbon trip, tube skin temperature monitoring"},
         {"node": "Methanol converter", "deviation": "High temperature", "cause": "Loss of boiler water circulation",
-         "consequence": "Catalyst sintering, by product formation, overpressure", "safeguard": "Steam drum level control, high temperature trip"},
+         "consequence": "Catalyst sintering, by-product formation, overpressure", "safeguard": "Steam drum level control, high-temperature trip"},
         {"node": "Crude separator", "deviation": "High level", "cause": "Level control failure",
          "consequence": "Liquid carry over into recycle compressor", "safeguard": "High high level trip on circulator"},
         {"node": "Methanol storage", "deviation": "Loss of containment", "cause": "Overfill, tank failure",

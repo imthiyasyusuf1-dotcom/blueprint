@@ -399,7 +399,7 @@ def head(page, pre):
     url = SITE_URL + page["path"]
     title = page["title"]
     desc = page["desc"]
-    og = SITE_URL + "assets/og.png"
+    og = SITE_URL + (page.get("og") or "assets/og.png")
     extra = page.get("head_extra", "")
     noindex = '<meta name="robots" content="noindex">\n' if page.get("noindex") else ""
     canon = "" if page.get("noindex") else '<link rel="canonical" href="{}">\n'.format(esc(url))
@@ -408,6 +408,7 @@ def head(page, pre):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>document.documentElement.classList.add('js')</script>
 <title>{title}</title>
 <meta name="description" content="{desc}">
 {noindex}{canon}<meta name="theme-color" content="#FCFCFD">
@@ -419,7 +420,7 @@ def head(page, pre):
 <meta property="og:image" content="{og}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Blueprint: type a chemical, get a first pass plant design">
+<meta property="og:image:alt" content="{og_alt}">
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{title}">
@@ -432,7 +433,7 @@ def head(page, pre):
 <link rel="stylesheet" href="{pre}css/site.css">
 {extra}</head>
 """.format(title=esc(title), desc=esc(desc), url=esc(url), og=esc(og), site=SITE_NAME, pre=pre,
-           extra=extra, noindex=noindex, canon=canon)
+           og_alt=esc(page.get("og_alt") or "Blueprint: type a chemical, get a first-pass plant design"), extra=extra, noindex=noindex, canon=canon)
 
 
 def header(pre, current=""):
@@ -444,7 +445,8 @@ def header(pre, current=""):
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="{pre}" aria-label="Blueprint home">{mark}<span>Blueprint</span></a>
-    <nav class="nav" aria-label="Main">{nav}</nav>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span></span><span></span></button>
+    <nav class="nav" id="site-nav" aria-label="Main">{nav}</nav>
   </div>
 </header>
 """.format(pre=pre or "./", mark=MARK, nav=nav)
@@ -552,21 +554,30 @@ def catalog_json(index, built):
         json.dumps(cat, separators=(",", ":")).replace("</", "<\\/"))
 
 
+POPULAR = ["ammonia", "hydrogen", "methanol", "e_methanol", "ethylene", "sulphuric_acid", "urea", "ethanol"]
+
+
 def search_block(built_procs, pre, idp="q", big=True):
-    chips = "".join('<a class="chip" href="{pre}design/{id}/">{l}</a>'.format(pre=pre, id=esc(p["id"]), l=esc(p["label"]))
-                    for p in built_procs)
+    rank = {pid: i for i, pid in enumerate(POPULAR)}
+    ordered = sorted(built_procs, key=lambda p: rank.get(p["id"], len(POPULAR)))
+    chips = "".join('<a class="chip{m}" href="{pre}design/{id}/">{l}</a>'.format(
+        pre=pre, id=esc(p["id"]), l=esc(p["label"]), m=" chip-more" if i >= len(POPULAR) else "")
+        for i, p in enumerate(ordered))
+    if len(ordered) > len(POPULAR):
+        chips += ('<a class="chip chip-all" href="{pre}examples/" data-bp-allchips aria-expanded="false">See all {n}</a>'
+                  .format(pre=pre, n=len(ordered)))
     return """<form class="search" role="search" data-bp-search action="{pre}request/" autocomplete="off">
   <label class="sr-only" for="{idp}">Type a chemical</label>
   <div class="search-field">
     <div class="search-box">
       {ic}
-      <input id="{idp}" name="q" type="text" placeholder="Type a chemical" spellcheck="false" autocapitalize="off"
+      <input id="{idp}" name="q" type="text" placeholder="e.g. ammonia, methanol" spellcheck="false" autocapitalize="off"
         role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="{idp}-list">
       <button class="btn btn-primary" type="submit">Design</button>
     </div>
     <ul class="typeahead" id="{idp}-list" role="listbox" aria-label="Matches" hidden></ul>
   </div>
-  <div class="search-meta"><span class="label">Live now</span>{chips}</div>
+  <div class="search-meta is-collapsed"><span class="label">Popular designs</span>{chips}</div>
 </form>
 """.format(pre=pre, idp=idp, ic=ICON["search"], chips=chips)
 
@@ -574,8 +585,8 @@ def search_block(built_procs, pre, idp="q", big=True):
 # ------------------------------------------------------------------------------------ pages
 
 def build_landing(index, built, designs):
-    page = {"path": "", "title": "Blueprint: first pass chemical plant design from one word",
-            "desc": "Type a chemical and get a first pass plant design: flow diagram, mass and energy balance, kit list, "
+    page = {"path": "", "title": "Blueprint: first-pass chemical plant design from one word",
+            "desc": "Type a chemical and get a first-pass plant design: flow diagram, mass and energy balance, kit list, "
                     "capex and opex, hazards and carbon, checked against published plant figures. Free."}
     pre = ""
     procs = [p for p in index["processes"] if p["id"] in built]
@@ -603,9 +614,9 @@ def build_landing(index, built, designs):
     body = """<main id="main">
 <section class="hero">
   <div class="wrap">
-    <p class="eyebrow">Free first pass chemical plant design</p>
+    <p class="eyebrow">Free first-pass chemical plant design</p>
     <h1><span class="line">Type a chemical.</span> <span class="line">Get a plant design.</span></h1>
-    <p class="lede">A first pass design you can check, from flow diagram to costs and carbon, measured against published plant figures.</p>
+    <p class="lede">A first-pass design you can check, from flow diagram to costs and carbon, measured against published plant figures.</p>
     {search}
   </div>
 </section>
@@ -622,7 +633,7 @@ def build_landing(index, built, designs):
   <div class="wrap">
     <div class="section-head">
       <h2>Example designs</h2>
-      <p>Default cases at typical world scale capacity, US prices. Open one to explore every section, switch region or change the inputs.</p>
+      <p>Default cases at typical world-scale capacity, US prices. Open one to explore every section, switch region or change the inputs.</p>
     </div>
     <div class="grid grid-3">{cards}</div>
     {more}
@@ -631,7 +642,7 @@ def build_landing(index, built, designs):
 <section class="section">
   <div class="wrap">
     {waitlist}
-    <p class="disclaimer" style="margin-top:var(--s5)">Blueprint gives a factored, screening level estimate, typically within minus 30 to plus 50 percent. It is a starting point for study and scoping, not a basis for construction or investment.</p>
+    <p class="disclaimer" style="margin-top:var(--s5)">Blueprint gives a factored, screening-level estimate, typically within minus 30 to plus 50 percent. It is a starting point for study and scoping, not a basis for construction or investment.</p>
   </div>
 </section>
 </main>
@@ -656,6 +667,7 @@ def design_config(p, regions, built_pdfs):
 
 SECTIONS = [
     ("overview", "Overview", "Route, conditions, reactions and the headline numbers."),
+    ("explore", "What if", "Resize the plant, see what drives the cost and compare regions. Every number is a full engine run."),
     ("flow", "Flow diagram", "Tap any stream or unit for its conditions and composition."),
     ("balance", "Mass and energy balance", "Every stream in kg/h, closure and atom balance errors, and utilities."),
     ("kit", "Kit list", "Major equipment, sized and costed with Turton bare module factors."),
@@ -667,16 +679,21 @@ SECTIONS = [
 ]
 
 
+ICON_SHARE = ('<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6.5 9.5 9.5 6.5M7 4.5l1.2-1.2a2.6 2.6 0 0 1 3.7 3.7L10.7 8.2'
+              'M9 11.5l-1.2 1.2a2.6 2.6 0 0 1-3.7-3.7L5.3 7.8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>')
+
+
 def build_design(p, d, regions, built_pdfs):
     pid = p["id"]
     path = "design/{}/".format(pid)
     pre = "../../"
     cap = (d.get("capacity") or {}).get("t_per_day")
     title = "{} plant design: {} t/d | Blueprint".format(p["label"], fmt_num(cap))
-    desc = ("First pass {} plant design at {} t/d: {} Flow diagram, mass and energy balance, kit list, "
+    desc = ("First-pass {} plant design at {} t/d: {} Flow diagram, mass and energy balance, kit list, "
             "capex, opex, hazards and carbon, validated against published figures.").format(
         p["label"].lower(), fmt_num(cap), (d.get("summary") or "").rstrip(".") + ".")
-    page = {"path": path, "title": title, "desc": desc[:300]}
+    page = {"path": path, "title": title, "desc": desc[:300], "og": "assets/og/{}.png".format(pid),
+            "og_alt": "Blueprint {} plant design at {} t/d".format(p["label"].lower(), fmt_num(cap))}
     cfg = design_config(p, regions, built_pdfs)
     page["head_extra"] = '<script type="application/json" id="bp-config">{}</script>\n'.format(
         json.dumps(cfg, separators=(",", ":")).replace("</", "<\\/"))
@@ -712,6 +729,7 @@ def build_design(p, d, regions, built_pdfs):
     <div class="toolbar">
       <div class="seg" role="group" aria-label="Price region">{rbtns}</div>
       <span class="spacer"></span>
+      <button class="btn btn-secondary" type="button" id="btn-share" title="Copy a link to this exact case">{ic_sh}<span>Share</span></button>
       <button class="btn btn-secondary" type="button" id="btn-inputs" aria-expanded="false" aria-controls="inputs">{ic_sl}Change inputs</button>
       <a class="btn btn-primary" id="btn-pdf" href="{pdf}" download>{ic_dl}Download PDF</a>
     </div>
@@ -736,7 +754,7 @@ def build_design(p, d, regions, built_pdfs):
 </main>
 """.format(pre=pre, label=esc(p["label"]), dtitle=esc(d.get("title")), summary=esc(d.get("summary")),
            rlabel=esc(d.get("region_label")), cap=fmt_num(cap), vcls="pill-pass" if val and npass == len(val) else "",
-           npass=npass, nval=len(val), rbtns=region_btns, ic_sl=ICON["sliders"], ic_dl=ICON["download"], pdf=pdf_href,
+           npass=npass, nval=len(val), rbtns=region_btns, ic_sl=ICON["sliders"], ic_dl=ICON["download"], ic_sh=ICON_SHARE, pdf=pdf_href,
            nav=nav, secs="\n".join(secs))
     write(path + "index.html", page_html(page, body, scripts=("js/config.js", "js/common.js", "js/design.js")))
     return page
@@ -838,7 +856,7 @@ def build_request(index, built):
 
 def build_about():
     page = {"path": "about/", "title": "About | Blueprint",
-            "desc": "Blueprint is a free tool that turns a chemical name into a first pass plant design. Founded and built by Yusuf Imthiyas."}
+            "desc": "Blueprint is a free tool that turns a chemical name into a first-pass plant design. Founded and built by Yusuf Imthiyas."}
     body = """<main id="main">
 <div class="page-head">
   <div class="wrap narrow">
@@ -850,7 +868,7 @@ def build_about():
 <div class="wrap narrow">
   <div class="prose">
     <h2>What it is</h2>
-    <p>Blueprint is a free web tool. You type a chemical and it returns a first pass design for a plant that makes it: a flow diagram, a solved mass and energy balance, a sized and costed kit list, capital and operating cost, hazards, carbon footprint and a PDF report.</p>
+    <p>Blueprint is a free web tool. You type a chemical and it returns a first-pass design for a plant that makes it: a flow diagram, a solved mass and energy balance, a sized and costed kit list, capital and operating cost, hazards, carbon footprint and a PDF report.</p>
     <p>Every number comes from a process model that solves the chemistry and the energy balance, a recognised costing method and sourced prices. Each design is then checked against published figures for real plants, and the result of that check is shown next to the design rather than hidden.</p>
     <h2>Who it is for</h2>
     <ul>
@@ -1134,6 +1152,70 @@ def build_images():
     im.save(os.path.join(SITE, "assets", "og.png"), optimize=True)
 
 
+def build_design_og(procs, designs):
+    """One 1200x630 preview per design: name, capacity and the headline numbers from the US data file."""
+    try:
+        from PIL import Image, ImageDraw, ImageFont
+    except ImportError:
+        return 0
+    odir = os.path.join(SITE, "assets", "og")
+    os.makedirs(odir, exist_ok=True)
+    fdir = os.path.join(SITE, "fonts")
+    sup = 2
+    F = lambda name, px: ImageFont.truetype(os.path.join(fdir, name), px * sup)  # noqa: E731
+    W, H = 1200, 630
+    n = 0
+    for p in procs:
+        d = designs[p["id"]]
+        e, c = d.get("economics") or {}, d.get("carbon") or {}
+        cap = (d.get("capacity") or {}).get("t_per_day")
+        val = d.get("validation") or []
+        npass = sum(1 for v in val if v.get("pass"))
+        im = Image.new("RGB", (W * sup, H * sup), "#FCFCFD")
+        dr = ImageDraw.Draw(im)
+        for x in range(0, W, 24):
+            for y in range(0, H, 24):
+                dr.ellipse([(x + 12) * sup - 2, (y + 12) * sup - 2, (x + 12) * sup + 2, (y + 12) * sup + 2], fill="#ECEEF2")
+        dr.rounded_rectangle([72 * sup, 72 * sup, 128 * sup, 128 * sup], radius=14 * sup, fill=ACCENT)
+        k = 56 / 32.0 * sup
+        ox, oy = 72 * sup, 72 * sup
+        w = max(1, round(2 * k))
+        dr.rounded_rectangle([ox + 6.5 * k, oy + 8.5 * k, ox + 14.5 * k, oy + 16.5 * k], radius=1.5 * k, outline="white", width=w)
+        dr.line([(ox + 14.5 * k, oy + 12.5 * k), (ox + 19 * k, oy + 12.5 * k), (ox + 19 * k, oy + 20 * k)], fill="white", width=w)
+        dr.rounded_rectangle([ox + 15 * k, oy + 19 * k, ox + 25.5 * k, oy + 24.5 * k], radius=1.5 * k, fill="white")
+        dr.text((144 * sup, 84 * sup), "Blueprint", font=F("Inter-SemiBold.ttf", 32), fill=INK)
+        label = p["label"]
+        size = 76
+        while size > 44 and dr.textlength(label, font=F("Inter-Bold.ttf", size)) > (W - 144) * sup:
+            size -= 4
+        dr.text((72 * sup, 190 * sup), label, font=F("Inter-Bold.ttf", size), fill=INK)
+        dr.text((72 * sup, (190 + size + 30) * sup), "{} t/d plant design, solved and costed".format(fmt_num(cap)),
+                font=F("Inter-Regular.ttf", 30), fill=ACCENT)
+        stats = [("Fixed capital", fmt_usd(e.get("fci"))), ("Levelised cost", fmt_usd(e.get("levelised_cost_per_tonne")) + "/t"),
+                 ("CO2", "{} t/t".format(fmt_num(c.get("total"))) if c.get("total") is not None else "n/a"),
+                 ("Checks", "{} of {} pass".format(npass, len(val)))]
+        x0, y0, gap = 72, 392, 16
+        bw = (W - 2 * x0 - 3 * gap) // 4
+        for i, (lab, v) in enumerate(stats):
+            x = x0 + i * (bw + gap)
+            dr.rounded_rectangle([x * sup, y0 * sup, (x + bw) * sup, (y0 + 132) * sup], radius=14 * sup, fill="white", outline="#CDD3DD", width=2 * sup)
+            if lab == "CO2":
+                dr.text(((x + 22) * sup, (y0 + 22) * sup), "CO", font=F("Inter-Regular.ttf", 22), fill="#5B6474")
+                tw = dr.textlength("CO", font=F("Inter-Regular.ttf", 22))
+                dr.text(((x + 22) * sup + tw, (y0 + 32) * sup), "2", font=F("Inter-Regular.ttf", 15), fill="#5B6474")
+            else:
+                dr.text(((x + 22) * sup, (y0 + 22) * sup), lab, font=F("Inter-Regular.ttf", 22), fill="#5B6474")
+            fs = 38
+            while fs > 24 and dr.textlength(v, font=F("Inter-SemiBold.ttf", fs)) > (bw - 44) * sup:
+                fs -= 2
+            dr.text(((x + 22) * sup, (y0 + 64) * sup), v, font=F("Inter-SemiBold.ttf", fs), fill=INK if lab != "Checks" else ("#08714F" if npass == len(val) else INK))
+        dr.text((72 * sup, 552 * sup), "US prices. Flow diagram, balances, kit list, hazards and PDF.",
+                font=F("Inter-Regular.ttf", 24), fill="#5B6474")
+        im.resize((W, H), Image.LANCZOS).save(os.path.join(odir, p["id"] + ".png"), optimize=True)
+        n += 1
+    return n
+
+
 # ----------------------------------------------------------------------------------- main
 
 def main():
@@ -1171,6 +1253,8 @@ def main():
 
     n_py = copy_engine()
     build_images()
+    n_og = build_design_og([p for p in index["processes"] if p["id"] in built], designs)
+    print("  {} design preview images".format(n_og))
 
     urls = "".join("  <url><loc>{}</loc></url>\n".format(esc(SITE_URL + p["path"])) for p in pages)
     write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n'

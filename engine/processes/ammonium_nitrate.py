@@ -3,7 +3,7 @@
 Gaseous ammonia and 60% nitric acid react in a neutraliser at about 4 bar. The reaction heat boils
 water off the solution; the neutraliser solves the water evaporated from an enthalpy balance built on
 the NBS heats of formation of nitric acid and ammonium nitrate solutions at their actual dilution.
-The contaminated process vapour is condensed in a reboiler that raises clean low pressure steam,
+The contaminated process vapour is condensed in a reboiler that raises clean low-pressure steam,
 after first vaporising the ammonia and preheating the acid. A vacuum evaporator on 10 bar steam takes
 the solution to 96%, a final concentrator to 99.7% melt, and the melt is prilled in a tower against
 air and cooled in a fluid bed.
@@ -170,7 +170,7 @@ def design(capacity_tpd=None, region="US", **over):
     d = Design("ammonium_nitrate", "Ammonium nitrate plant (pressure neutralisation and prilling)",
                "Ammonium nitrate", p["capacity_tpd"], region)
     d.route = ("Ammonia gas and 60% nitric acid are neutralised at about 4 bar; the reaction heat boils off water "
-               "and the process vapour raises clean low pressure steam. The solution is concentrated to 96% in a "
+               "and the process vapour raises clean low-pressure steam. The solution is concentrated to 96% in a "
                "vacuum evaporator and to a 99.7% melt, then prilled against air and cooled in a fluid bed.")
     d.summary = f"{p['capacity_tpd']:,.0f} t/d of prilled ammonium nitrate (34.9% N)."
     d.reactions = [
